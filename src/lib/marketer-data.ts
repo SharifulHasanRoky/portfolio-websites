@@ -18,6 +18,16 @@ import {
   Shirt,
   Phone,
   Dumbbell,
+  PawPrint,
+  Coffee,
+  Sofa,
+  Gem,
+  Pill,
+  Baby,
+  Mountain,
+  Watch,
+  Headphones,
+  Gift,
   type LucideIcon,
 } from "lucide-react";
 
@@ -412,6 +422,206 @@ export const caseStudies: CaseStudy[] = [
     spend: "$72k/mo",
     highlight: "Built a consumables flywheel that lifts LTV 3.4x.",
   },
+  {
+    id: "pet-supplies",
+    industry: "Ecommerce · Pet Supplies",
+    icon: PawPrint,
+    client: "Pawsome Co.",
+    location: "Austin, TX",
+    vertical: "Ecommerce",
+    challenge:
+      "Premium pet food + supplement brand losing to Chewy on price. Subscription churn spiking at month 3.",
+    approach:
+      "Rebuilt offer around a 'first month free + flex schedule' subscription. Launched breed-specific quiz funnel and UGC testimonial engine on Meta + TikTok.",
+    results: [
+      { metric: "Active subscribers", value: "9,800", delta: "+248%" },
+      { metric: "3-month churn", value: "8.2%", delta: "−58%" },
+      { metric: "LTV / CAC ratio", value: "3.6", delta: "+112%" },
+    ],
+    timeline: "8 months",
+    spend: "$54k/mo",
+    highlight: "Cut subscription churn by more than half in one quarter.",
+  },
+  {
+    id: "coffee",
+    industry: "Ecommerce · Coffee",
+    icon: Coffee,
+    client: "Roast & Rebel Coffee",
+    location: "Portland, OR",
+    vertical: "Ecommerce",
+    challenge:
+      "Specialty coffee roaster stuck at $90k/mo. High AOV ($48) but only 1.4 orders/customer/year.",
+    approach:
+      "Launched 'roaster's choice' subscription + gift bundles for corporate gifting. Built a tasting-flight quiz that recommends origin by flavor profile.",
+    results: [
+      { metric: "Subscription revenue", value: "42%", delta: "+38pts" },
+      { metric: "Avg orders / customer / yr", value: "4.1", delta: "+193%" },
+      { metric: "Monthly revenue", value: "$310k", delta: "+244%" },
+    ],
+    timeline: "10 months",
+    spend: "$32k/mo",
+    highlight: "Turned occasional buyers into 4x/year subscribers.",
+  },
+  {
+    id: "home-decor",
+    industry: "Ecommerce · Home Decor",
+    icon: Sofa,
+    client: "Nordhaus Living",
+    location: "Brooklyn, NY",
+    vertical: "Ecommerce",
+    challenge:
+      "DTC home decor + lighting brand with long consideration cycle (avg 21 days). High cart abandonment, low brand recall.",
+    approach:
+      "Built a 14-day Pinterest + Meta retargeting sequence with room-styling reels. Launched AR room-visualizer on PDP. Added 'designer-pick' bundles with anchor pricing.",
+    results: [
+      { metric: "Cart-to-purchase rate", value: "31%", delta: "+78%" },
+      { metric: "Avg session duration", value: "4m 12s", delta: "+162%" },
+      { metric: "Monthly revenue", value: "$540k", delta: "+128%" },
+    ],
+    timeline: "7 months",
+    spend: "$48k/mo",
+    highlight: "AR visualizer lifted conversion 38% on featured SKUs.",
+  },
+  {
+    id: "jewelry",
+    industry: "Ecommerce · Jewelry",
+    icon: Gem,
+    client: "Meira Fine Jewelry",
+    location: "Los Angeles, CA",
+    vertical: "Ecommerce",
+    challenge:
+      "Demi-fine jewelry brand ($150-$800 AOV). High price point = high trust barrier, low first-purchase conversion.",
+    approach:
+      "Launched 'try-at-home' program for $1 (credited to purchase). Built founder-story creative on Instagram + TikTok. Layered review-request automation + UGC gallery on PDP.",
+    results: [
+      { metric: "First-purchase conversion", value: "3.8%", delta: "+171%" },
+      { metric: "Try-at-home → purchase", value: "29%", delta: "+29pts" },
+      { metric: "Monthly revenue", value: "$420k", delta: "+196%" },
+    ],
+    timeline: "9 months",
+    spend: "$38k/mo",
+    highlight: "Try-at-home program drove 29% purchase rate from trials.",
+  },
+  {
+    id: "supplements",
+    industry: "Ecommerce · Supplements",
+    icon: Pill,
+    client: "VitalRoot Wellness",
+    location: "Miami, FL",
+    vertical: "Ecommerce",
+    challenge:
+      "Health supplement brand facing rising CAC and tightening Meta ad costs. Subscription plateau at 4,200 active subs.",
+    approach:
+      "Pivoted to problem-aware funnel: sleep, energy, gut health quiz → personalized bundle. Layered TikTok creator partnerships + affiliate program. Implemented post-purchase upsell flow.",
+    results: [
+      { metric: "Blended CAC", value: "$34", delta: "−47%" },
+      { metric: "Active subscribers", value: "14,800", delta: "+252%" },
+      { metric: "AOV (with upsells)", value: "$78", delta: "+62%" },
+    ],
+    timeline: "10 months",
+    spend: "$96k/mo",
+    highlight: "Quiz funnel cut CAC nearly in half while doubling subs.",
+  },
+  {
+    id: "baby-kids",
+    industry: "Ecommerce · Baby & Kids",
+    icon: Baby,
+    client: "Little Atlas Co.",
+    location: "Seattle, WA",
+    vertical: "Ecommerce",
+    challenge:
+      "Premium baby gear brand (carriers, sleep sacks, feeding). High trust required, strong seasonality, plateauing growth.",
+    approach:
+      "Launched safety-certified content marketing on YouTube + Pinterest. Built a milestone-based lifecycle email that maps to baby's age. Partnered with 40+ parent influencers for UGC.",
+    results: [
+      { metric: "Email revenue share", value: "34%", delta: "+22pts" },
+      { metric: "New customer rate", value: "62%", delta: "+18pts" },
+      { metric: "Monthly revenue", value: "$380k", delta: "+148%" },
+    ],
+    timeline: "9 months",
+    spend: "$42k/mo",
+    highlight: "Milestone lifecycle now drives 34% of total revenue.",
+  },
+  {
+    id: "outdoor-gear",
+    industry: "Ecommerce · Outdoor Gear",
+    icon: Mountain,
+    client: "Ridgeline Outdoors",
+    location: "Salt Lake City, UT",
+    vertical: "Ecommerce",
+    challenge:
+      "DTC outdoor + camping gear brand competing with REI + Backcountry. Long consideration cycle, high return rate on apparel.",
+    approach:
+      "Launched 'trail-tested' UGC series with real hikers + creators. Built fit-guide quiz for apparel. Layered seasonal bundles (camp kitchen, sleep system) with member pricing.",
+    results: [
+      { metric: "Return rate", value: "11%", delta: "−52%" },
+      { metric: "Bundle attach rate", value: "27%", delta: "+27pts" },
+      { metric: "Monthly revenue", value: "$620k", delta: "+118%" },
+    ],
+    timeline: "11 months",
+    spend: "$64k/mo",
+    highlight: "Cut apparel returns in half with fit-guide quiz.",
+  },
+  {
+    id: "watches",
+    industry: "Ecommerce · Watches",
+    icon: Watch,
+    client: "Meridian Watch Co.",
+    location: "Toronto, ON",
+    vertical: "Ecommerce",
+    challenge:
+      "Direct-to-consumer watch brand ($300-$1,200 AOV). High trust barrier, luxury positioning, difficult to justify ad spend at scale.",
+    approach:
+      "Launched founder-led YouTube long-form (watchmaking process). Built comparison pages vs. legacy brands. Layered Meta catalog ads with movement-specific creative.",
+    results: [
+      { metric: "Blended ROAS", value: "3.9x", delta: "+86%" },
+      { metric: "Avg order value", value: "$485", delta: "+34%" },
+      { metric: "Monthly revenue", value: "$290k", delta: "+172%" },
+    ],
+    timeline: "8 months",
+    spend: "$58k/mo",
+    highlight: "Founder content drove 41% of new-customer revenue.",
+  },
+  {
+    id: "audio-accessories",
+    industry: "Ecommerce · Audio Accessories",
+    icon: Headphones,
+    client: "Bassdrop Audio",
+    location: "Shenzhen, CN → Global",
+    vertical: "Ecommerce",
+    challenge:
+      "Audio accessories brand (cables, cases, stands) on Amazon + DTC. Low AOV ($28), high competition, weak brand identity.",
+    approach:
+      "Rebuilt DTC site with bundle pricing + 'audiophile starter kit'. Launched YouTube reviewer partnerships + Reddit-targeted Meta ads. Added post-purchase cross-sell flow.",
+    results: [
+      { metric: "AOV (DTC)", value: "$72", delta: "+157%" },
+      { metric: "DTC revenue share", value: "38%", delta: "+27pts" },
+      { metric: "Monthly DTC revenue", value: "$180k", delta: "+218%" },
+    ],
+    timeline: "7 months",
+    spend: "$24k/mo",
+    highlight: "Shifted 38% of revenue off Amazon onto owned DTC channel.",
+  },
+  {
+    id: "gifting",
+    industry: "Ecommerce · Gifting",
+    icon: Gift,
+    client: "Curated Joy Co.",
+    location: "Chicago, IL",
+    vertical: "Ecommerce",
+    challenge:
+      "Curated gift box brand with extreme seasonality (Q4 = 70% of revenue). Off-season cash crunch, weak repeat purchase.",
+    approach:
+      "Built 'celebration calendar' lifecycle (birthdays, anniversaries, holidays). Launched corporate gifting B2B funnel. Added subscription 'surprise box' quarterly.",
+    results: [
+      { metric: "Off-season revenue", value: "$72k/mo", delta: "+186%" },
+      { metric: "Corporate accounts", value: "84", delta: "+84" },
+      { metric: "Q4 revenue", value: "$1.8M", delta: "+92%" },
+    ],
+    timeline: "12 months",
+    spend: "$36k/mo",
+    highlight: "Smoothed seasonality — off-season is now 30% of revenue.",
+  },
 ];
 
 export type PortfolioItem = {
@@ -490,6 +700,50 @@ export const portfolio: PortfolioItem[] = [
     metric: "+164%",
     metricLabel: "Monthly revenue",
     tags: ["YouTube", "Bundle", "Recharge", "GA4"],
+    accent: "brand",
+  },
+  {
+    id: "p7",
+    title: "Pawsome Co.",
+    category: "Ecommerce · Pet Supplies",
+    description:
+      "Rebuilt offer around 'first month free' subscription + breed-specific quiz funnel. Cut 3-month churn by 58% while nearly tripling active subscribers.",
+    metric: "9.8k",
+    metricLabel: "Active subscribers",
+    tags: ["Subscription", "Quiz", "UGC", "TikTok"],
+    accent: "fire",
+  },
+  {
+    id: "p8",
+    title: "Roast & Rebel Coffee",
+    category: "Ecommerce · Coffee",
+    description:
+      "Launched 'roaster's choice' subscription + corporate gifting bundles. Tasting-flight quiz turned 1.4 orders/yr customers into 4.1 orders/yr subscribers.",
+    metric: "+244%",
+    metricLabel: "Monthly revenue",
+    tags: ["Subscription", "Quiz", "Recharge", "Klaviyo"],
+    accent: "brand",
+  },
+  {
+    id: "p9",
+    title: "VitalRoot Wellness",
+    category: "Ecommerce · Supplements",
+    description:
+      "Problem-aware quiz funnel (sleep, energy, gut) cut blended CAC 47% while post-purchase upsells lifted AOV 62%. Sub base grew from 4.2k to 14.8k.",
+    metric: "−47%",
+    metricLabel: "Blended CAC",
+    tags: ["Quiz", "TikTok", "Upsell", "Recharge"],
+    accent: "fire",
+  },
+  {
+    id: "p10",
+    title: "Meira Fine Jewelry",
+    category: "Ecommerce · Jewelry",
+    description:
+      "$1 try-at-home program (credited to purchase) broke the luxury trust barrier. Founder-story creative on IG + TikTok lifted first-purchase conversion 171%.",
+    metric: "29%",
+    metricLabel: "Trial → purchase rate",
+    tags: ["Try-at-Home", "UGC", "Founder", "IG"],
     accent: "brand",
   },
 ];
@@ -650,9 +904,18 @@ export const industriesMarquee = [
   "Clothing",
   "Telecom",
   "Sports",
+  "Pet Supplies",
+  "Coffee",
+  "Home Decor",
+  "Jewelry",
+  "Supplements",
+  "Baby & Kids",
+  "Outdoor Gear",
+  "Watches",
+  "Audio Accessories",
+  "Gifting",
   "HVAC",
   "Pest Control",
   "Landscaping",
-  "Pet Care",
   "Fitness",
 ];
