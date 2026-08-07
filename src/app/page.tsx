@@ -12,6 +12,7 @@ import { Pillars } from "@/components/marketer/Pillars";
 import { NumbersShowcase } from "@/components/marketer/NumbersShowcase";
 import { TestimonialsSlider } from "@/components/marketer/TestimonialsSlider";
 import { FAQSection } from "@/components/marketer/FAQSection";
+import { AboutPage } from "@/components/marketer/AboutPage";
 import { PortfolioPage } from "@/components/marketer/PortfolioPage";
 import { CaseStudiesPage } from "@/components/marketer/CaseStudiesPage";
 import { CVPage } from "@/components/marketer/CVPage";
@@ -101,6 +102,18 @@ export default function Home() {
               transition={{ duration: 0.25 }}
             >
               <PortfolioPage />
+            </motion.div>
+          )}
+
+          {view === "about" && (
+            <motion.div
+              key="about"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+            >
+              <AboutPage />
             </motion.div>
           )}
 

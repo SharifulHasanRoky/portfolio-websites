@@ -1073,6 +1073,177 @@ export const featuredCaseStudyIds = [
   "cleaning",
 ];
 
+// ===== About Me =====
+export type AboutStat = {
+  label: string;
+  value: string;
+  caption: string;
+};
+
+export const aboutStats: AboutStat[] = [
+  { label: "Years in performance marketing", value: "8+", caption: "From SMB SEO to $6.5M+ tracked spend" },
+  { label: "Brands shipped", value: "22", caption: "Home services, DTC, local, specialty" },
+  { label: "Industries served", value: "14+", caption: "Plumbing to jewelry, telecom to coffee" },
+  { label: "Client retention (12mo)", value: "94%", caption: "I'd rather keep you than chase you" },
+];
+
+export type Principle = {
+  title: string;
+  description: string;
+  icon: "NumbersFirst" | "SystemOverTactics" | "HonestyFirst" | "Speed" | "Ownership" | "Curiosity";
+};
+
+export const principles: Principle[] = [
+  {
+    title: "Numbers first, vanity last",
+    description:
+      "I track revenue, MER, blended CAC, and payback period. Clicks and platform ROAS are leading indicators — these four are results. If a number doesn't move money, I don't celebrate it.",
+    icon: "NumbersFirst",
+  },
+  {
+    title: "System over tactics",
+    description:
+      "Most marketers sell tactics — a winning ad, a viral hook. I sell a system: campaign → business → scaling → numbers → measurements → growth. Skip a chapter and scale breaks at month 9.",
+    icon: "SystemOverTactics",
+  },
+  {
+    title: "Honesty first, even when it costs me",
+    description:
+      "If your unit economics won't survive scaling, I'll tell you before you spend a dollar with me. I've turned down clients whose business model I couldn't honestly fix. The ones I take tend to stay.",
+    icon: "HonestyFirst",
+  },
+  {
+    title: "Speed as a moat",
+    description:
+      "Creative testing weekly. Losing-ad kill list every 72 hours. New angle in market in 5 days from idea. Speed compounds — by quarter 3 you're operating 2-3x faster than competitors.",
+    icon: "Speed",
+  },
+  {
+    title: "Ownership, not agency-handoff",
+    description:
+      "When you hire me, you get me — not a junior account manager. I write the strategy, build the funnels, audit the ad accounts, and answer your Slack. No layers, no game of telephone.",
+    icon: "Ownership",
+  },
+  {
+    title: "Curiosity > credentials",
+    description:
+      "Performance marketing changes every 6 months. I read every earnings call, every platform update, every new tool. Certifications are baseline. Curiosity is the actual edge.",
+    icon: "Curiosity",
+  },
+];
+
+export type WorkPrinciple = {
+  question: string;
+  answer: string;
+};
+
+export const workingStyle: WorkPrinciple[] = [
+  {
+    question: "Where I work",
+    answer:
+      "Remote-first, based in Dhaka, Bangladesh. I work with clients across the US, Canada, UK, and Australia — typically async with one live call per week. My dashboard and SOPs make async work feel like I'm sitting next to you.",
+  },
+  {
+    question: "How I communicate",
+    answer:
+      "Slack for day-to-day, Loom for walk-throughs, a weekly 30-min call for strategy, and a written monthly report your CFO can actually read. No jargon, no fluff, no 'synergize the funnel' nonsense.",
+  },
+  {
+    question: "Who I work with",
+    answer:
+      "Home services owners ($100k-$2M/mo), DTC ecommerce founders ($200k-$5M/mo), and local service businesses looking to break free from aggregators. If you're below $5k/mo ad spend, I'll refer you to a partner.",
+  },
+  {
+    question: "What I don't do",
+    answer:
+      "I don't do brand-only work without measurement. I don't take on brands whose product I wouldn't recommend to a friend. I don't outsource creative to cheap Fiverr gigs. And I don't ghost clients when something breaks.",
+  },
+];
+
+export type DailyTool = {
+  name: string;
+  purpose: string;
+  category: "Paid" | "Measurement" | "Lifecycle" | "Creative" | "Ops";
+};
+
+export const dailyTools: DailyTool[] = [
+  { name: "Meta Ads", purpose: "Primary paid social — Advantage+, CAPI, catalog", category: "Paid" },
+  { name: "Google Ads", purpose: "Search, PMax, LSA for home services", category: "Paid" },
+  { name: "TikTok Ads", purpose: "Spark Ads, creator partnerships, UGC", category: "Paid" },
+  { name: "YouTube Ads", purpose: "Long-form education, founder content", category: "Paid" },
+  { name: "GA4 + Server-side GTM", purpose: "Source-of-truth measurement, CAPI", category: "Measurement" },
+  { name: "BigQuery", purpose: "Unified warehouse: spend + Shopify + Stripe", category: "Measurement" },
+  { name: "Looker / Hex", purpose: "Live dashboards clients actually open", category: "Measurement" },
+  { name: "Klaviyo", purpose: "Email + SMS lifecycle engine", category: "Lifecycle" },
+  { name: "Recharge", purpose: "Subscription management + retention", category: "Lifecycle" },
+  { name: "GoHighLevel", purpose: "Local services CRM + automation", category: "Lifecycle" },
+  { name: "Figma", purpose: "Creative briefs + landing page design", category: "Creative" },
+  { name: "CapCut + Premiere", purpose: "UGC editing, ad creative", category: "Creative" },
+  { name: "Notion", purpose: "SOPs, creative backlogs, client documentation", category: "Ops" },
+  { name: "Linear", purpose: "Experiment backlog, ICE-ranked growth tests", category: "Ops" },
+];
+
+export const aboutBio = {
+  shortBio:
+    "I'm Rakib Hasan — a performance marketer who's managed $6.5M+ in tracked ad spend across 22 brands in 18 months. I build full-funnel paid + lifecycle systems for home services and DTC ecommerce brands. Growth that compounds in your bank account, not just in your ad dashboard.",
+  longBio: [
+    "I started in 2017 doing SEO for SMBs in Dhaka — back when 'performance marketing' meant ranking a WordPress site for 'best plumber in [city]'. Eight years and four roles later, I've managed over $6.5M in tracked ad spend across 22 brands in industries as different as premium audio gadgets and Calgary cleaning subscriptions.",
+    "What I learned along the way: most agencies sell tactics (a winning ad, a viral hook, a new platform). I sell a system — six chapters that compound: campaign, business, scaling, numbers, measurements, growth. Skip one and scale breaks at month 9. Run all six and growth stops being heroic and becomes boring, predictable, repeatable.",
+    "I work remote from Dhaka, serving clients across the US, Canada, UK, and Australia. Async-first, one live call per week, and a dashboard your CFO will actually open. No agency handoffs, no junior account managers — when you hire me, you get me. I write the strategy, build the funnels, audit the ad accounts, and answer your Slack.",
+    "Outside of marketing: I read earnings calls like novels, run a small private Slack community of 60+ founders trading growth experiments, and I'm probably the only person in Dhaka who genuinely enjoys spreadsheets. If you're a founder who's been burned by agencies before — let's talk. The strategy call is free, and I'll tell you honestly whether I can help.",
+  ],
+  location: "Dhaka, Bangladesh",
+  timezone: "Asia/Dhaka (GMT+6)",
+  languages: ["English (fluent)", "Bengali (native)", "Hindi (conversational)"],
+  availability: "2 new client spots per quarter",
+  email: "rakib@hasan.studio",
+};
+
+export type TimelineChapter = {
+  year: string;
+  title: string;
+  description: string;
+};
+
+export const personalTimeline: TimelineChapter[] = [
+  {
+    year: "2013",
+    title: "Started marketing at 19",
+    description:
+      "Enrolled in B.B.A. Marketing at University of Dhaka. Started freelancing on oDesk (now Upwork) doing SEO for small US businesses — $5/hr, learned more in 6 months than 4 years of class.",
+  },
+  {
+    year: "2017",
+    title: "First agency job",
+    description:
+      "Graduated, joined Brightway Consulting in Dhaka. Cut my teeth on local service SEO, then Facebook Ads when iOS was still easy. First Shopify funnel I built did $1M in 12 months for a cosmetics client.",
+  },
+  {
+    year: "2019",
+    title: "Moved to the US market",
+    description:
+      "Joined Lumen Growth Agency in Austin, TX as Senior Paid Media Manager. Owned $2.8M/yr in paid spend across 14 home-service clients. Built the agency's first server-side tracking implementation post-iOS 14.",
+  },
+  {
+    year: "2021",
+    title: "Head of Performance Marketing",
+    description:
+      "Promoted to lead a 6-person team at Northbridge DTC Holdings in Toronto. Scaled a 4-brand portfolio from $7M to $18M ARR in 22 months. Cut blended CAC by 34% portfolio-wide.",
+  },
+  {
+    year: "2023",
+    title: "Founded Hasan Performance Studio",
+    description:
+      "Went independent. Took the system I'd built at Northbridge and started offering it directly to home services + DTC brands. 22 clients, $6.5M+ spend, 94% retention in the first 18 months.",
+  },
+  {
+    year: "2026",
+    title: "What's next",
+    description:
+      "Building a measurement product (SaaS) for home services owners who can't afford a $5k/mo agency. Still taking 2 new clients per quarter — but getting pickier about who.",
+  },
+];
+
 export type NavLink = {
   label: string;
   /** Either scroll to a section on the home page, or switch to a dedicated view. */
@@ -1085,6 +1256,7 @@ export const navLinks: NavLink[] = [
   { label: "Story", kind: "scroll", target: "#story" },
   { label: "Pillars", kind: "scroll", target: "#pillars" },
   { label: "Numbers", kind: "scroll", target: "#numbers" },
+  { label: "About", kind: "view", target: "about" },
   { label: "Portfolio", kind: "view", target: "portfolio" },
   { label: "Case Studies", kind: "view", target: "cases" },
   { label: "CV", kind: "view", target: "cv" },

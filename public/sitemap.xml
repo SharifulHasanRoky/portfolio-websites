@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://rakibhasan.studio/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://rakibhasan.studio/marketer-portrait.webp</image:loc>
+      <image:title>Rakib Hasan — Performance Marketer</image:title>
+      <image:caption>Performance marketer for home services &amp; DTC ecommerce. $6.5M+ tracked spend across 22 brands.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Although these are client-side views, the content is rendered into the DOM
+       on initial load and accessible via the navbar — search engines and AI crawlers
+       using a headless browser will see this content. -->
+
+</urlset>

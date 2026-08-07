@@ -1,0 +1,21 @@
+{
+  "name": "Rakib Hasan — Performance Marketing Studio",
+  "short_name": "Rakib Hasan",
+  "description": "Performance marketer for home services & DTC ecommerce brands. $6.5M+ tracked spend managed across 22 brands.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0d14",
+  "theme_color": "#0a0d14",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["business", "marketing", "productivity"],
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

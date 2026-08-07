@@ -1,0 +1,104 @@
+# Rakib Hasan — Performance Marketer
+
+> Performance marketer for home services and DTC ecommerce brands. Managed $6.5M+ in tracked ad spend across 22 brands in 18 months.
+
+## Who I am
+
+I'm Rakib Hasan, an independent performance marketer based in Dhaka, Bangladesh. I build full-funnel paid + lifecycle systems for home services owners and DTC ecommerce founders across the US, Canada, UK, and Australia.
+
+## What I do
+
+I run a 6-chapter system for every client, in this order: **campaign → business → scaling → numbers → measurements → growth**. Skip one and scale breaks at month 9.
+
+- **Campaign**: Hook-led creative testing on Meta, Google, TikTok, YouTube. Server-side tracking with CAPI. Weekly creative refresh.
+- **Business**: Unit economics, CAC:LTV modeling, offer engineering, cash-cycle aware budget pacing.
+- **Scaling**: Horizontal + vertical scaling, budget laddering (20% bumps every 48-72h), SOP-ized so it survives team churn.
+- **Numbers**: Revenue, MER (blended ROAS), blended CAC, payback period — the only four numbers that move a business.
+- **Measurements**: Server-side GTM + Conversions API, unified data warehouse (BigQuery/Snowflake), MMM + incrementality for channels above $50k/mo.
+- **Growth**: Lifecycle email/SMS, brand creative, referral loops, quarterly growth experiments.
+
+## Numbers (last 18 months)
+
+- Ad spend managed: **$6.5M+** across 22 brands
+- Average client revenue lift: **168%** within first 6 months
+- Client retention (12-month rolling): **94%**
+- Industries served: **14+** (home services, DTC, local, specialty)
+
+## Case studies (23 total)
+
+### Featured (2)
+- **Atelier Nord** — Sydney, Australia. Premium menswear Shopify store. Cut returns from 38% to 14% (−63%) with AR size-finder + size-quiz funnel. Mobile conversion +143%. AOV +72%.
+- **PristinePro Cleaning** — Calgary, AB, Canada. Subscription residential cleaning. Subscription CAC $48 (−57%). 12-month retention 62% (+24pts). MRR $96k (+187%).
+
+### Other ecommerce case studies
+- NovaTech Audio (gadgets) — Brooklyn, NY. $440k → $1.4M/mo. 4.8x blended ROAS.
+- Luxe Beauty Lab (cosmetics) — Toronto, ON. 12.4k subscribers. 4.2 LTV:CAC.
+- Signal Mobile (telecom) — Austin, TX. 90-day churn −62%. 6,200 net new subs/mo.
+- Titan Strength Co. (sports) — Denver, CO. Repeat purchase rate +26pts. $680k/mo.
+- Pawsome Co. (pet supplies) — Austin, TX. 9,800 subs (+248%). 3-mo churn −58%.
+- Roast & Rebel Coffee — Portland, OR. $310k/mo (+244%). 4.1 orders/customer/yr.
+- Nordhaus Living (home decor) — Brooklyn, NY. $540k/mo (+128%). AR visualizer +38% conv.
+- Meira Fine Jewelry — Los Angeles, CA. $1 try-at-home → 29% purchase rate.
+- VitalRoot Wellness (supplements) — Miami, FL. CAC −47%. 14.8k subs (from 4.2k).
+- Little Atlas Co. (baby & kids) — Seattle, WA. $380k/mo (+148%). Email = 34% revenue.
+- Ridgeline Outdoors (outdoor gear) — Salt Lake City, UT. $620k/mo (+118%). Returns −52%.
+- Meridian Watch Co. — Toronto, ON. 3.9x ROAS. Founder content = 41% new revenue.
+- Bassdrop Audio (audio accessories) — Shenzhen → Global. AOV +157%. 38% DTC share.
+- Curated Joy Co. (gifting) — Chicago, IL. Off-season +186%. Q4 revenue $1.8M.
+- Heritage Yarn Co. (yarn & crafts) — Portland, OR. $312k/mo (+247%).
+
+### Home services & local case studies
+- MetroFlow Plumbing — Dallas-Fort Worth, TX. 184 booked jobs/mo. CAC $62 (−66%).
+- FixIt Joe Pro (handyman) — Atlanta, GA. 47 jobs/week. Lead cost $21 (−48%).
+- InkPress Print Co. (printing) — Los Angeles, CA. 92 qualified quotes/mo (+178%).
+- Skyline Roofing Group — Houston, TX. 38 signed contracts/mo (+245%). Cost per signed contract −42%.
+- VoltEdge Electric — Phoenix, AZ. Off-season revenue +210%. Google rating 4.9★.
+- Apex Auto Repair — Chicago, IL. 62% online bookings. Avg RO $612 (+38%).
+
+## Testimonials (10)
+
+First 2 ecommerce, next 8 home services/local/specialty. Including:
+- David Chen, Founder & CEO, NovaTech Audio — "Rakib scaled us from $440k to $1.4M a month without ROAS collapsing."
+- Dr. Sarah Patel, Co-Founder, VitalRoot Wellness — "Within two quarters we went from 4,200 subs to 14,800. CAC dropped by half."
+- Marcus Reyes, Owner, MetroFlow Plumbing — "Within 90 days we were at $62 per job — and booked 184 jobs in a single month. He saved my business."
+- Hank Calloway, Founder, Skyline Roofing Group — "Cost per signed roof contract dropped 42% in one storm season. He's earned a long-term partner."
+
+(Full 10 testimonials on the home page testimonials slider.)
+
+## How I work
+
+- Remote-first, based in Dhaka, Bangladesh (GMT+6)
+- Async with one live 30-min call per week
+- Slack for day-to-day, Loom for walk-throughs, written monthly reports
+- Direct ownership — no junior account managers, no agency handoff
+- 90-day initial engagement, then month-to-month with 30 days' notice
+- Minimum engagement: $5k/mo ad spend
+
+## Industries served
+
+Plumbing, handyman, printing, roofing, electrician, cleaning, yarn & crafts, car repair, ecommerce (gadgets, cosmetics, clothing, telecom, sports, pet supplies, coffee, home decor, jewelry, supplements, baby & kids, outdoor gear, watches, audio accessories, gifting), HVAC, pest control, landscaping, pet care, fitness.
+
+## Tools I use daily
+
+- Paid: Meta Ads, Google Ads (Search, PMax, LSA), TikTok Ads, YouTube Ads
+- Measurement: GA4 + Server-side GTM, BigQuery, Looker/Hex
+- Lifecycle: Klaviyo, Recharge, GoHighLevel
+- Creative: Figma, CapCut + Premiere
+- Ops: Notion, Linear
+
+## Contact
+
+- Email: rakib@hasan.studio
+- Location: Dhaka, Bangladesh
+- Availability: 2 new client spots per quarter
+- Book a free 30-min strategy call: https://rakibhasan.studio/ (click "Book a Call")
+
+## Site structure
+
+This site is a single-page Next.js 16 application with client-side view switching. The navbar exposes: Story, Pillars, Numbers, About, Portfolio, Case Studies, CV, Book a Call. All content is rendered into the DOM on initial page load and accessible to JavaScript-capable crawlers.
+
+## Links
+
+- Homepage: https://rakibhasan.studio/
+- Sitemap: https://rakibhasan.studio/sitemap.xml
+- Robots: https://rakibhasan.studio/robots.txt

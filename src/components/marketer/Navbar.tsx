@@ -54,6 +54,7 @@ export function Navbar() {
 
   const viewLabel: Record<View, string> = {
     home: "Home",
+    about: "About Me",
     portfolio: "Portfolio",
     cases: "Case Studies",
     cv: "CV / Experience",
