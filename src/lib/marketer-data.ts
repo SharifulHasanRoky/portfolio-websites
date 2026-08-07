@@ -618,14 +618,22 @@ export const headlineMetrics: HeadlineMetric[] = [
   { label: "Industries served", value: "14", suffix: "+", caption: "Home services, DTC, local & specialty" },
 ];
 
-export const navLinks = [
-  { label: "Story", href: "#story" },
-  { label: "Pillars", href: "#pillars" },
-  { label: "Numbers", href: "#numbers" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Case Studies", href: "#cases" },
-  { label: "CV", href: "#cv" },
-  { label: "Book", href: "#book" },
+export type NavLink = {
+  label: string;
+  /** Either scroll to a section on the home page, or switch to a dedicated view. */
+  kind: "scroll" | "view";
+  /** For `scroll`: the section id (#story). For `view`: the view name. */
+  target: string;
+};
+
+export const navLinks: NavLink[] = [
+  { label: "Story", kind: "scroll", target: "#story" },
+  { label: "Pillars", kind: "scroll", target: "#pillars" },
+  { label: "Numbers", kind: "scroll", target: "#numbers" },
+  { label: "Portfolio", kind: "view", target: "portfolio" },
+  { label: "Case Studies", kind: "view", target: "cases" },
+  { label: "CV", kind: "view", target: "cv" },
+  { label: "Book a Call", kind: "scroll", target: "#book" },
 ];
 
 export const industriesMarquee = [

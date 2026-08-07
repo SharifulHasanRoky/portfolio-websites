@@ -5,29 +5,47 @@ import { Building2, GraduationCap, MapPin, Award, Download } from "lucide-react"
 import { cvEntries, skills } from "@/lib/marketer-data";
 import { SectionHeading } from "./SectionHeading";
 import { TiltCard } from "./TiltCard";
+import { useViewStore } from "@/lib/view-store";
 import { cn } from "@/lib/utils";
 
-export function CVSection() {
+export function CVSection({ hideHeading = false }: { hideHeading?: boolean }) {
+  const goHomeAndScroll = useViewStore((s) => s.goHomeAndScroll);
+  const view = useViewStore((s) => s.view);
+
+  function handleBookClick() {
+    if (view !== "home") {
+      goHomeAndScroll("#book");
+    } else {
+      const el = document.querySelector("#book");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
   return (
     <section
       id="cv"
-      className="relative py-24 sm:py-32 px-4 sm:px-6 section-anchor"
+      className={cn(
+        "relative px-4 sm:px-6 section-anchor",
+        hideHeading ? "py-8 sm:py-12" : "py-24 sm:py-32"
+      )}
     >
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow="CV · 8 years, 4 chapters"
-          title="From SMB SEO to running $4.2M in tracked spend — the path."
-          description="A condensed CV. If you want the long-form version with references, hit the button below."
-        />
+      <div className="mx-auto max-w-7xl relative">
+        {!hideHeading && (
+          <SectionHeading
+            eyebrow="CV · 8 years, 4 chapters"
+            title="From SMB SEO to running $4.2M in tracked spend — the path."
+            description="A condensed CV. If you want the long-form version with references, hit the button below."
+          />
+        )}
 
-        <div className="mt-6 flex flex-wrap gap-3">
-          <a
-            href="#book"
+        <div className={cn("flex flex-wrap gap-3", hideHeading ? "mt-0" : "mt-6")}>
+          <button
+            type="button"
+            onClick={handleBookClick}
             className="inline-flex items-center gap-2 rounded-xl bg-foreground text-background px-5 py-2.5 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors"
           >
             <Download className="h-4 w-4" />
-            Download full CV (PDF)
-          </a>
+            Book a strategy call
+          </button>
           <div className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/50 px-5 py-2.5 text-sm text-muted-foreground">
             <Award className="h-4 w-4 text-brand" />
             Meta Business Partner · Google Premier Partner

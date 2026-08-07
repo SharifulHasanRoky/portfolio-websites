@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
 
 const verticals = ["All", "Home Services", "Ecommerce", "Local Services", "Specialty"] as const;
 
-export function CaseStudies() {
+export function CaseStudies({ hideHeading = false }: { hideHeading?: boolean }) {
   const [activeVertical, setActiveVertical] =
     useState<(typeof verticals)[number]>("All");
   const [selected, setSelected] = useState<CaseStudy>(caseStudies[0]);
@@ -34,17 +34,22 @@ export function CaseStudies() {
   return (
     <section
       id="cases"
-      className="relative py-24 sm:py-32 px-4 sm:px-6 section-anchor"
+      className={cn(
+        "relative px-4 sm:px-6 section-anchor",
+        hideHeading ? "py-8 sm:py-12" : "py-24 sm:py-32"
+      )}
     >
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow="Case studies · real numbers, real clients"
-          title="14 industries. One repeatable system. Zero vanity metrics."
-          description="Pick an industry, see the actual challenge, the exact system I built, and the real numbers we hit. No 'up to 5x ROAS' hedging — these are the deals, signed contracts, and revenue that hit the bank."
-        />
+      <div className="mx-auto max-w-7xl relative">
+        {!hideHeading && (
+          <SectionHeading
+            eyebrow="Case studies · real numbers, real clients"
+            title="14 industries. One repeatable system. Zero vanity metrics."
+            description="Pick an industry, see the actual challenge, the exact system I built, and the real numbers we hit. No 'up to 5x ROAS' hedging — these are the deals, signed contracts, and revenue that hit the bank."
+          />
+        )}
 
         {/* Vertical filter */}
-        <div className="mt-10 flex flex-wrap items-center gap-2">
+        <div className={cn("flex flex-wrap items-center gap-2", hideHeading ? "mt-0" : "mt-10")}>
           {verticals.map((v) => (
             <button
               key={v}

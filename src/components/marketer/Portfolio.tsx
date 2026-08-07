@@ -5,20 +5,27 @@ import { ArrowUpRight } from "lucide-react";
 import { portfolio } from "@/lib/marketer-data";
 import { SectionHeading } from "./SectionHeading";
 import { TiltCard } from "./TiltCard";
+import { useViewStore } from "@/lib/view-store";
 import { cn } from "@/lib/utils";
 
-export function Portfolio() {
+export function Portfolio({ hideHeading = false }: { hideHeading?: boolean }) {
+  const setView = useViewStore((s) => s.setView);
   return (
     <section
       id="portfolio"
-      className="relative py-24 sm:py-32 px-4 sm:px-6 section-anchor"
+      className={cn(
+        "relative px-4 sm:px-6 section-anchor",
+        hideHeading ? "py-8 sm:py-12" : "py-24 sm:py-32"
+      )}
     >
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow="Portfolio · selected work"
-          title="A snapshot of brands I've scaled — across home services, DTC, and local."
-          description="Each card below is a real engagement. Click through to the case studies section for the full story: challenge, approach, numbers, and timeline."
-        />
+      <div className="mx-auto max-w-7xl relative">
+        {!hideHeading && (
+          <SectionHeading
+            eyebrow="Portfolio · selected work"
+            title="A snapshot of brands I've scaled — across home services, DTC, and local."
+            description="Each card below is a real engagement. Click through to the case studies section for the full story: challenge, approach, numbers, and timeline."
+          />
+        )}
 
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {portfolio.map((p, i) => (
@@ -136,13 +143,13 @@ export function Portfolio() {
           transition={{ duration: 0.5 }}
           className="mt-12 text-center"
         >
-          <a
-            href="#cases"
+          <button
+            onClick={() => setView("cases")}
             className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/60 backdrop-blur px-6 py-3 text-sm font-semibold hover:bg-card transition-colors"
           >
             See full case studies with numbers
             <ArrowUpRight className="h-4 w-4" />
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>

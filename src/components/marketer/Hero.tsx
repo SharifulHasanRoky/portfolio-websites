@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { ArrowDown, Sparkles, Star, TrendingUp } from "lucide-react";
 import { headlineMetrics } from "@/lib/marketer-data";
+import { useViewStore } from "@/lib/view-store";
 import { AnimatedNumber } from "./AnimatedNumber";
 
 export function Hero() {
@@ -175,12 +176,13 @@ export function Hero() {
             <span className="relative">Book a free strategy call</span>
             <ArrowDown className="relative h-4 w-4 group-hover:translate-y-0.5 transition-transform" />
           </a>
-          <a
-            href="#cases"
+          <button
+            type="button"
+            onClick={() => useViewStore.getState().setView("cases")}
             className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/60 backdrop-blur px-6 py-3.5 text-sm font-semibold hover:bg-card transition-colors"
           >
             See case studies
-          </a>
+          </button>
         </motion.div>
 
         {/* headline metrics */}

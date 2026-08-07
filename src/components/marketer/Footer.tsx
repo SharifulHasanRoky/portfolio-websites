@@ -9,9 +9,26 @@ import {
   Youtube,
   MapPin,
 } from "lucide-react";
-import { navLinks } from "@/lib/marketer-data";
+import { navLinks, type NavLink } from "@/lib/marketer-data";
+import { useViewStore, type View } from "@/lib/view-store";
 
 export function Footer() {
+  const setView = useViewStore((s) => s.setView);
+  const goHomeAndScroll = useViewStore((s) => s.goHomeAndScroll);
+  const view = useViewStore((s) => s.view);
+
+  function handleNavClick(l: NavLink) {
+    if (l.kind === "view") {
+      setView(l.target as View);
+    } else {
+      if (view !== "home") {
+        goHomeAndScroll(l.target);
+      } else {
+        const el = document.querySelector(l.target);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }
   return (
     <footer className="relative mt-auto border-t border-border bg-card/30 backdrop-blur">
       {/* Top stripe */}
@@ -38,13 +55,14 @@ export function Footer() {
               One call. Real numbers. A real plan. If we&apos;re not a fit,
               you&apos;ll still walk away with the next 30 days mapped out.
             </p>
-            <a
-              href="#book"
+            <button
+              type="button"
+              onClick={() => handleNavClick({ label: "Book", kind: "scroll", target: "#book" })}
               className="mt-7 inline-flex items-center gap-2 rounded-xl bg-foreground text-background px-6 py-3.5 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors"
             >
               Book your strategy call
               <ArrowUp className="h-4 w-4 -rotate-45" />
-            </a>
+            </button>
           </div>
         </motion.div>
 
@@ -89,13 +107,14 @@ export function Footer() {
             </div>
             <ul className="space-y-2.5">
               {navLinks.map((l) => (
-                <li key={l.href}>
-                  <a
-                    href={l.href}
-                    className="text-sm text-foreground/80 hover:text-brand transition-colors"
+                <li key={l.label}>
+                  <button
+                    type="button"
+                    onClick={() => handleNavClick(l)}
+                    className="text-sm text-foreground/80 hover:text-brand transition-colors text-left"
                   >
                     {l.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
