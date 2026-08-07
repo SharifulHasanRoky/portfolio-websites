@@ -22,14 +22,14 @@ export function CVPage() {
     >
       <PageHero
         eyebrow="CV · experience & skills"
-        title="From SMB SEO to running $4.2M in tracked spend — the path."
-        description="A condensed CV of the last 8 years: 4 roles, 22 brands, $8.4M+ in tracked spend. Includes certifications, the full tech stack, and skill self-assessments across paid, measurement, and lifecycle."
+        title="From SMB SEO to running $6.5M in tracked spend — the path."
+        description="A condensed CV of the last 8 years: 4 roles, 22 brands, $6.5M+ in tracked spend. Includes certifications, the full tech stack, and skill self-assessments across paid, measurement, and lifecycle."
         icon={GraduationCap}
         accent="brand"
         stats={[
           { label: "Years in performance", value: totalYears },
           { label: "Roles held", value: String(cvEntries.length) },
-          { label: "Spend managed", value: "$8.4M+" },
+          { label: "Spend managed", value: "$6.5M+" },
           { label: "Client retention", value: "94%" },
         ]}
       />

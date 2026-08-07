@@ -22,7 +22,7 @@ type Stat = {
 const stats: Stat[] = [
   {
     label: "Ad spend managed",
-    value: 8.4,
+    value: 6.5,
     decimals: 1,
     prefix: "$",
     suffix: "M+",

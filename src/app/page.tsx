@@ -6,9 +6,12 @@ import { Background3D } from "@/components/marketer/Background3D";
 import { Navbar } from "@/components/marketer/Navbar";
 import { Hero } from "@/components/marketer/Hero";
 import { IndustriesMarquee } from "@/components/marketer/IndustriesMarquee";
+import { FeaturedCaseStudies } from "@/components/marketer/FeaturedCaseStudies";
 import { StoryScroll } from "@/components/marketer/StoryScroll";
 import { Pillars } from "@/components/marketer/Pillars";
 import { NumbersShowcase } from "@/components/marketer/NumbersShowcase";
+import { TestimonialsSlider } from "@/components/marketer/TestimonialsSlider";
+import { FAQSection } from "@/components/marketer/FAQSection";
 import { PortfolioPage } from "@/components/marketer/PortfolioPage";
 import { CaseStudiesPage } from "@/components/marketer/CaseStudiesPage";
 import { CVPage } from "@/components/marketer/CVPage";
@@ -80,9 +83,12 @@ export default function Home() {
             >
               <Hero />
               <IndustriesMarquee />
+              <FeaturedCaseStudies />
               <StoryScroll />
               <Pillars />
               <NumbersShowcase />
+              <TestimonialsSlider />
+              <FAQSection />
               <BookMeeting />
             </motion.div>
           )}

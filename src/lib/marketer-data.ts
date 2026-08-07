@@ -767,7 +767,7 @@ export const cvEntries: CVEntry[] = [
     summary:
       "Independent performance marketing studio serving home services and DTC ecommerce brands between $100k and $5M/mo. Direct ownership of paid spend, measurement, and lifecycle.",
     achievements: [
-      "Managed $4.2M+ in tracked ad spend across 22 brands in 18 months",
+      "Managed $6.5M+ in tracked ad spend across 22 brands in 18 months",
       "Average client revenue lift of 168% within first 6 months of engagement",
       "Built proprietary measurement dashboard used by every client",
       "Maintained 94% client retention rate over 18 months",
@@ -866,10 +866,213 @@ export type HeadlineMetric = {
 };
 
 export const headlineMetrics: HeadlineMetric[] = [
-  { label: "Ad spend managed", value: "8.4", suffix: "M+", caption: "Across 22 brands in 18 months" },
+  { label: "Ad spend managed", value: "6.5", suffix: "M+", caption: "Across 22 brands in 18 months" },
   { label: "Avg client revenue lift", value: "168", suffix: "%", caption: "Within first 6 months of engagement" },
   { label: "Client retention", value: "94", suffix: "%", caption: "12-month rolling retention rate" },
   { label: "Industries served", value: "14", suffix: "+", caption: "Home services, DTC, local & specialty" },
+];
+
+// ===== Testimonials =====
+// Order: first 2 are ecommerce, next 8 are home services / local / specialty
+export type Testimonial = {
+  id: string;
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  industry: string;
+  rating: number;
+  vertical: "Ecommerce" | "Home Services" | "Local Services" | "Specialty";
+  metric: string;
+  metricLabel: string;
+};
+
+export const testimonials: Testimonial[] = [
+  {
+    id: "t1",
+    quote:
+      "Rakib scaled us from $440k to $1.4M a month without ROAS collapsing. He's the only marketer I've worked with who actually understands unit economics — not just ROAS, but contribution margin and cash cycle. We finally stopped renting growth and started owning a brand.",
+    name: "David Chen",
+    role: "Founder & CEO",
+    company: "NovaTech Audio",
+    industry: "Ecommerce · Gadgets",
+    rating: 5,
+    vertical: "Ecommerce",
+    metric: "3.2x",
+    metricLabel: "Revenue in 9 months",
+  },
+  {
+    id: "t2",
+    quote:
+      "Subscription churn was killing us. Rakib rebuilt the offer, built a quiz funnel, and within two quarters we went from 4,200 subs to 14,800. CAC dropped by half. I've never had a marketer deliver this level of clarity on what's actually moving the business.",
+    name: "Dr. Sarah Patel",
+    role: "Co-Founder",
+    company: "VitalRoot Wellness",
+    industry: "Ecommerce · Supplements",
+    rating: 5,
+    vertical: "Ecommerce",
+    metric: "−47%",
+    metricLabel: "Blended CAC",
+  },
+  {
+    id: "t3",
+    quote:
+      "We were paying $180 per booked plumbing job and getting eaten by HomeAdvisor. Rakib came in, rebuilt the funnel, and within 90 days we were at $62 per job — and booked 184 jobs in a single month. He saved my business.",
+    name: "Marcus Reyes",
+    role: "Owner",
+    company: "MetroFlow Plumbing",
+    industry: "Home Services · Plumbing",
+    rating: 5,
+    vertical: "Home Services",
+    metric: "184",
+    metricLabel: "Booked jobs / month",
+  },
+  {
+    id: "t4",
+    quote:
+      "I'd been burned by two agencies before Rakib. He's different — he actually picked up the phone, walked through my P&L, and told me flat-out what wasn't working. Cost per signed roof contract dropped 42% in one storm season. He's earned a long-term partner.",
+    name: "Hank Calloway",
+    role: "Founder",
+    company: "Skyline Roofing Group",
+    industry: "Home Services · Roofing",
+    rating: 5,
+    vertical: "Home Services",
+    metric: "−42%",
+    metricLabel: "Cost per signed contract",
+  },
+  {
+    id: "t5",
+    quote:
+      "Rakib built us a year-round pipeline that doesn't depend on Arizona summer. Off-season revenue tripled, our Google rating jumped to 4.9 stars, and customers now refer us without us even asking. The system runs itself now.",
+    name: "Teresa Alvarez",
+    role: "Owner",
+    company: "VoltEdge Electric",
+    industry: "Home Services · Electrician",
+    rating: 5,
+    vertical: "Home Services",
+    metric: "+210%",
+    metricLabel: "Off-season revenue",
+  },
+  {
+    id: "t6",
+    quote:
+      "Our cleaning subscription had 28% churn and rising CAC. Rakib rebuilt the offer around a 3-month commit, added a 9-touch lifecycle, and cut churn in half. MRR tripled. We finally have a business that scales without breaking.",
+    name: "Olivia Bennett",
+    role: "Co-Founder",
+    company: "PristinePro Cleaning",
+    industry: "Home Services · Cleaning",
+    rating: 5,
+    vertical: "Home Services",
+    metric: "62%",
+    metricLabel: "12-month retention",
+  },
+  {
+    id: "t7",
+    quote:
+      "I was a one-man show maxed out at 5 jobs a day. Rakib's funnel filled my calendar 8 weeks out, and I hired two new crews in four months. The ROI was obvious from week one — I just wish I'd found him three years earlier.",
+    name: "Joe Marchetti",
+    role: "Owner",
+    company: "FixIt Joe Pro",
+    industry: "Home Services · Handyman",
+    rating: 5,
+    vertical: "Home Services",
+    metric: "47",
+    metricLabel: "Jobs / week",
+  },
+  {
+    id: "t8",
+    quote:
+      "We were getting crushed by online printers. Rakib built us a sample-kit offer, an ABM flow on LinkedIn, and a 5-touch nurture. Quote volume nearly tripled and average order value jumped 44%. Best money we've spent in five years.",
+    name: "Karen Whitfield",
+    role: "VP Sales",
+    company: "InkPress Print Co.",
+    industry: "Local Services · Printing",
+    rating: 5,
+    vertical: "Local Services",
+    metric: "+178%",
+    metricLabel: "Qualified quotes / month",
+  },
+  {
+    id: "t9",
+    quote:
+      "Independent auto shop competing with dealers is brutal. Rakib built a transparent online booking flow and retargeted high-margin services. Online bookings are now 62% of intake and average repair order is up 38%. Bays are 94% utilized.",
+    name: "Frank Delgado",
+    role: "Owner",
+    company: "Apex Auto Repair",
+    industry: "Local Services · Car Repair",
+    rating: 5,
+    vertical: "Local Services",
+    metric: "62%",
+    metricLabel: "Online bookings",
+  },
+  {
+    id: "t10",
+    quote:
+      "Rakib turned my hobbyist yarn community into a $3.7M-a-year DTC brand. Subscription Yarn-of-the-Month, UGC knitting tutorials, and a pattern library that reactivates past buyers. He genuinely understands community-led commerce.",
+    name: "Margaret Holloway",
+    role: "Founder",
+    company: "Heritage Yarn Co.",
+    industry: "Specialty · Yarn & Crafts",
+    rating: 5,
+    vertical: "Specialty",
+    metric: "$312k",
+    metricLabel: "Monthly revenue",
+  },
+];
+
+// ===== FAQ =====
+export type FAQ = {
+  id: string;
+  question: string;
+  answer: string;
+};
+
+export const faqs: FAQ[] = [
+  {
+    id: "faq1",
+    question: "What's the minimum ad spend you'll take on?",
+    answer:
+      "I work with brands spending at least $5,000/month on paid media. Below that, the math doesn't work — there isn't enough budget to test creative properly or build a real measurement stack. If you're below $5k/mo, I'll happily refer you to a partner who's a better fit.",
+  },
+  {
+    id: "faq2",
+    question: "Do you work month-to-month or require long contracts?",
+    answer:
+      "Initial engagements are 90 days minimum — that's the shortest window where the system can show real results. After that, it's month-to-month with 30 days' notice. I'd rather you stay because the numbers work than because a contract forces you to.",
+  },
+  {
+    id: "faq3",
+    question: "Which industries do you specialize in?",
+    answer:
+      "Home services (plumbing, roofing, electrician, HVAC, handyman, cleaning), local services (printing, auto repair), and DTC ecommerce across 15+ verticals — from gadgets and cosmetics to coffee, jewelry, supplements, and outdoor gear. If you're outside these, ask — I'll tell you honestly if I'm not the right fit.",
+  },
+  {
+    id: "faq4",
+    question: "How do you handle iOS 14 attribution issues?",
+    answer:
+      "I rebuilt measurement around server-side tagging (GTM Server-Side + Conversions API on Meta and Google), a unified data warehouse (BigQuery or Snowflake), and modeled conversions. Your dashboard finally tells the truth — not what Meta wants you to believe. I also run incrementality tests on any channel spending more than $50k/mo.",
+  },
+  {
+    id: "faq5",
+    question: "Do you build the creative or just run the ads?",
+    answer:
+      "Both. I run a creative testing matrix (5–10 variants per week) and either produce the assets myself or work with your in-house team. I have a network of UGC creators, editors, and designers I bring in when needed. Creative is 70% of performance — I don't outsource the most important part.",
+  },
+  {
+    id: "faq6",
+    question: "What does the onboarding process look like?",
+    answer:
+      "Week 1: deep audit of your funnel, ad accounts, tracking, and unit economics. Week 2: measurement rebuild + first campaign restructure. Week 3: creative testing engine goes live. By day 30, you'll have a clean dashboard, a real creative pipeline, and the first signal on what's working. You'll never wonder what I'm doing — everything is documented.",
+  },
+];
+
+// ===== Featured case studies (shown on home page after hero) =====
+// Pulls from caseStudies by ID — picked across verticals for variety
+export const featuredCaseStudyIds = [
+  "gadgets",
+  "plumbing",
+  "supplements",
+  "roofing",
 ];
 
 export type NavLink = {

@@ -32,7 +32,7 @@ export function CVSection({ hideHeading = false }: { hideHeading?: boolean }) {
         {!hideHeading && (
           <SectionHeading
             eyebrow="CV · 8 years, 4 chapters"
-            title="From SMB SEO to running $4.2M in tracked spend — the path."
+            title="From SMB SEO to running $6.5M in tracked spend — the path."
             description="A condensed CV. If you want the long-form version with references, hit the button below."
           />
         )}
