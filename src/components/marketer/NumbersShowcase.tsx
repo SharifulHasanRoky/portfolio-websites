@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight, BarChart3, DollarSign, Users2, Repeat } from "lucide-react";
+import { headlineMetrics } from "@/lib/marketer-data";
 import { SectionHeading } from "./SectionHeading";
 import { TiltCard } from "./TiltCard";
 import { AnimatedNumber } from "./AnimatedNumber";
@@ -71,6 +72,33 @@ export function NumbersShowcase() {
           title="The only four numbers that actually move a business."
           description="I track revenue, marketing efficiency ratio (MER), blended CAC, and payback period. Clicks and platform ROAS are leading indicators — these four are results. Everything below is from real client work over the last 18 months."
         />
+
+        {/* Headline metrics strip — quick-scan row of the headline numbers */}
+        <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          {headlineMetrics.map((m, i) => (
+            <motion.div
+              key={m.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.5, delay: i * 0.07 }}
+              className="relative rounded-2xl border border-border bg-card/40 backdrop-blur p-4 sm:p-5 overflow-hidden"
+            >
+              <div className="absolute -top-px left-4 right-4 h-px bg-gradient-to-r from-transparent via-brand/60 to-transparent opacity-70" />
+              <div className="text-[11px] uppercase tracking-wider text-muted-foreground">
+                {m.label}
+              </div>
+              <div className="mt-1.5 font-display text-2xl sm:text-3xl font-semibold">
+                <AnimatedNumber
+                  value={parseFloat(m.value)}
+                  suffix={m.suffix}
+                  decimals={m.value.includes(".") ? 1 : 0}
+                />
+              </div>
+              <div className="mt-1 text-xs text-muted-foreground">{m.caption}</div>
+            </motion.div>
+          ))}
+        </div>
 
         <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {stats.map((s, i) => (
