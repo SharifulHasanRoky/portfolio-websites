@@ -57,6 +57,7 @@ export function Navbar() {
     portfolio: "Portfolio",
     cases: "Case Studies",
     cv: "CV / Experience",
+    book: "Book a Call",
   };
 
   return (
@@ -134,7 +135,7 @@ export function Navbar() {
                 </button>
               )}
               <button
-                onClick={() => handleNav({ label: "Book", kind: "scroll", target: "#book" })}
+                onClick={() => handleNav({ label: "Book", kind: "view", target: "book" })}
                 className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-foreground text-background px-4 py-2 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors group"
               >
                 Book a Call
@@ -199,7 +200,7 @@ export function Navbar() {
                 );
               })}
               <button
-                onClick={() => handleNav({ label: "Book", kind: "scroll", target: "#book" })}
+                onClick={() => handleNav({ label: "Book", kind: "view", target: "book" })}
                 className="mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-brand-foreground px-5 py-4 text-base font-semibold"
               >
                 Book a Call <ArrowUpRight className="h-5 w-5" />

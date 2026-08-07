@@ -9,16 +9,10 @@ import { useViewStore } from "@/lib/view-store";
 import { cn } from "@/lib/utils";
 
 export function CVSection({ hideHeading = false }: { hideHeading?: boolean }) {
-  const goHomeAndScroll = useViewStore((s) => s.goHomeAndScroll);
-  const view = useViewStore((s) => s.view);
+  const setView = useViewStore((s) => s.setView);
 
   function handleBookClick() {
-    if (view !== "home") {
-      goHomeAndScroll("#book");
-    } else {
-      const el = document.querySelector("#book");
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    setView("book");
   }
   return (
     <section

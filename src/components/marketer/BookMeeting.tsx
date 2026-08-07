@@ -32,7 +32,7 @@ const slots = [
 
 const budgets = ["< $5k/mo", "$5k – $15k/mo", "$15k – $50k/mo", "$50k+/mo"];
 
-export function BookMeeting() {
+export function BookMeeting({ hideHeading = false }: { hideHeading?: boolean }) {
   const { toast } = useToast();
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
@@ -63,16 +63,21 @@ export function BookMeeting() {
   return (
     <section
       id="book"
-      className="relative py-24 sm:py-32 px-4 sm:px-6 section-anchor"
+      className={cn(
+        "relative px-4 sm:px-6 section-anchor",
+        hideHeading ? "py-8 sm:py-12" : "py-24 sm:py-32"
+      )}
     >
-      <div className="mx-auto max-w-7xl">
-        <SectionHeading
-          eyebrow="Book a meeting · 2 spots left this quarter"
-          title="Free 30-min strategy call. No pitch deck, no fluff."
-          description="You bring a real number (current CAC, current revenue, current ROAS). I'll bring a real plan — what I'd change in your funnel in the first 30 days. If we're a fit, we talk next steps. If not, you walk away with a plan you can hand to anyone."
-        />
+      <div className="mx-auto max-w-7xl relative">
+        {!hideHeading && (
+          <SectionHeading
+            eyebrow="Book a meeting · 2 spots left this quarter"
+            title="Free 30-min strategy call. No pitch deck, no fluff."
+            description="You bring a real number (current CAC, current revenue, current ROAS). I'll bring a real plan — what I'd change in your funnel in the first 30 days. If we're a fit, we talk next steps. If not, you walk away with a plan you can hand to anyone."
+          />
+        )}
 
-        <div className="mt-14 grid lg:grid-cols-12 gap-6">
+        <div className={cn("grid lg:grid-cols-12 gap-6", hideHeading ? "mt-0" : "mt-14")}>
           {/* Left — value props + slot picker */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

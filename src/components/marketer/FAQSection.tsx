@@ -110,7 +110,7 @@ export function FAQSection() {
           </p>
           <button
             type="button"
-            onClick={() => setView("home")}
+            onClick={() => setView("book")}
             className="mt-5 inline-flex items-center gap-2 rounded-xl bg-foreground text-background px-5 py-3 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors group"
           >
             Book your strategy call

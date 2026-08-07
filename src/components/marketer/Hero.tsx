@@ -146,14 +146,15 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3"
         >
-          <a
-            href="#book"
+          <button
+            type="button"
+            onClick={() => useViewStore.getState().setView("book")}
             className="group relative inline-flex items-center gap-2 rounded-xl bg-foreground text-background px-6 py-3.5 text-sm font-semibold overflow-hidden transition-transform hover:scale-[1.02]"
           >
             <span className="absolute inset-0 bg-gradient-to-r from-brand to-fire opacity-0 group-hover:opacity-100 transition-opacity" />
             <span className="relative">Book a free strategy call</span>
             <ArrowDown className="relative h-4 w-4 group-hover:translate-y-0.5 transition-transform" />
-          </a>
+          </button>
           <button
             type="button"
             onClick={() => useViewStore.getState().setView("cases")}

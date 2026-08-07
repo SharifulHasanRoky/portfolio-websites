@@ -15,7 +15,7 @@ import { FAQSection } from "@/components/marketer/FAQSection";
 import { PortfolioPage } from "@/components/marketer/PortfolioPage";
 import { CaseStudiesPage } from "@/components/marketer/CaseStudiesPage";
 import { CVPage } from "@/components/marketer/CVPage";
-import { BookMeeting } from "@/components/marketer/BookMeeting";
+import { BookPage } from "@/components/marketer/BookPage";
 import { Footer } from "@/components/marketer/Footer";
 import { useViewStore } from "@/lib/view-store";
 
@@ -89,7 +89,6 @@ export default function Home() {
               <NumbersShowcase />
               <TestimonialsSlider />
               <FAQSection />
-              <BookMeeting />
             </motion.div>
           )}
 
@@ -126,6 +125,18 @@ export default function Home() {
               transition={{ duration: 0.25 }}
             >
               <CVPage />
+            </motion.div>
+          )}
+
+          {view === "book" && (
+            <motion.div
+              key="book"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+            >
+              <BookPage />
             </motion.div>
           )}
         </AnimatePresence>

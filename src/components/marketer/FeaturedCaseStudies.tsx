@@ -24,12 +24,12 @@ export function FeaturedCaseStudies() {
     >
       <div className="mx-auto max-w-7xl relative">
         <SectionHeading
-          eyebrow="Featured wins · 4 of 23 case studies"
-          title="A quick taste of what the system actually delivers."
-          description="Four hand-picked case studies — two ecommerce, two home services — so you can see the system works across very different business models. Click through to the full case studies page for all 23."
+          eyebrow="Featured wins · 2 of 23 case studies"
+          title="Two featured engagements — one Australian Shopify store, one Calgary cleaning company."
+          description="Two real client stories across very different business models: a Shopify-based premium menswear brand in Sydney and a subscription cleaning company in Calgary. Same system, same proof, very different numbers. Click through to the full case studies page for all 23."
         />
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+        <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6">
           {featured.map((c, i) => {
             const accent = i % 2 === 0 ? "brand" : "fire";
             return (

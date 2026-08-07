@@ -267,12 +267,12 @@ export const caseStudies: CaseStudy[] = [
     industry: "Cleaning",
     icon: Sparkles,
     client: "PristinePro Cleaning",
-    location: "Miami, FL",
+    location: "Calgary, AB, Canada",
     vertical: "Home Services",
     challenge:
-      "Subscription residential cleaning with high churn. CAC was climbing, LTV was shrinking.",
+      "Subscription residential cleaning in Calgary's competitive market. CAC was climbing through winter, LTV was shrinking, and churn was spiking after the 60-day mark.",
     approach:
-      "Rebuilt offer around 'first clean free with 3-month commit'. Replaced single-purchase ads with subscription-focused creative. Built a 9-touch post-sale lifecycle to cut churn.",
+      "Rebuilt offer around 'first clean free with 3-month commit'. Replaced single-purchase ads with subscription-focused creative. Built a 9-touch post-sale lifecycle (SMS + email + review request) to cut churn, plus a referral loop with dual-sided $25 credit.",
     results: [
       { metric: "Subscription CAC", value: "$48", delta: "−57%" },
       { metric: "12-month retention", value: "62%", delta: "+24pts" },
@@ -280,7 +280,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     timeline: "7 months",
     spend: "$8k/mo",
-    highlight: "Cut churn in half, tripled monthly recurring revenue.",
+    highlight: "Cut churn in half, tripled monthly recurring revenue in Calgary.",
   },
   {
     id: "yarn",
@@ -367,12 +367,12 @@ export const caseStudies: CaseStudy[] = [
     industry: "Ecommerce · Clothing",
     icon: Shirt,
     client: "Atelier Nord",
-    location: "Montreal, QC",
+    location: "Sydney, Australia",
     vertical: "Ecommerce",
     challenge:
-      "Premium menswear brand with high returns (38%) and weak size conversion on mobile.",
+      "Premium menswear Shopify store in the Australian market. High returns (38%) from international sizing confusion, weak size conversion on mobile, and Shopify's default checkout wasn't optimized for repeat purchase.",
     approach:
-      "Built AR size-finder + size-quiz funnel. Retargeted by fit-confidence score. Introduced 'second-fit-free' guarantee that doubled AOV.",
+      "Built AR size-finder + size-quiz funnel on Shopify. Retargeted by fit-confidence score. Introduced 'second-fit-free' guarantee that doubled AOV. Layered Klaviyo lifecycle on top of Shopify flow with AU-specific shipping logic.",
     results: [
       { metric: "Return rate", value: "14%", delta: "−63%" },
       { metric: "Mobile conversion rate", value: "3.4%", delta: "+143%" },
@@ -380,7 +380,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     timeline: "8 months",
     spend: "$44k/mo",
-    highlight: "Cut returns by 24 points while doubling AOV.",
+    highlight: "Cut returns by 24 points while doubling AOV on Shopify.",
   },
   {
     id: "telecom",
@@ -1067,12 +1067,10 @@ export const faqs: FAQ[] = [
 ];
 
 // ===== Featured case studies (shown on home page after hero) =====
-// Pulls from caseStudies by ID — picked across verticals for variety
+// 2 featured: Australian Shopify ecommerce store + Calgary cleaning company
 export const featuredCaseStudyIds = [
-  "gadgets",
-  "plumbing",
-  "supplements",
-  "roofing",
+  "clothing",
+  "cleaning",
 ];
 
 export type NavLink = {
@@ -1090,7 +1088,7 @@ export const navLinks: NavLink[] = [
   { label: "Portfolio", kind: "view", target: "portfolio" },
   { label: "Case Studies", kind: "view", target: "cases" },
   { label: "CV", kind: "view", target: "cv" },
-  { label: "Book a Call", kind: "scroll", target: "#book" },
+  { label: "Book a Call", kind: "view", target: "book" },
 ];
 
 export const industriesMarquee = [

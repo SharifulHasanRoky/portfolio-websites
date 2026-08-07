@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 
-export type View = "home" | "portfolio" | "cases" | "cv";
+export type View = "home" | "portfolio" | "cases" | "cv" | "book";
 
 interface ViewState {
   /** The currently active "page" rendered in the main content area. */

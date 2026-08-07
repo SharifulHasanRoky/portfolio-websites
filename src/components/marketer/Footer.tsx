@@ -57,7 +57,7 @@ export function Footer() {
             </p>
             <button
               type="button"
-              onClick={() => handleNavClick({ label: "Book", kind: "scroll", target: "#book" })}
+              onClick={() => handleNavClick({ label: "Book", kind: "view", target: "book" })}
               className="mt-7 inline-flex items-center gap-2 rounded-xl bg-foreground text-background px-6 py-3.5 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors"
             >
               Book your strategy call
