@@ -1,4 +1,4 @@
-# robots.txt for rakibhasan.studio
+# robots.txt for sharifulroky.studio
 # Owner: Rakib Hasan — rakib@hasan.studio
 
 # ===== Search Engines =====
@@ -95,4 +95,4 @@ User-agent: *
 Allow: /
 
 # ===== Sitemap =====
-Sitemap: https://rakibhasan.studio/sitemap.xml
+Sitemap: https://sharifulroky.studio/sitemap.xml

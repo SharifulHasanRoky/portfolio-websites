@@ -79,9 +79,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[5.5rem] font-semibold leading-[0.98] tracking-tight"
           >
-            Campaigns that convert.
+            I turn ad spend
             <br />
-            <span className="text-gradient-brand">Scales that stick.</span>
+            into <span className="text-gradient-brand">unfair advantage.</span>
           </motion.h1>
 
           {/* Small circular portrait chip — sits beside the headline */}
@@ -101,7 +101,7 @@ export function Hero() {
               {/* The photo */}
               <Image
                 src="/marketer-portrait.webp"
-                alt="Rakib Hasan — performance marketer"
+                alt="Shariful Hasan Roky — performance marketer"
                 fill
                 priority
                 sizes="(max-width: 640px) 80px, (max-width: 1024px) 112px, 128px"
@@ -134,10 +134,11 @@ export function Hero() {
           className="mx-auto mt-7 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed"
         >
           I&apos;m{" "}
-          <span className="text-foreground font-medium">Rakib Hasan</span> — I
-          build full-funnel paid + lifecycle systems for plumbers, roofers,
-          ecommerce brands, and 11 other industries. Growth that compounds in
-          your bank account, not just in your ad dashboard.
+          <span className="text-foreground font-medium">Shariful Hasan Roky</span> —
+          a performance marketer who&apos;s worked across 50+ niches and 60+
+          countries. I build full-funnel paid + lifecycle systems for ecommerce
+          and home service brands. Growth that compounds in your bank account,
+          not just in your ad dashboard.
         </motion.p>
 
         <motion.div

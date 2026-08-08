@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import {
   User,
   BarChart3,
@@ -75,73 +74,47 @@ export function AboutPage() {
         }))}
       />
 
-      {/* ===== Bio + Portrait ===== */}
+      {/* ===== Bio (no second portrait — the one in the hero is enough) ===== */}
       <section className="relative px-4 sm:px-6 py-12 sm:py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* Portrait */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-4 flex justify-center lg:justify-start"
-            >
-              <div className="relative" style={{ perspective: 1000 }}>
-                {/* Glow ring */}
-                <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-brand/30 via-transparent to-fire/30 blur-2xl opacity-60" />
-                <div className="relative h-64 w-64 sm:h-80 sm:w-80 rounded-3xl overflow-hidden ring-2 ring-brand/40 shadow-[0_0_60px_-10px_var(--brand),0_0_120px_-30px_var(--fire)]">
-                  <Image
-                    src="/marketer-portrait.webp"
-                    alt="Rakib Hasan — performance marketer, founder of Hasan Performance Studio"
-                    fill
-                    sizes="(max-width: 640px) 256px, 320px"
-                    className="object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-tr from-background/30 via-transparent to-fire/10 pointer-events-none" />
-                </div>
-                {/* Status badge */}
-                <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full border border-brand/30 bg-card/90 backdrop-blur-md px-3 py-1.5 shadow-lg whitespace-nowrap">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-brand opacity-75 animate-ping" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
-                  </span>
-                  <span className="text-[11px] font-medium text-foreground">
-                    {aboutBio.availability}
-                  </span>
-                </div>
-              </div>
-            </motion.div>
+        <div className="mx-auto max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-5"
+          >
+            <div className="text-[11px] uppercase tracking-wider text-brand font-mono">
+              the longer version
+            </div>
+            {aboutBio.longBio.map((para, i) => (
+              <p
+                key={i}
+                className="text-base sm:text-lg text-muted-foreground leading-relaxed"
+              >
+                {para}
+              </p>
+            ))}
 
-            {/* Bio paragraphs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="lg:col-span-8 space-y-5"
-            >
-              <div className="text-[11px] uppercase tracking-wider text-brand font-mono">
-                the longer version
-              </div>
-              {aboutBio.longBio.map((para, i) => (
-                <p
-                  key={i}
-                  className="text-base sm:text-lg text-muted-foreground leading-relaxed"
-                >
-                  {para}
-                </p>
-              ))}
+            {/* Personal details strip */}
+            <div className="mt-8 grid sm:grid-cols-2 gap-3">
+              <DetailItem icon={MapPin} label="Location" value={aboutBio.location} />
+              <DetailItem icon={Clock} label="Timezone" value={aboutBio.timezone} />
+              <DetailItem icon={Languages} label="Languages" value={aboutBio.languages.join(" · ")} />
+              <DetailItem icon={Mail} label="Email" value={aboutBio.email} />
+            </div>
 
-              {/* Personal details strip */}
-              <div className="mt-8 grid sm:grid-cols-2 gap-3">
-                <DetailItem icon={MapPin} label="Location" value={aboutBio.location} />
-                <DetailItem icon={Clock} label="Timezone" value={aboutBio.timezone} />
-                <DetailItem icon={Languages} label="Languages" value={aboutBio.languages.join(" · ")} />
-                <DetailItem icon={Mail} label="Email" value={aboutBio.email} />
-              </div>
-            </motion.div>
-          </div>
+            {/* Availability badge */}
+            <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/5 px-4 py-2">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-brand opacity-75 animate-ping" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand" />
+              </span>
+              <span className="text-sm font-medium text-foreground">
+                {aboutBio.availability}
+              </span>
+            </div>
+          </motion.div>
         </div>
       </section>
 

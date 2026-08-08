@@ -22,17 +22,17 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const SITE_URL = "https://rakibhasan.studio";
-const SITE_NAME = "Rakib Hasan — Performance Marketing Studio";
+const SITE_URL = "https://sharifulroky.studio";
+const SITE_NAME = "Shariful Hasan Roky — Performance Marketing Studio";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Rakib Hasan — Performance Marketer | Campaigns That Convert, Scales That Stick",
-    template: "%s · Rakib Hasan",
+    default: "Shariful Hasan Roky — Performance Marketer | Turning Ad Spend Into Unfair Advantage",
+    template: "%s · Shariful Hasan Roky",
   },
   description:
-    "Performance marketer for home services & DTC ecommerce. Managed $6.5M+ in tracked ad spend across 22 brands in 18 months — plumbing, roofing, ecommerce, supplements, and 11 other industries. Book a free 30-min strategy call.",
+    "Performance marketer for ecommerce & home service brands. Worked across 50+ niches and 60+ countries. $6.5M+ tracked ad spend managed. Book a free 30-min strategy call.",
   keywords: [
     "performance marketing",
     "performance marketer",
@@ -63,14 +63,15 @@ export const metadata: Metadata = {
     "GA4",
     "Conversions API",
     "BigQuery",
-    "Rakib Hasan",
-    "Hasan Performance Studio",
+    "Shariful Hasan Roky",
+    "Shariful Roky",
+    "Independent Performance Marketing Studio",
     "Dhaka marketer",
     "Bangladesh marketer",
   ],
-  authors: [{ name: "Rakib Hasan", url: SITE_URL }],
-  creator: "Rakib Hasan",
-  publisher: "Rakib Hasan",
+  authors: [{ name: "Shariful Hasan Roky", url: SITE_URL }],
+  creator: "Shariful Hasan Roky",
+  publisher: "Shariful Hasan Roky",
   applicationName: SITE_NAME,
   category: "Marketing",
   classification: "Performance Marketing Services",
@@ -84,24 +85,24 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "Rakib Hasan — Performance Marketer | Campaigns That Convert, Scales That Stick",
+    title: "Shariful Hasan Roky — Performance Marketer | Turning Ad Spend Into Unfair Advantage",
     description:
-      "Performance marketer for home services & DTC ecommerce. $6.5M+ tracked spend managed across 22 brands. Book a free 30-min strategy call.",
+      "Performance marketer for ecommerce & home service brands. 50+ niches, 60+ countries, $6.5M+ tracked spend. Book a free 30-min strategy call.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_US",
     type: "profile",
-    firstName: "Rakib",
-    lastName: "Hasan",
-    username: "rakibhasan",
+    firstName: "Shariful Hasan",
+    lastName: "Roky",
+    username: "sharifulroky",
     gender: "male",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rakib Hasan — Performance Marketer",
+    title: "Shariful Hasan Roky — Performance Marketer",
     description:
-      "Campaigns that convert. Scales that stick. $6.5M+ tracked spend managed across 22 brands in 18 months.",
-    creator: "@rakibhasan",
+      "Turning ad spend into unfair advantage. 50+ niches, 60+ countries, $6.5M+ tracked spend managed.",
+    creator: "@sharifulroky",
   },
   robots: {
     index: true,
@@ -142,7 +143,7 @@ export const viewport: Viewport = {
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Rakib Hasan",
+  name: "Shariful Hasan Roky",
   url: SITE_URL,
   image: `${SITE_URL}/marketer-portrait.webp`,
   jobTitle: "Performance Marketer",
@@ -150,14 +151,14 @@ const personJsonLd = {
     "Performance marketer for home services and DTC ecommerce brands. Managed $6.5M+ in tracked ad spend across 22 brands in 18 months.",
   worksFor: {
     "@type": "Organization",
-    name: "Hasan Performance Studio",
+    name: "Shariful Hasan Roky Performance Studio",
   },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Dhaka",
     addressCountry: "Bangladesh",
   },
-  email: "mailto:rakib@hasan.studio",
+  email: "mailto:shariful@roky.studio",
   knowsAbout: [
     "Performance Marketing",
     "Paid Social (Meta, TikTok, YouTube)",
@@ -175,9 +176,9 @@ const personJsonLd = {
     name: "Bangladesh",
   },
   sameAs: [
-    "https://www.linkedin.com/in/rakibhasan",
-    "https://twitter.com/rakibhasan",
-    "https://www.youtube.com/@rakibhasan",
+    "https://www.linkedin.com/in/sharifulroky",
+    "https://twitter.com/sharifulroky",
+    "https://www.youtube.com/@sharifulroky",
   ],
 };
 
@@ -186,21 +187,21 @@ const websiteJsonLd = {
   "@type": "WebSite",
   name: SITE_NAME,
   url: SITE_URL,
-  author: { "@type": "Person", name: "Rakib Hasan" },
+  author: { "@type": "Person", name: "Shariful Hasan Roky" },
   description:
-    "Performance marketing portfolio and case studies of Rakib Hasan — serving home services and DTC ecommerce brands.",
+    "Performance marketing portfolio and case studies of Shariful Hasan Roky — serving ecommerce and home service brands across 60+ countries.",
   inLanguage: "en",
 };
 
 const professionalServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Hasan Performance Studio",
+  name: "Shariful Hasan Roky Performance Studio",
   description:
     "Independent performance marketing studio for home services and DTC ecommerce brands.",
   url: SITE_URL,
   image: `${SITE_URL}/marketer-portrait.webp`,
-  email: "rakib@hasan.studio",
+  email: "shariful@roky.studio",
   priceRange: "$$$",
   areaServed: ["US", "CA", "UK", "AU"],
   serviceType: [
@@ -210,7 +211,7 @@ const professionalServiceJsonLd = {
     "Marketing Measurement",
     "Conversion Rate Optimization",
   ],
-  founder: { "@type": "Person", name: "Rakib Hasan" },
+  founder: { "@type": "Person", name: "Shariful Hasan Roky" },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Dhaka",

@@ -1,10 +1,10 @@
-# Rakib Hasan — Performance Marketer
+# Shariful Hasan Roky — Performance Marketer
 
 > Performance marketer for home services and DTC ecommerce brands. Managed $6.5M+ in tracked ad spend across 22 brands in 18 months.
 
 ## Who I am
 
-I'm Rakib Hasan, an independent performance marketer based in Dhaka, Bangladesh. I build full-funnel paid + lifecycle systems for home services owners and DTC ecommerce founders across the US, Canada, UK, and Australia.
+I'm Shariful Hasan Roky, an independent performance marketer based in Dhaka, Bangladesh. I build full-funnel paid + lifecycle systems for home services owners and DTC ecommerce founders across the US, Canada, UK, and Australia.
 
 ## What I do
 
@@ -91,7 +91,7 @@ Plumbing, handyman, printing, roofing, electrician, cleaning, yarn & crafts, car
 - Email: rakib@hasan.studio
 - Location: Dhaka, Bangladesh
 - Availability: 2 new client spots per quarter
-- Book a free 30-min strategy call: https://rakibhasan.studio/ (click "Book a Call")
+- Book a free 30-min strategy call: https://sharifulroky.studio/ (click "Book a Call")
 
 ## Site structure
 
@@ -99,6 +99,6 @@ This site is a single-page Next.js 16 application with client-side view switchin
 
 ## Links
 
-- Homepage: https://rakibhasan.studio/
-- Sitemap: https://rakibhasan.studio/sitemap.xml
-- Robots: https://rakibhasan.studio/robots.txt
+- Homepage: https://sharifulroky.studio/
+- Sitemap: https://sharifulroky.studio/sitemap.xml
+- Robots: https://sharifulroky.studio/robots.txt

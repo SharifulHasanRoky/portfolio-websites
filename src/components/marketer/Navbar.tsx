@@ -92,7 +92,7 @@ export function Navbar() {
                 <span className="absolute inset-0 rounded-xl ring-1 ring-white/20" />
               </span>
               <span className="font-display text-[15px] font-semibold tracking-tight">
-                Rakib<span className="text-brand">.</span>Hasan
+                Shariful<span className="text-brand">.</span>Roky
               </span>
             </button>
 

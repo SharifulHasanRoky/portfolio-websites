@@ -25,8 +25,8 @@ export function FeaturedCaseStudies() {
       <div className="mx-auto max-w-7xl relative">
         <SectionHeading
           eyebrow="Featured wins · 2 of 23 case studies"
-          title="Two featured engagements — one Australian Shopify store, one Calgary cleaning company."
-          description="Two real client stories across very different business models: a Shopify-based premium menswear brand in Sydney and a subscription cleaning company in Calgary. Same system, same proof, very different numbers. Click through to the full case studies page for all 23."
+          title="Two featured engagements — an Australian Shopify store at 13x ROI, and a Calgary cleaning company booking 100 leads a month."
+          description="Two real client stories across very different business models: an Australian Shopify ecommerce brand scaled from 2x to 13x ROI, and a Calgary cleaning company hitting 100 qualified leads per month. Same system, very different numbers. Click through to the full case studies page for all 23."
         />
 
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6">

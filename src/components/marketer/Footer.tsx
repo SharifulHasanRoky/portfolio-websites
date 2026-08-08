@@ -86,11 +86,11 @@ export function Footer() {
                 </svg>
               </span>
               <span className="font-display text-base font-semibold tracking-tight">
-                Rakib<span className="text-brand">.</span>Hasan
+                Shariful<span className="text-brand">.</span>Roky
               </span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Performance marketer for home services &amp; DTC ecommerce. I
+              Performance marketer for ecommerce &amp; home service brands. 50+ niches, 60+ countries, $6.5M+ tracked spend. I
               build full-funnel systems that compound in your bank account, not
               just in your ad dashboard.
             </p>
@@ -147,11 +147,11 @@ export function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <a
-                  href="mailto:rakib@hasanperformance.studio"
+                  href="mailto:shariful@roky.studio"
                   className="inline-flex items-center gap-2 text-sm text-foreground/80 hover:text-brand transition-colors"
                 >
                   <Mail className="h-4 w-4" />
-                  rakib@hasan.studio
+                  shariful@roky.studio
                 </a>
               </li>
               <li>
@@ -188,7 +188,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <div>
-            © {new Date().getFullYear()} Rakib Hasan Performance Studio. Built
+            © {new Date().getFullYear()} Shariful Hasan Roky · Performance Marketing Studio. Built
             with intent — and a lot of caffeine.
           </div>
           <div className="flex items-center gap-4">

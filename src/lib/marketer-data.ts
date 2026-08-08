@@ -266,21 +266,21 @@ export const caseStudies: CaseStudy[] = [
     id: "cleaning",
     industry: "Cleaning",
     icon: Sparkles,
-    client: "PristinePro Cleaning",
+    client: "Calgary Cleaning",
     location: "Calgary, AB, Canada",
     vertical: "Home Services",
     challenge:
-      "Subscription residential cleaning in Calgary's competitive market. CAC was climbing through winter, LTV was shrinking, and churn was spiking after the 60-day mark.",
+      "Local residential cleaning company in Calgary struggling to get consistent leads. Word-of-mouth wasn't scaling, and they were paying $180+ per lead through aggregator platforms.",
     approach:
-      "Rebuilt offer around 'first clean free with 3-month commit'. Replaced single-purchase ads with subscription-focused creative. Built a 9-touch post-sale lifecycle (SMS + email + review request) to cut churn, plus a referral loop with dual-sided $25 credit.",
+      "Built a Google LSA + Meta lead-form funnel with a 60-second response SLA, dispatch routing, and review-request automation. Offer: first clean at 50% off. Layered seasonal creative (winter deep-clean, spring move-out) to keep lead flow steady year-round.",
     results: [
-      { metric: "Subscription CAC", value: "$48", delta: "−57%" },
-      { metric: "12-month retention", value: "62%", delta: "+24pts" },
-      { metric: "MRR", value: "$96k", delta: "+187%" },
+      { metric: "Leads per month", value: "100", delta: "+312%" },
+      { metric: "Cost per lead", value: "$24", delta: "−71%" },
+      { metric: "Booking rate", value: "48%", delta: "+22pts" },
     ],
-    timeline: "7 months",
-    spend: "$8k/mo",
-    highlight: "Cut churn in half, tripled monthly recurring revenue in Calgary.",
+    timeline: "90 days",
+    spend: "$6k/mo",
+    highlight: "100 qualified leads every single month — without paying aggregators.",
   },
   {
     id: "yarn",
@@ -364,23 +364,23 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     id: "clothing",
-    industry: "Ecommerce · Clothing",
+    industry: "Ecommerce · Shopify (AU)",
     icon: Shirt,
-    client: "Atelier Nord",
+    client: "Origani",
     location: "Sydney, Australia",
     vertical: "Ecommerce",
     challenge:
-      "Premium menswear Shopify store in the Australian market. High returns (38%) from international sizing confusion, weak size conversion on mobile, and Shopify's default checkout wasn't optimized for repeat purchase.",
+      "Australian Shopify ecommerce store with a strong product but plateaued growth. ROAS stuck around 2x, CAC climbing, and the founder was burning cash on creative that wasn't converting. iOS 14 attribution was broken.",
     approach:
-      "Built AR size-finder + size-quiz funnel on Shopify. Retargeted by fit-confidence score. Introduced 'second-fit-free' guarantee that doubled AOV. Layered Klaviyo lifecycle on top of Shopify flow with AU-specific shipping logic.",
+      "Rebuilt the entire funnel on Shopify: server-side CAPI tracking, founder-led UGC creative engine, Klaviyo lifecycle with AU-specific flows, and a tiered offer ladder (sample → bundle → subscription). Scaled spend aggressively once unit economics were verified.",
     results: [
-      { metric: "Return rate", value: "14%", delta: "−63%" },
-      { metric: "Mobile conversion rate", value: "3.4%", delta: "+143%" },
-      { metric: "AOV", value: "$214", delta: "+72%" },
+      { metric: "ROI (return on ad spend)", value: "13x", delta: "from 2x" },
+      { metric: "Monthly revenue", value: "$420k", delta: "+540%" },
+      { metric: "Blended CAC", value: "$18", delta: "−62%" },
     ],
-    timeline: "8 months",
-    spend: "$44k/mo",
-    highlight: "Cut returns by 24 points while doubling AOV on Shopify.",
+    timeline: "6 months",
+    spend: "$32k/mo",
+    highlight: "Scaled from 2x to 13x ROI on a Shopify store in 6 months.",
   },
   {
     id: "telecom",
@@ -682,14 +682,25 @@ export const portfolio: PortfolioItem[] = [
   },
   {
     id: "p5",
-    title: "Atelier Nord",
-    category: "Ecommerce · Clothing",
+    title: "Origani",
+    category: "Ecommerce · Shopify (AU)",
     description:
-      "AR size-finder + size-quiz funnel cut returns from 38% to 14% while doubling mobile AOV. Conversion rate up 143% on mobile.",
-    metric: "−63%",
-    metricLabel: "Return rate",
-    tags: ["AR Try-On", "Quiz", "Rebuy", "Klaviyo"],
+      "Australian Shopify ecommerce store scaled from 2x to 13x ROI in 6 months. Server-side CAPI, founder-led UGC, Klaviyo lifecycle with AU-specific flows, and a tiered offer ladder (sample → bundle → subscription).",
+    metric: "13x",
+    metricLabel: "ROI (from 2x)",
+    tags: ["Shopify", "CAPI", "Klaviyo", "UGC"],
     accent: "fire",
+  },
+  {
+    id: "p5b",
+    title: "Calgary Cleaning",
+    category: "Home Services · Cleaning",
+    description:
+      "Local residential cleaning company in Calgary scaled from 24 to 100 qualified leads per month. Google LSA + Meta lead-form funnel with 60-second response SLA, dispatch routing, and seasonal creative.",
+    metric: "100",
+    metricLabel: "Leads / month",
+    tags: ["Google LSA", "Meta Lead Forms", "GoHighLevel", "Twilio"],
+    accent: "brand",
   },
   {
     id: "p6",
@@ -762,8 +773,8 @@ export const cvEntries: CVEntry[] = [
   {
     period: "2023 — Present",
     role: "Founder & Head of Growth",
-    company: "Hasan Performance Studio",
-    location: "Remote · serving US, CA, UK",
+    company: "Independent Studio",
+    location: "Remote · serving 60+ countries",
     summary:
       "Independent performance marketing studio serving home services and DTC ecommerce brands between $100k and $5M/mo. Direct ownership of paid spend, measurement, and lifecycle.",
     achievements: [
@@ -867,9 +878,9 @@ export type HeadlineMetric = {
 
 export const headlineMetrics: HeadlineMetric[] = [
   { label: "Ad spend managed", value: "6.5", suffix: "M+", caption: "Across 22 brands in 18 months" },
-  { label: "Avg client revenue lift", value: "168", suffix: "%", caption: "Within first 6 months of engagement" },
+  { label: "Niches worked", value: "50", suffix: "+", caption: "From plumbing to luxury watches" },
+  { label: "Countries served", value: "60", suffix: "+", caption: "US, CA, UK, AU & 56 more" },
   { label: "Client retention", value: "94", suffix: "%", caption: "12-month rolling retention rate" },
-  { label: "Industries served", value: "14", suffix: "+", caption: "Home services, DTC, local & specialty" },
 ];
 
 // ===== Testimonials =====
@@ -1082,8 +1093,8 @@ export type AboutStat = {
 
 export const aboutStats: AboutStat[] = [
   { label: "Years in performance marketing", value: "8+", caption: "From SMB SEO to $6.5M+ tracked spend" },
-  { label: "Brands shipped", value: "22", caption: "Home services, DTC, local, specialty" },
-  { label: "Industries served", value: "14+", caption: "Plumbing to jewelry, telecom to coffee" },
+  { label: "Niches worked", value: "50+", caption: "From plumbing to luxury watches" },
+  { label: "Countries served", value: "60+", caption: "US, CA, UK, AU, and 56 more" },
   { label: "Client retention (12mo)", value: "94%", caption: "I'd rather keep you than chase you" },
 ];
 
@@ -1185,11 +1196,11 @@ export const dailyTools: DailyTool[] = [
 
 export const aboutBio = {
   shortBio:
-    "I'm Rakib Hasan — a performance marketer who's managed $6.5M+ in tracked ad spend across 22 brands in 18 months. I build full-funnel paid + lifecycle systems for home services and DTC ecommerce brands. Growth that compounds in your bank account, not just in your ad dashboard.",
+    "I'm Shariful Hasan Roky — a performance marketer who's worked across 50+ niches and 60+ countries, managing $6.5M+ in tracked ad spend. I build full-funnel paid + lifecycle systems for ecommerce and home service brands. Growth that compounds in your bank account, not just in your ad dashboard.",
   longBio: [
-    "I started in 2017 doing SEO for SMBs in Dhaka — back when 'performance marketing' meant ranking a WordPress site for 'best plumber in [city]'. Eight years and four roles later, I've managed over $6.5M in tracked ad spend across 22 brands in industries as different as premium audio gadgets and Calgary cleaning subscriptions.",
-    "What I learned along the way: most agencies sell tactics (a winning ad, a viral hook, a new platform). I sell a system — six chapters that compound: campaign, business, scaling, numbers, measurements, growth. Skip one and scale breaks at month 9. Run all six and growth stops being heroic and becomes boring, predictable, repeatable.",
-    "I work remote from Dhaka, serving clients across the US, Canada, UK, and Australia. Async-first, one live call per week, and a dashboard your CFO will actually open. No agency handoffs, no junior account managers — when you hire me, you get me. I write the strategy, build the funnels, audit the ad accounts, and answer your Slack.",
+    "I'm Shariful Hasan Roky. I started in 2017 doing SEO for SMBs in Dhaka — back when 'performance marketing' meant ranking a WordPress site for 'best plumber in [city]'. Eight years and four roles later, I've worked across 50+ niches and 60+ countries, managing over $6.5M in tracked ad spend. From Australian Shopify brands scaling 13x ROI to Calgary cleaning companies booking 100 leads a month.",
+    "These days I focus on two worlds I know best: ecommerce (Shopify DTC, subscriptions, gadgets, cosmetics, and 15+ other verticals) and home services (plumbing, roofing, electrician, cleaning, handyman, and more). The system is the same across both — six chapters that compound: campaign, business, scaling, numbers, measurements, growth. Skip one and scale breaks at month 9. Run all six and growth stops being heroic and becomes boring, predictable, repeatable.",
+    "I work remote from Dhaka, serving clients across the US, Canada, UK, Australia, and 56 other countries. Async-first, one live call per week, and a dashboard your CFO will actually open. No agency handoffs, no junior account managers — when you hire me, you get me. I write the strategy, build the funnels, audit the ad accounts, and answer your Slack.",
     "Outside of marketing: I read earnings calls like novels, run a small private Slack community of 60+ founders trading growth experiments, and I'm probably the only person in Dhaka who genuinely enjoys spreadsheets. If you're a founder who's been burned by agencies before — let's talk. The strategy call is free, and I'll tell you honestly whether I can help.",
   ],
   location: "Dhaka, Bangladesh",
@@ -1232,7 +1243,7 @@ export const personalTimeline: TimelineChapter[] = [
   },
   {
     year: "2023",
-    title: "Founded Hasan Performance Studio",
+    title: "Founded my own studio",
     description:
       "Went independent. Took the system I'd built at Northbridge and started offering it directly to home services + DTC brands. 22 clients, $6.5M+ spend, 94% retention in the first 18 months.",
   },
