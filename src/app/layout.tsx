@@ -28,7 +28,7 @@ const SITE_NAME = "Shariful Hasan Roky — Performance Marketing Studio";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Shariful Hasan Roky — Performance Marketer | Turning Ad Spend Into Unfair Advantage",
+    default: "Shariful Hasan Roky — Revenue Growth Strategist | Turning Ad Spend Into Unfair Advantage",
     template: "%s · Shariful Hasan Roky",
   },
   description:
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
   openGraph: {
-    title: "Shariful Hasan Roky — Performance Marketer | Turning Ad Spend Into Unfair Advantage",
+    title: "Shariful Hasan Roky — Revenue Growth Strategist | Turning Ad Spend Into Unfair Advantage",
     description:
       "Performance marketer for ecommerce & home service brands. 50+ niches, 60+ countries, $6.5M+ tracked spend. Book a free 30-min strategy call.",
     url: SITE_URL,
@@ -99,7 +99,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shariful Hasan Roky — Performance Marketer",
+    title: "Shariful Hasan Roky — Revenue Growth Strategist",
     description:
       "Turning ad spend into unfair advantage. 50+ niches, 60+ countries, $6.5M+ tracked spend managed.",
     creator: "@sharifulroky",
@@ -146,7 +146,7 @@ const personJsonLd = {
   name: "Shariful Hasan Roky",
   url: SITE_URL,
   image: `${SITE_URL}/marketer-portrait.webp`,
-  jobTitle: "Performance Marketer",
+  jobTitle: "Revenue Growth Strategist",
   description:
     "Performance marketer for home services and DTC ecommerce brands. Managed $6.5M+ in tracked ad spend across 22 brands in 18 months.",
   worksFor: {

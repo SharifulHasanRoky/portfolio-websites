@@ -68,7 +68,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-xs font-medium text-muted-foreground"
         >
           <Sparkles className="h-3.5 w-3.5 text-brand" />
-          Performance marketer for home services &amp; DTC ecommerce
+          Revenue growth strategist · ecommerce &amp; home service brands
         </motion.div>
 
         {/* ===== Headline row — H1 with small circular portrait to the right ===== */}
@@ -79,9 +79,10 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="font-display text-[2.5rem] sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[5.5rem] font-semibold leading-[0.98] tracking-tight"
           >
-            I turn ad spend
+            Revenue growth strategist
             <br />
-            into <span className="text-gradient-brand">unfair advantage.</span>
+            who turns ad spend into{" "}
+            <span className="text-gradient-brand">unfair advantage.</span>
           </motion.h1>
 
           {/* Small circular portrait chip — sits beside the headline */}
@@ -135,7 +136,7 @@ export function Hero() {
         >
           I&apos;m{" "}
           <span className="text-foreground font-medium">Shariful Hasan Roky</span> —
-          a performance marketer who&apos;s worked across 50+ niches and 60+
+          a revenue growth strategist who&apos;s worked across 50+ niches and 60+
           countries. I build full-funnel paid + lifecycle systems for ecommerce
           and home service brands. Growth that compounds in your bank account,
           not just in your ad dashboard.

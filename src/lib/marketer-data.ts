@@ -790,6 +790,48 @@ export const caseStudies: CaseStudy[] = [
     spend: "$1.5k/mo",
     highlight: "531 VSL leads at $8.44 each — Retargeting angle won at $6.78 CPR.",
   },
+  {
+    id: "fb-cynthia",
+    industry: "Ecommerce · Multi-Campaign FB",
+    icon: Megaphone,
+    client: "Meta Ads · CYNTHIA",
+    location: "United States",
+    vertical: "Ecommerce",
+    challenge:
+      "Film niche ecommerce brand running 7 parallel Facebook Ads campaigns with no clear testing structure. Budget was spread thin, CPMs were high on some campaigns, and the team couldn't identify which creative angles were working.",
+    approach:
+      "Reorganized 7 campaigns into a structured testing matrix: CYNTHIA (main), Copy (scaling winner), Film Niche (audience test), plus 4 supporting campaigns. Built creative testing framework with 3 hooks per angle, and consolidated budget toward the top 2 performers (67,000,000 and Copy).",
+    results: [
+      { metric: "Results", value: "1,395", delta: "across 7 campaigns" },
+      { metric: "Reach", value: "666,980", delta: "unique people" },
+      { metric: "Amount spent", value: "$43,869", delta: "over campaign life" },
+      { metric: "Impressions", value: "2.58M", delta: "total ad views" },
+    ],
+    timeline: "8 months",
+    spend: "$5.5k/mo",
+    highlight: "$43,869 spent across 7 FB campaigns — 67,000,000 campaign drove 612 results at $11.28 CPR.",
+  },
+  {
+    id: "fb-8415-lifetime",
+    industry: "Home Services · Lead Gen FB",
+    icon: Megaphone,
+    client: "Meta Ads · Lifetime Budgets",
+    location: "United States",
+    vertical: "Home Services",
+    challenge:
+      "Lead-gen account running 8 lifetime-budget Facebook Ads campaigns. Budget was committed upfront (lifetime budgets from $15 to $8,091), but results weren't being measured per campaign. CPMs ranged from $0.10 to $7.75 — huge variance.",
+    approach:
+      "Audited all 8 lifetime campaigns, identified the 2 winners ($15-5day at $0.10 CPM and ner-11/09/25 at $7.75 CPM with 487 results), and restructured future budgets toward daily campaigns with the winning creative. Built a reporting dashboard showing CPR per campaign.",
+    results: [
+      { metric: "Reach", value: "1,046,005", delta: "unique people" },
+      { metric: "Impressions", value: "2,116,059", delta: "total ad views" },
+      { metric: "Amount spent", value: "$8,415", delta: "8 lifetime budgets" },
+      { metric: "CPM", value: "$3.98", delta: "blended avg" },
+    ],
+    timeline: "8 months",
+    spend: "$1.05k/mo",
+    highlight: "1,046,005 reach from $8,415 spend — $0.10 CPM on the best-performing $15 lifetime campaign.",
+  },
 ];
 
 export type PortfolioItem = {
@@ -1011,6 +1053,28 @@ export const portfolio: PortfolioItem[] = [
     metric: "531",
     metricLabel: "VSL Leads",
     tags: ["Facebook Ads", "VSL", "4 Ad Sets", "Angle Testing"],
+    accent: "brand",
+  },
+  {
+    id: "p19",
+    title: "Meta Ads · CYNTHIA",
+    category: "Ecommerce · Multi-Campaign",
+    description:
+      "Facebook Ads multi-campaign account (CYNTHIA) with 7 active campaigns. $43,869.43 total spend, 666,980 reach, 2.58M impressions. Film niche + creative testing structure.",
+    metric: "$43.8K",
+    metricLabel: "Total spent",
+    tags: ["Facebook Ads", "7 Campaigns", "Film Niche", "Creative Testing"],
+    accent: "fire",
+  },
+  {
+    id: "p20",
+    title: "Meta Ads · Lifetime Budgets",
+    category: "Home Services · Lead Gen",
+    description:
+      "Facebook Ads lifetime-budget campaign set with 8 campaigns. $8,415 total spend, 1,046,005 reach, 2,116,059 impressions. Lead-gen focus with $3.98 CPM.",
+    metric: "1.04M",
+    metricLabel: "Reach",
+    tags: ["Facebook Ads", "Lifetime Budget", "8 Campaigns", "Lead Gen"],
     accent: "brand",
   },
 ];
@@ -1452,9 +1516,9 @@ export const dailyTools: DailyTool[] = [
 
 export const aboutBio = {
   shortBio:
-    "I'm Shariful Hasan Roky — a performance marketer who's worked across 50+ niches and 60+ countries, managing $6.5M+ in tracked ad spend. I build full-funnel paid + lifecycle systems for ecommerce and home service brands. Growth that compounds in your bank account, not just in your ad dashboard.",
+    "I'm Shariful Hasan Roky — a revenue growth strategist who's worked across 50+ niches and 60+ countries, managing $6.5M+ in tracked ad spend. I build full-funnel paid + lifecycle systems for ecommerce and home service brands. Growth that compounds in your bank account, not just in your ad dashboard.",
   longBio: [
-    "I'm Shariful Hasan Roky. I started in 2017 doing SEO for SMBs in Dhaka — back when 'performance marketing' meant ranking a WordPress site for 'best plumber in [city]'. Eight years and four roles later, I've worked across 50+ niches and 60+ countries, managing over $6.5M in tracked ad spend. From Australian Shopify brands scaling 13x ROI to Calgary cleaning companies booking 100 leads a month.",
+    "I'm Shariful Hasan Roky — a revenue growth strategist. I started in 2017 doing SEO for SMBs in Dhaka, back when 'performance marketing' meant ranking a WordPress site for 'best plumber in [city]'. Eight years and four roles later, I've worked across 50+ niches and 60+ countries, managing over $6.5M in tracked ad spend. From Australian Shopify brands scaling 13x ROI to Calgary cleaning companies booking 100 leads a month.",
     "These days I focus on two worlds I know best: ecommerce (Shopify DTC, subscriptions, gadgets, cosmetics, and 15+ other verticals) and home services (plumbing, roofing, electrician, cleaning, handyman, and more). The system is the same across both — six chapters that compound: campaign, business, scaling, numbers, measurements, growth. Skip one and scale breaks at month 9. Run all six and growth stops being heroic and becomes boring, predictable, repeatable.",
     "I work remote from Dhaka, serving clients across the US, Canada, UK, Australia, and 56 other countries. Async-first, one live call per week, and a dashboard your CFO will actually open. No agency handoffs, no junior account managers — when you hire me, you get me. I write the strategy, build the funnels, audit the ad accounts, and answer your Slack.",
     "Outside of marketing: I read earnings calls like novels, run a small private Slack community of 60+ founders trading growth experiments, and I'm probably the only person in Dhaka who genuinely enjoys spreadsheets. If you're a founder who's been burned by agencies before — let's talk. The strategy call is free, and I'll tell you honestly whether I can help.",

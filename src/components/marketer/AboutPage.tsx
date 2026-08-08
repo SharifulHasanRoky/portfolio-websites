@@ -64,7 +64,7 @@ export function AboutPage() {
     >
       <PageHero
         eyebrow="About me · the marketer behind the numbers"
-        title="Performance marketer. System builder. Honest operator."
+        title="Revenue growth strategist. System builder. Honest operator."
         description={aboutBio.shortBio}
         icon={User}
         accent="brand"

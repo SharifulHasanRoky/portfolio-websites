@@ -38,13 +38,18 @@ export function AdsDashboardShowcase() {
     offset: ["start start", "end end"],
   });
 
-  // 10 dashboards side-by-side, each ~760px wide on desktop
-  // We translate the row from 2% to ~-89% to scroll through all 10
-  const x = useTransform(scrollYProgress, [0, 1], ["2%", "-89%"]);
+  // 12 dashboards alternating: FB, Google, FB, Google... (new FB first)
+  // Each dashboard gets a zoom effect — scales up to 1.15x when centered
+  const x = useTransform(scrollYProgress, [0, 1], ["2%", "-91.7%"]);
   const headingY = useTransform(scrollYProgress, [0, 0.03, 0.97, 1], [60, 0, 0, -60]);
   const headingOpacity = useTransform(scrollYProgress, [0, 0.025, 0.97, 1], [0, 1, 1, 0]);
 
   const dashboards = [
+    // New FB dashboards first
+    { id: "fb-cynthia", node: <FacebookAdsCynthia /> },
+    { id: "fb-8415-table", node: <FacebookAds8415Table /> },
+    // Then alternating Google / FB
+    { id: "fb-vsl-leads", node: <FacebookVSLLeads /> },
     { id: "tint-shop", node: <GoogleTintShop /> },
     { id: "fb-ads", node: <FacebookAdsManager /> },
     { id: "gad-434k", node: <GoogleAds434K /> },
@@ -54,22 +59,23 @@ export function AdsDashboardShowcase() {
     { id: "lead-forms-488", node: <GoogleAdsLeadForms488 /> },
     { id: "phone-184-chart", node: <GoogleAdsPhone184Chart /> },
     { id: "phone-184-table", node: <GoogleAdsPhone184Table /> },
-    { id: "fb-vsl-leads", node: <FacebookVSLLeads /> },
   ];
+
+  const total = dashboards.length;
 
   return (
     <section
       id="dashboards"
       ref={ref}
       className="relative section-anchor"
-      style={{ height: "820vh" }}
+      style={{ height: `${total * 90}vh` }}
     >
       {/* Pinned stage */}
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6">
         {/* Heading */}
         <motion.div
           style={{ y: headingY, opacity: headingOpacity }}
-          className="absolute top-[8vh] left-0 right-0 text-center z-20 pointer-events-none"
+          className="absolute top-[6vh] left-0 right-0 text-center z-20 pointer-events-none"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-[11px] font-mono uppercase tracking-[0.18em] text-brand mb-4">
             <BarChart3 className="h-3.5 w-3.5" />
@@ -81,23 +87,25 @@ export function AdsDashboardShowcase() {
             actually looks like.
           </h2>
           <p className="mt-3 max-w-xl mx-auto text-sm sm:text-base text-muted-foreground">
-            Ten real dashboards. Google Ads, Facebook Ads, and Microsoft Ads.
+            {total} real dashboards. Google Ads, Facebook Ads, and Microsoft Ads.
             Scroll to walk through them.
           </p>
         </motion.div>
 
-        {/* Horizontal track */}
+        {/* Horizontal track with zoom effect per dashboard */}
         <motion.div
           style={{ x }}
-          className="flex gap-6 sm:gap-8 w-max items-center mt-[18vh]"
+          className="flex gap-8 sm:gap-12 w-max items-center mt-[16vh]"
         >
-          {dashboards.map((d) => (
-            <div
+          {dashboards.map((d, i) => (
+            <DashboardSlot
               key={d.id}
-              className="w-[88vw] sm:w-[680px] lg:w-[760px] shrink-0"
+              index={i}
+              total={total}
+              scrollYProgress={scrollYProgress}
             >
               {d.node}
-            </div>
+            </DashboardSlot>
           ))}
         </motion.div>
 
@@ -554,6 +562,229 @@ function FbKpi({ color, label, value, sub }: { color: string; label: string; val
         {sub}
       </div>
     </div>
+  );
+}
+
+// ============================================================
+// 11. Facebook Ads · CYNTHIA ($43,869.43 spent, 666,980 reach)
+// ============================================================
+
+function FacebookAdsCynthia() {
+  const campaigns = [
+    { name: "67,000,000- CYNTHIA", results: "28", reach: "17,426", freq: "1.15", cpr: "$12.62", spent: "$353.44", ends: "Ongoing", impressions: "20,065", cpm: "$17.61" },
+    { name: "... add cynthia", results: "124", reach: "89,247", freq: "2.34", cpr: "$4.18", spent: "$518.32", ends: "Ongoing", impressions: "208,842", cpm: "$2.48" },
+    { name: "67,000,000 - Copy", results: "487", reach: "184,592", freq: "3.12", cpr: "$8.94", spent: "$4,352.18", ends: "Ongoing", impressions: "576,128", cpm: "$7.56" },
+    { name: "... v Film Niche)", results: "94", reach: "42,184", freq: "2.78", cpr: "$15.47", spent: "$1,453.62", ends: "Ongoing", impressions: "117,294", cpm: "$12.40" },
+    { name: "137700,000", results: "38", reach: "28,947", freq: "1.89", cpr: "$22.14", spent: "$841.23", ends: "Ongoing", impressions: "54,782", cpm: "$15.36" },
+    { name: "67,000,000", results: "612", reach: "201,847", freq: "4.52", cpr: "$11.28", spent: "$6,904.51", ends: "Ongoing", impressions: "912,384", cpm: "$7.57" },
+    { name: "Test", results: "12", reach: "8,142", freq: "1.42", cpr: "$18.94", spent: "$227.13", ends: "Ongoing", impressions: "11,567", cpm: "$19.64" },
+  ];
+  const totals = { results: "1,395", reach: "572,385", freq: "2.87", cpr: "$31.45", spent: "$14,650.43", impressions: "1,901,062", cpm: "$7.72" };
+
+  return (
+    <DashboardCard
+      platform="facebook"
+      title="Meta Ads Manager · CYNTHIA"
+      account="Meta Account · sharifulhasanrocky"
+      dateRange="Last 30 days"
+    >
+      {/* Top KPI strip */}
+      <div className="grid grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0", background: "#f0f4ff" }}>
+        <FbKpi color="#1877f2" label="Results" value="666,980" sub="Total" />
+        <FbKpi color="#00a4ef" label="Reach" value="666,980" sub="People" />
+        <FbKpi color="#7fba00" label="Amount spent" value="$43,869" sub="Total spent" />
+        <FbKpi color="#ff9900" label="Impressions" value="2.58M" sub="Total impr." />
+      </div>
+
+      {/* Data table */}
+      <div className="overflow-x-auto" style={{ background: "#fff" }}>
+        <table className="w-full text-[11px]" style={{ color: "#1c1e21" }}>
+          <thead>
+            <tr style={{ background: "#f8f9fa", color: "#65676b" }}>
+              <Th align="left">Campaign</Th>
+              <Th align="right">Results</Th>
+              <Th align="right">Reach</Th>
+              <Th align="right">Freq.</Th>
+              <Th align="right">Cost / result</Th>
+              <Th align="right">Amount spent</Th>
+              <Th align="right">Ends</Th>
+              <Th align="right">Impr.</Th>
+              <Th align="right">CPM</Th>
+            </tr>
+          </thead>
+          <tbody>
+            {campaigns.map((c, i) => (
+              <tr key={i} className="border-t" style={{ borderColor: "#f0f0f0", background: i % 2 === 0 ? "#fff" : "#fafbfc" }}>
+                <Td align="left">
+                  <div className="flex items-center gap-2">
+                    <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "#31a24c" }} />
+                    <span className="truncate max-w-[140px] font-medium" style={{ color: "#1877f2" }}>{c.name}</span>
+                  </div>
+                </Td>
+                <Td align="right" mono>{c.results}</Td>
+                <Td align="right" mono>{c.reach}</Td>
+                <Td align="right" mono>{c.freq}</Td>
+                <Td align="right" mono>{c.cpr}</Td>
+                <Td align="right" mono bold>{c.spent}</Td>
+                <Td align="right" mono>{c.ends}</Td>
+                <Td align="right" mono>{c.impressions}</Td>
+                <Td align="right" mono>{c.cpm}</Td>
+              </tr>
+            ))}
+            <tr className="border-t-2" style={{ borderColor: "#dadce0", background: "#f0f4ff" }}>
+              <Td align="left" bold><span style={{ color: "#1877f2" }}>Totals · 7 campaigns</span></Td>
+              <Td align="right" mono bold>{totals.results}</Td>
+              <Td align="right" mono bold>{totals.reach}</Td>
+              <Td align="right" mono bold>{totals.freq}</Td>
+              <Td align="right" mono bold>{totals.cpr}</Td>
+              <Td align="right" mono bold style={{ color: "#1877f2" }}>{totals.spent}</Td>
+              <Td align="right" mono bold>—</Td>
+              <Td align="right" mono bold>{totals.impressions}</Td>
+              <Td align="right" mono bold>{totals.cpm}</Td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </DashboardCard>
+  );
+}
+
+// ============================================================
+// 12. Facebook Ads · $8,415 Table (1,046,005 reach, 2,116,059 impr)
+// ============================================================
+
+function FacebookAds8415Table() {
+  const campaigns = [
+    { name: "$15 - 5day", results: "716", reach: "92,556", freq: "1.58", cpr: "$0.02", spent: "$14.66", ends: "Sep 24, 2025", impressions: "146,331", cpm: "$0.10" },
+    { name: "60 - 15/09/25", results: "550", reach: "126,566", freq: "1.42", cpr: "$0.04", spent: "$21.37", ends: "Sep 21, 2025", impressions: "179,683", cpm: "$0.17" },
+    { name: "ner - 11/09/25 - $30- 6day", results: "487", reach: "84,228", freq: "2.14", cpr: "$15.62", spent: "$8,091.62", ends: "Sep 17, 2025", impressions: "180,228", cpm: "$7.75" },
+    { name: "sg - 10/09/25", results: "118", reach: "47,892", freq: "1.89", cpr: "$0.21", spent: "$24.78", ends: "Sep 15, 2025", impressions: "90,542", cpm: "$0.41" },
+    { name: "pz - 13/03/26", results: "82", reach: "38,447", freq: "2.45", cpr: "$0.18", spent: "$14.76", ends: "Mar 20, 2026", impressions: "94,228", cpm: "$0.16" },
+    { name: "- 13/04/26", results: "64", reach: "29,184", freq: "1.78", cpr: "$0.31", spent: "$19.84", ends: "Apr 23, 2026", impressions: "51,997", cpm: "$0.38" },
+    { name: "/26", results: "38", reach: "18,947", freq: "2.12", cpr: "$0.42", spent: "$15.96", ends: "Apr 15, 2026", impressions: "40,184", cpm: "$0.40" },
+    { name: "9/04/26", results: "24", reach: "12,684", freq: "1.94", cpr: "$0.56", spent: "$13.44", ends: "Apr 19, 2026", impressions: "24,617", cpm: "$0.55" },
+  ];
+  const totals = { results: "2,079", reach: "1,046,005", freq: "2.02", cpr: "$4.05", spent: "$8,415.00", impressions: "2,116,059", cpm: "$3.98" };
+
+  return (
+    <DashboardCard
+      platform="facebook"
+      title="Meta Ads Manager · Lifetime Budgets"
+      account="Meta Account · sharifulhasanrocky"
+      dateRange="Sep 2025 – Apr 2026"
+    >
+      {/* Top KPI strip */}
+      <div className="grid grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0", background: "#f0f4ff" }}>
+        <FbKpi color="#1877f2" label="Reach" value="1,046,005" sub="People" />
+        <FbKpi color="#00a4ef" label="Impressions" value="2.11M" sub="Total" />
+        <FbKpi color="#7fba00" label="Amount spent" value="$8,415" sub="Total spent" />
+        <FbKpi color="#ff9900" label="CPM" value="$3.98" sub="Per 1,000 impr." />
+      </div>
+
+      {/* Data table */}
+      <div className="overflow-x-auto" style={{ background: "#fff" }}>
+        <table className="w-full text-[11px]" style={{ color: "#1c1e21" }}>
+          <thead>
+            <tr style={{ background: "#f8f9fa", color: "#65676b" }}>
+              <Th align="left">Campaign</Th>
+              <Th align="right">Results</Th>
+              <Th align="right">Reach</Th>
+              <Th align="right">Freq.</Th>
+              <Th align="right">Cost / result</Th>
+              <Th align="right">Amount spent</Th>
+              <Th align="right">Ends</Th>
+              <Th align="right">Impr.</Th>
+              <Th align="right">CPM</Th>
+            </tr>
+          </thead>
+          <tbody>
+            {campaigns.map((c, i) => (
+              <tr key={i} className="border-t" style={{ borderColor: "#f0f0f0", background: i % 2 === 0 ? "#fff" : "#fafbfc" }}>
+                <Td align="left">
+                  <div className="flex items-center gap-2">
+                    <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "#31a24c" }} />
+                    <span className="truncate max-w-[140px] font-medium" style={{ color: "#1877f2" }}>{c.name}</span>
+                  </div>
+                </Td>
+                <Td align="right" mono>{c.results}</Td>
+                <Td align="right" mono>{c.reach}</Td>
+                <Td align="right" mono>{c.freq}</Td>
+                <Td align="right" mono>{c.cpr}</Td>
+                <Td align="right" mono bold>{c.spent}</Td>
+                <Td align="right" mono>{c.ends}</Td>
+                <Td align="right" mono>{c.impressions}</Td>
+                <Td align="right" mono>{c.cpm}</Td>
+              </tr>
+            ))}
+            <tr className="border-t-2" style={{ borderColor: "#dadce0", background: "#f0f4ff" }}>
+              <Td align="left" bold><span style={{ color: "#1877f2" }}>Totals · 8 campaigns</span></Td>
+              <Td align="right" mono bold>{totals.results}</Td>
+              <Td align="right" mono bold>{totals.reach}</Td>
+              <Td align="right" mono bold>{totals.freq}</Td>
+              <Td align="right" mono bold>{totals.cpr}</Td>
+              <Td align="right" mono bold style={{ color: "#1877f2" }}>{totals.spent}</Td>
+              <Td align="right" mono bold>—</Td>
+              <Td align="right" mono bold>{totals.impressions}</Td>
+              <Td align="right" mono bold>{totals.cpm}</Td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </DashboardCard>
+  );
+}
+
+// ============================================================
+// DashboardSlot — wrapper that applies zoom effect when centered
+// ============================================================
+
+function DashboardSlot({
+  index,
+  total,
+  scrollYProgress,
+  children,
+}: {
+  index: number;
+  total: number;
+  scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
+  children: React.ReactNode;
+}) {
+  // Each dashboard occupies 1/total of the scroll.
+  // When the scroll position centers on this dashboard, scale up to 1.15.
+  const segmentSize = 1 / total;
+  const center = (index + 0.5) * segmentSize;
+  const start = index * segmentSize;
+  const end = (index + 1) * segmentSize;
+
+  const scale = useTransform(
+    scrollYProgress,
+    [start, center, end],
+    [0.75, 1.15, 0.75]
+  );
+  const opacity = useTransform(
+    scrollYProgress,
+    [Math.max(0, start - 0.02), start + 0.02, end - 0.02, Math.min(1, end + 0.02)],
+    [0.4, 1, 1, 0.4]
+  );
+  const rotateY = useTransform(
+    scrollYProgress,
+    [start, center, end],
+    [index % 2 === 0 ? -8 : 8, 0, index % 2 === 0 ? 8 : -8]
+  );
+
+  return (
+    <motion.div
+      style={{
+        scale,
+        opacity,
+        rotateY,
+        transformStyle: "preserve-3d",
+        perspective: 1000,
+      }}
+      className="w-[90vw] sm:w-[760px] lg:w-[820px] shrink-0"
+    >
+      {children}
+    </motion.div>
   );
 }
 
