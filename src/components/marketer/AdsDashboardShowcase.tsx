@@ -38,12 +38,6 @@ export function AdsDashboardShowcase() {
     offset: ["start start", "end end"],
   });
 
-  // 12 dashboards alternating: FB, Google, FB, Google... (new FB first)
-  // Each dashboard gets a zoom effect — scales up to 1.15x when centered
-  const x = useTransform(scrollYProgress, [0, 1], ["2%", "-91.7%"]);
-  const headingY = useTransform(scrollYProgress, [0, 0.03, 0.97, 1], [60, 0, 0, -60]);
-  const headingOpacity = useTransform(scrollYProgress, [0, 0.025, 0.97, 1], [0, 1, 1, 0]);
-
   const dashboards = [
     // New FB dashboards first
     { id: "fb-cynthia", node: <FacebookAdsCynthia /> },
@@ -63,54 +57,73 @@ export function AdsDashboardShowcase() {
 
   const total = dashboards.length;
 
+  // Heading stays visible the whole time, just slides up slightly at the very end
+  const headingY = useTransform(scrollYProgress, [0, 0.85, 1], [0, 0, -40]);
+  const headingOpacity = useTransform(scrollYProgress, [0, 0.85, 0.97], [1, 1, 0]);
+
+  // We use a percentage-based x transform that's relative to the track's own width.
+  // The track is `w-max` (fits all 12 cards + gaps). We want:
+  //   - At scroll 0: first card centered in viewport
+  //   - At scroll 1: last card centered in viewport
+  // The track width = total * cardWidth + (total-1) * gap.
+  // Each card is ~88vw on mobile, ~800px on desktop. Gap is ~24-40px.
+  // We translate by -(total-1) / total of the track width.
+  // But we also need to offset by half a card width so the first card starts centered.
+  // Solution: use a wrapper that starts at 50vw and the track translates left.
+  const translatePercent = ((total - 1) / total) * 100;
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${translatePercent}%`]);
+
   return (
     <section
       id="dashboards"
       ref={ref}
       className="relative section-anchor"
-      style={{ height: `${total * 90}vh` }}
+      style={{ height: `${total * 80}vh` }}
     >
       {/* Pinned stage */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6">
-        {/* Heading */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden px-4 sm:px-6">
+        {/* Heading — at the very top, compact */}
         <motion.div
           style={{ y: headingY, opacity: headingOpacity }}
-          className="absolute top-[6vh] left-0 right-0 text-center z-20 pointer-events-none"
+          className="absolute top-[3vh] left-0 right-0 text-center z-20 pointer-events-none px-4"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-[11px] font-mono uppercase tracking-[0.18em] text-brand mb-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-[11px] font-mono uppercase tracking-[0.18em] text-brand mb-3">
             <BarChart3 className="h-3.5 w-3.5" />
             Live ad accounts · real dashboards
           </div>
-          <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-semibold leading-[1.02] tracking-tight max-w-4xl mx-auto">
+          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-semibold leading-[1.05] tracking-tight max-w-4xl mx-auto">
             This is what a{" "}
             <span className="text-gradient-brand">profitable ad account</span>{" "}
             actually looks like.
           </h2>
-          <p className="mt-3 max-w-xl mx-auto text-sm sm:text-base text-muted-foreground">
+          <p className="mt-2 max-w-xl mx-auto text-xs sm:text-sm text-muted-foreground">
             {total} real dashboards. Google Ads, Facebook Ads, and Microsoft Ads.
-            Scroll to walk through them.
           </p>
         </motion.div>
 
-        {/* Horizontal track with zoom effect per dashboard */}
-        <motion.div
-          style={{ x }}
-          className="flex gap-8 sm:gap-12 w-max items-center mt-[16vh]"
-        >
-          {dashboards.map((d, i) => (
-            <DashboardSlot
-              key={d.id}
-              index={i}
-              total={total}
-              scrollYProgress={scrollYProgress}
-            >
-              {d.node}
-            </DashboardSlot>
-          ))}
-        </motion.div>
+        {/* Horizontal track — vertically centered.
+            The outer div centers the first card at scroll=0.
+            The inner motion.div translates left as you scroll. */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[88vw] sm:w-[720px] lg:w-[800px]">
+          <motion.div
+            style={{ x }}
+            className="flex gap-6 sm:gap-10 w-max items-center"
+          >
+            {dashboards.map((d, i) => (
+              <DashboardSlot
+                key={d.id}
+                index={i}
+                total={total}
+                scrollYProgress={scrollYProgress}
+              >
+                {d.node}
+              </DashboardSlot>
+            ))}
+          </motion.div>
+        </div>
 
         {/* Progress indicator */}
-        <div className="absolute bottom-10 left-0 right-0 flex justify-center">
+        <div className="absolute bottom-6 left-0 right-0 flex justify-center">
           <div className="w-48 h-1 rounded-full bg-border overflow-hidden">
             <motion.div
               style={{ scaleX: scrollYProgress }}
@@ -750,26 +763,39 @@ function DashboardSlot({
   children: React.ReactNode;
 }) {
   // Each dashboard occupies 1/total of the scroll.
-  // When the scroll position centers on this dashboard, scale up to 1.15.
+  // Off-center: scale 0.55 (small), centered: scale 1.2 (big).
+  // This creates a clear "zoom in when you scroll to it" effect.
   const segmentSize = 1 / total;
   const center = (index + 0.5) * segmentSize;
   const start = index * segmentSize;
   const end = (index + 1) * segmentSize;
+  // Add a small buffer so the zoom starts slightly before the segment
+  const buffer = segmentSize * 0.15;
 
   const scale = useTransform(
     scrollYProgress,
-    [start, center, end],
-    [0.75, 1.15, 0.75]
+    [
+      Math.max(0, start - buffer),
+      center,
+      Math.min(1, end + buffer),
+    ],
+    [0.55, 1.2, 0.55]
   );
   const opacity = useTransform(
     scrollYProgress,
-    [Math.max(0, start - 0.02), start + 0.02, end - 0.02, Math.min(1, end + 0.02)],
-    [0.4, 1, 1, 0.4]
+    [
+      Math.max(0, start - buffer),
+      start + buffer * 0.5,
+      end - buffer * 0.5,
+      Math.min(1, end + buffer),
+    ],
+    [0.25, 1, 1, 0.25]
   );
+  // Subtle 3D tilt off-center, flat when centered
   const rotateY = useTransform(
     scrollYProgress,
     [start, center, end],
-    [index % 2 === 0 ? -8 : 8, 0, index % 2 === 0 ? 8 : -8]
+    [index % 2 === 0 ? -12 : 12, 0, index % 2 === 0 ? 12 : -12]
   );
 
   return (
@@ -779,9 +805,9 @@ function DashboardSlot({
         opacity,
         rotateY,
         transformStyle: "preserve-3d",
-        perspective: 1000,
+        perspective: 1200,
       }}
-      className="w-[90vw] sm:w-[760px] lg:w-[820px] shrink-0"
+      className="w-[88vw] sm:w-[720px] lg:w-[800px] shrink-0"
     >
       {children}
     </motion.div>
