@@ -2,15 +2,13 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, HelpCircle, ArrowRight } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import { faqs } from "@/lib/marketer-data";
 import { SectionHeading } from "./SectionHeading";
-import { useViewStore } from "@/lib/view-store";
 import { cn } from "@/lib/utils";
 
 export function FAQSection() {
   const [open, setOpen] = useState<string | null>(faqs[0].id);
-  const setView = useViewStore((s) => s.setView);
 
   return (
     <section id="faq" className="relative py-24 sm:py-32 px-4 sm:px-6 section-anchor">
@@ -88,35 +86,6 @@ export function FAQSection() {
             );
           })}
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          className="mt-12 rounded-2xl border border-border bg-card/40 backdrop-blur p-6 sm:p-8 text-center"
-        >
-          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-brand mb-3">
-            <HelpCircle className="h-4 w-4" />
-            still have a question?
-          </div>
-          <h3 className="font-display text-xl sm:text-2xl font-semibold">
-            Bring it to the free 30-minute strategy call.
-          </h3>
-          <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">
-            No pitch deck. No sales script. Just a real answer to your real
-            question — whether or not we end up working together.
-          </p>
-          <button
-            type="button"
-            onClick={() => setView("book")}
-            className="mt-5 inline-flex items-center gap-2 rounded-xl bg-foreground text-background px-5 py-3 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors group"
-          >
-            Book your strategy call
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-          </button>
-        </motion.div>
       </div>
     </section>
   );
