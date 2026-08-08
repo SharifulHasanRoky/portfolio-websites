@@ -38,11 +38,11 @@ export function AdsDashboardShowcase() {
     offset: ["start start", "end end"],
   });
 
-  // 5 dashboards side-by-side, each ~70vw wide on desktop
-  // We translate the row from 0% to ~-72% to scroll through all 5
-  const x = useTransform(scrollYProgress, [0, 1], ["2%", "-78%"]);
-  const headingY = useTransform(scrollYProgress, [0, 0.05, 0.95, 1], [60, 0, 0, -60]);
-  const headingOpacity = useTransform(scrollYProgress, [0, 0.04, 0.96, 1], [0, 1, 1, 0]);
+  // 10 dashboards side-by-side, each ~760px wide on desktop
+  // We translate the row from 2% to ~-89% to scroll through all 10
+  const x = useTransform(scrollYProgress, [0, 1], ["2%", "-89%"]);
+  const headingY = useTransform(scrollYProgress, [0, 0.03, 0.97, 1], [60, 0, 0, -60]);
+  const headingOpacity = useTransform(scrollYProgress, [0, 0.025, 0.97, 1], [0, 1, 1, 0]);
 
   const dashboards = [
     { id: "tint-shop", node: <GoogleTintShop /> },
@@ -50,6 +50,11 @@ export function AdsDashboardShowcase() {
     { id: "gad-434k", node: <GoogleAds434K /> },
     { id: "gad-655", node: <GoogleAds655Calls /> },
     { id: "ms-ads", node: <MicrosoftAds /> },
+    { id: "downioa", node: <GoogleAdsDownioa /> },
+    { id: "lead-forms-488", node: <GoogleAdsLeadForms488 /> },
+    { id: "phone-184-chart", node: <GoogleAdsPhone184Chart /> },
+    { id: "phone-184-table", node: <GoogleAdsPhone184Table /> },
+    { id: "fb-vsl-leads", node: <FacebookVSLLeads /> },
   ];
 
   return (
@@ -57,7 +62,7 @@ export function AdsDashboardShowcase() {
       id="dashboards"
       ref={ref}
       className="relative section-anchor"
-      style={{ height: "420vh" }}
+      style={{ height: "820vh" }}
     >
       {/* Pinned stage */}
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6">
@@ -76,7 +81,7 @@ export function AdsDashboardShowcase() {
             actually looks like.
           </h2>
           <p className="mt-3 max-w-xl mx-auto text-sm sm:text-base text-muted-foreground">
-            Five real dashboards. Google Ads, Facebook Ads, and Microsoft Ads.
+            Ten real dashboards. Google Ads, Facebook Ads, and Microsoft Ads.
             Scroll to walk through them.
           </p>
         </motion.div>
@@ -300,6 +305,255 @@ function MicrosoftAds() {
         yLabels={["$0", "$6K", "$12K", "$18K", "$24K"]}
       />
     </DashboardCard>
+  );
+}
+
+// ============================================================
+// 6. Google Ads · Downioa (Conversions 1.39K, ROAS 764%)
+// ============================================================
+
+function GoogleAdsDownioa() {
+  return (
+    <DashboardCard
+      platform="google"
+      title="Downioa · Performance Max"
+      account="Account: sharifulhasanrocky@gmail.com"
+      dateRange="Last 30 days"
+    >
+      <div className="grid grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0" }}>
+        <GoogleKpi color={GOOGLE_COLORS.blue} label="Conversions" value="1.39K" sub="Total conv." />
+        <GoogleKpi color={GOOGLE_COLORS.red} label="Conv. value" value="259K" sub="Revenue tracked" />
+        <GoogleKpi color={GOOGLE_COLORS.yellow} label="Actual ROAS" value="764.35%" sub="Return on ad spend" darkText />
+        <GoogleKpi color={GOOGLE_COLORS.green} label="Cost" value="$33.9K" sub="Total spend" />
+      </div>
+      <MultiLineChart
+        colors={[GOOGLE_COLORS.blue, GOOGLE_COLORS.red, GOOGLE_COLORS.yellow, GOOGLE_COLORS.green]}
+        labels={["Conversions", "Conv. value", "ROAS", "Cost"]}
+        yLabels={["$0", "$2K", "$4K", "$6K", "$8K"]}
+      />
+    </DashboardCard>
+  );
+}
+
+// ============================================================
+// 7. Google Ads · Lead Forms 488 (Oct 2023 – Mar 2024)
+// ============================================================
+
+function GoogleAdsLeadForms488() {
+  return (
+    <DashboardCard
+      platform="google"
+      title="Lead Gen · 13 Campaigns"
+      account="Account: sharifulhasanrocky@gmail.com"
+      dateRange="Oct 1, 2023 – Mar 31, 2024"
+    >
+      <div className="grid grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0" }}>
+        <GoogleKpi color={GOOGLE_COLORS.blue} label="Submit lead forms" value="7" sub="Form submissions" />
+        <GoogleKpi color={GOOGLE_COLORS.red} label="Phone calls" value="56" sub="Call conversions" />
+        <GoogleKpi color={GOOGLE_COLORS.yellow} label="Conversions" value="488" sub="Total conv." darkText />
+        <GoogleKpi color={GOOGLE_COLORS.green} label="Cost" value="$4.67K" sub="Total spend" />
+      </div>
+      <MultiLineChart
+        colors={[GOOGLE_COLORS.blue, GOOGLE_COLORS.red, GOOGLE_COLORS.yellow, GOOGLE_COLORS.green]}
+        labels={["Lead forms", "Phone calls", "Conversions", "Cost"]}
+        yLabels={["$0", "$150", "$300", "$450", "$600"]}
+      />
+    </DashboardCard>
+  );
+}
+
+// ============================================================
+// 8. Google Ads · Phone Calls 184 (chart view, Aug 2023 – Nov 2024)
+// ============================================================
+
+function GoogleAdsPhone184Chart() {
+  return (
+    <DashboardCard
+      platform="google"
+      title="Lead Gen · Call-Heavy Account"
+      account="Account: sharifulhasanrocky@gmail.com"
+      dateRange="Aug 1, 2023 – Nov 30, 2024"
+    >
+      <div className="grid grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0" }}>
+        <GoogleKpi color={GOOGLE_COLORS.blue} label="CTR" value="2.02%" sub="Click-through rate" />
+        <GoogleKpi color={GOOGLE_COLORS.red} label="Phone calls" value="184" sub="Call conversions" />
+        <GoogleKpi color={GOOGLE_COLORS.yellow} label="Conversions" value="759" sub="Total conv." darkText />
+        <GoogleKpi color={GOOGLE_COLORS.green} label="Cost" value="$14.4K" sub="Total spend" />
+      </div>
+      <MultiLineChart
+        colors={[GOOGLE_COLORS.blue, GOOGLE_COLORS.red, GOOGLE_COLORS.yellow, GOOGLE_COLORS.green]}
+        labels={["CTR", "Phone calls", "Conversions", "Cost"]}
+        yLabels={["$0", "$300", "$600", "$900", "$1.2K"]}
+      />
+    </DashboardCard>
+  );
+}
+
+// ============================================================
+// 9. Google Ads · Phone Calls 184 (table view with campaign breakdown)
+// ============================================================
+
+function GoogleAdsPhone184Table() {
+  return (
+    <DashboardCard
+      platform="google"
+      title="Lead Gen · Campaign Breakdown"
+      account="Account: sharifulhasanrocky@gmail.com"
+      dateRange="Aug 1, 2023 – Nov 30, 2024"
+    >
+      <div className="grid grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0" }}>
+        <GoogleKpi color={GOOGLE_COLORS.blue} label="CTR" value="2.02%" sub="Click-through rate" />
+        <GoogleKpi color={GOOGLE_COLORS.red} label="Phone calls" value="184" sub="Call conversions" />
+        <GoogleKpi color={GOOGLE_COLORS.yellow} label="Conversions" value="759" sub="Total conv." darkText />
+        <GoogleKpi color={GOOGLE_COLORS.green} label="Cost" value="$14.4K" sub="Total spend" />
+      </div>
+      {/* Campaign breakdown table */}
+      <div className="px-4 pb-4 pt-3" style={{ background: "#fff" }}>
+        <div className="text-[12px] font-medium mb-2" style={{ color: "#202124" }}>
+          All campaigns · 6 active
+        </div>
+        <div className="rounded-lg border overflow-hidden" style={{ borderColor: "#dadce0" }}>
+          <div
+            className="grid grid-cols-12 px-3 py-2 text-[10px] font-medium uppercase tracking-wide"
+            style={{ background: "#f8f9fa", color: "#5f6368" }}
+          >
+            <div className="col-span-5">Campaign</div>
+            <div className="col-span-2 text-right">Cost</div>
+            <div className="col-span-2 text-right">Calls</div>
+            <div className="col-span-2 text-right">Conv.</div>
+            <div className="col-span-1 text-right">CTR</div>
+          </div>
+          {[
+            { name: "Search — Call-Only", cost: "$4.8K", calls: "78", conv: "312", ctr: "3.4%" },
+            { name: "Search — Brand", cost: "$3.2K", calls: "42", conv: "186", ctr: "4.1%" },
+            { name: "LSA — Local Service", cost: "$2.9K", calls: "38", conv: "142", ctr: "—" },
+            { name: "Display — Retargeting", cost: "$2.1K", calls: "14", conv: "78", ctr: "1.2%" },
+            { name: "PMax — All Campaigns", cost: "$1.4K", calls: "12", conv: "41", ctr: "1.8%" },
+          ].map((row, i) => (
+            <div
+              key={i}
+              className="grid grid-cols-12 px-3 py-2 text-[12px] border-t"
+              style={{
+                borderColor: "#f0f0f0",
+                background: i % 2 === 0 ? "#fff" : "#fafbfc",
+                color: "#202124",
+              }}
+            >
+              <div className="col-span-5 truncate">{row.name}</div>
+              <div className="col-span-2 text-right font-mono">{row.cost}</div>
+              <div className="col-span-2 text-right font-mono">{row.calls}</div>
+              <div className="col-span-2 text-right font-mono">{row.conv}</div>
+              <div className="col-span-1 text-right font-mono" style={{ color: GOOGLE_COLORS.green }}>
+                {row.ctr}
+              </div>
+            </div>
+          ))}
+          {/* Totals row */}
+          <div
+            className="grid grid-cols-12 px-3 py-2 text-[12px] border-t-2 font-semibold"
+            style={{ borderColor: "#dadce0", background: "#f0f4ff", color: "#1877f2" }}
+          >
+            <div className="col-span-5">Totals · 5 campaigns</div>
+            <div className="col-span-2 text-right font-mono">$14.4K</div>
+            <div className="col-span-2 text-right font-mono">184</div>
+            <div className="col-span-2 text-right font-mono">759</div>
+            <div className="col-span-1 text-right font-mono">2.02%</div>
+          </div>
+        </div>
+      </div>
+    </DashboardCard>
+  );
+}
+
+// ============================================================
+// 10. Facebook Ads · VSL Lead Gen (531 results, $8.44 CPR)
+// ============================================================
+
+function FacebookVSLLeads() {
+  const campaigns = [
+    { name: "Lead Gen - Retargeting", results: "184", reach: "12,847", spent: "$1,247", cpr: "$6.78", impr: "28,394", clicks: "892" },
+    { name: "Lead Gen - Angle 3", results: "142", reach: "11,204", spent: "$1,184", cpr: "$8.34", impr: "24,872", clicks: "648" },
+    { name: "Lead Gen - Angle 2", results: "118", reach: "10,128", spent: "$1,002", cpr: "$8.49", impr: "22,941", clicks: "584" },
+    { name: "Lead Gen - Angle 1", results: "87", reach: "9,008", spent: "$1,048", cpr: "$12.05", impr: "22,438", clicks: "412" },
+  ];
+  const totals = { results: "531", reach: "43,187", spent: "$4,481", cpr: "$8.44", impr: "98,645", clicks: "2,536" };
+
+  return (
+    <DashboardCard
+      platform="facebook"
+      title="VSL Lead Gen · 4 Ad Sets"
+      account="Meta Account · sharifulhasanrocky"
+      dateRange="Last 30 days"
+    >
+      {/* Top summary KPI strip */}
+      <div className="grid grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0", background: "#f0f4ff" }}>
+        <FbKpi color="#1877f2" label="Results" value="531" sub="VSL Leads" />
+        <FbKpi color="#00a4ef" label="Reach" value="43,187" sub="People" />
+        <FbKpi color="#7fba00" label="Impressions" value="98,645" sub="Total" />
+        <FbKpi color="#ff9900" label="Cost / result" value="$8.44" sub="Per VSL Lead" />
+      </div>
+
+      {/* Data table */}
+      <div className="overflow-x-auto" style={{ background: "#fff" }}>
+        <table className="w-full text-[11px]" style={{ color: "#1c1e21" }}>
+          <thead>
+            <tr style={{ background: "#f8f9fa", color: "#65676b" }}>
+              <Th align="left">Campaign</Th>
+              <Th align="right">Results</Th>
+              <Th align="right">Reach</Th>
+              <Th align="right">Amount spent</Th>
+              <Th align="right">Cost / result</Th>
+              <Th align="right">Impressions</Th>
+              <Th align="right">Link clicks</Th>
+            </tr>
+          </thead>
+          <tbody>
+            {campaigns.map((c, i) => (
+              <tr key={i} className="border-t" style={{ borderColor: "#f0f0f0", background: i % 2 === 0 ? "#fff" : "#fafbfc" }}>
+                <Td align="left">
+                  <div className="flex items-center gap-2">
+                    <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "#31a24c" }} />
+                    <span className="truncate max-w-[160px] font-medium" style={{ color: "#1877f2" }}>{c.name}</span>
+                  </div>
+                </Td>
+                <Td align="right" mono>{c.results}</Td>
+                <Td align="right" mono>{c.reach}</Td>
+                <Td align="right" mono bold>{c.spent}</Td>
+                <Td align="right" mono>{c.cpr}</Td>
+                <Td align="right" mono>{c.impr}</Td>
+                <Td align="right" mono>{c.clicks}</Td>
+              </tr>
+            ))}
+            {/* Totals row */}
+            <tr className="border-t-2" style={{ borderColor: "#dadce0", background: "#f0f4ff" }}>
+              <Td align="left" bold><span style={{ color: "#1877f2" }}>Totals · 4 ad sets</span></Td>
+              <Td align="right" mono bold>{totals.results}</Td>
+              <Td align="right" mono bold>{totals.reach}</Td>
+              <Td align="right" mono bold style={{ color: "#1877f2" }}>{totals.spent}</Td>
+              <Td align="right" mono bold>{totals.cpr}</Td>
+              <Td align="right" mono bold>{totals.impr}</Td>
+              <Td align="right" mono bold>{totals.clicks}</Td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </DashboardCard>
+  );
+}
+
+function FbKpi({ color, label, value, sub }: { color: string; label: string; value: string; sub: string }) {
+  return (
+    <div className="px-3 py-3 border-r last:border-r-0" style={{ borderColor: "#dadce0" }}>
+      <div className="text-[10px] font-medium uppercase tracking-wide" style={{ color }}>
+        {label}
+      </div>
+      <div className="mt-1 font-display text-lg sm:text-xl font-semibold leading-none" style={{ color: "#1c1e21" }}>
+        {value}
+      </div>
+      <div className="mt-1 text-[9px]" style={{ color: "#65676b" }}>
+        {sub}
+      </div>
+    </div>
   );
 }
 

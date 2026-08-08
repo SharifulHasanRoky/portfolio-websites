@@ -706,6 +706,90 @@ export const caseStudies: CaseStudy[] = [
     spend: "$20k/mo",
     highlight: "Microsoft Ads added 620K in tracked purchase value at lower CAC than Google.",
   },
+  {
+    id: "downioa",
+    industry: "Ecommerce · Shopify DTC",
+    icon: Smartphone,
+    client: "Downioa",
+    location: "United States",
+    vertical: "Ecommerce",
+    challenge:
+      "Shopify DTC brand with strong product but plateaued growth on Meta. Existing Google Ads setup wasn't using Performance Max or server-side tracking.",
+    approach:
+      "Launched Google Performance Max with full server-side CAPI tracking and offline conversion import. Built dynamic product feeds, audience signals from Klaviyo lists, and scaled spend once unit economics were verified.",
+    results: [
+      { metric: "Conversions", value: "1.39K", delta: "+218%" },
+      { metric: "Conv. value", value: "259K", delta: "+312%" },
+      { metric: "Actual ROAS", value: "764.35%", delta: "from 240%" },
+      { metric: "Cost", value: "$33.9K", delta: "−18% CPA" },
+    ],
+    timeline: "4 months",
+    spend: "$8.5k/mo",
+    highlight: "Scaled to 764% actual ROAS — $259K conversion value from $33.9K spend.",
+  },
+  {
+    id: "lead-gen-13-camp",
+    industry: "Home Services · Multi-Campaign",
+    icon: MousePointerClick,
+    client: "Lead Gen · 13 Campaigns",
+    location: "United States",
+    vertical: "Home Services",
+    challenge:
+      "Multi-location home service business running 13 separate Google Ads campaigns with no centralized tracking. Lead forms and phone calls weren't being attributed back to spend.",
+    approach:
+      "Implemented call tracking with offline conversion import across all 13 campaigns. Rebuilt campaign structure into themed ad groups, added responsive search ads, and built a dashboard combining lead forms + calls into a single conversion view.",
+    results: [
+      { metric: "Submit lead forms", value: "7", delta: "tracked" },
+      { metric: "Phone calls", value: "56", delta: "tracked" },
+      { metric: "Conversions", value: "488", delta: "+167%" },
+      { metric: "Cost", value: "$4.67K", delta: "−42% CPA" },
+    ],
+    timeline: "6 months",
+    spend: "$780/mo",
+    highlight: "488 tracked conversions across 13 campaigns at $9.57 blended CPA.",
+  },
+  {
+    id: "call-heavy-184",
+    industry: "Home Services · Call-Heavy",
+    icon: Phone,
+    client: "Call-Heavy Lead Gen",
+    location: "United States",
+    vertical: "Home Services",
+    challenge:
+      "Local service business dependent on phone calls. Existing campaigns drove clicks but calls weren't tracked. CTR was stuck at 1.4%, and conversion volume was plateauing.",
+    approach:
+      "Implemented Google call extensions + call-only campaigns, layered call tracking with offline conversion import, and rebuilt creative around urgency (same-day service, limited slots). Optimized for call conversions, not clicks.",
+    results: [
+      { metric: "CTR", value: "2.02%", delta: "+0.6pts" },
+      { metric: "Phone calls", value: "184", delta: "+245%" },
+      { metric: "Conversions", value: "759", delta: "+168%" },
+      { metric: "Cost", value: "$14.4K", delta: "−22% CPA" },
+    ],
+    timeline: "16 months",
+    spend: "$900/mo",
+    highlight: "184 tracked phone calls + 759 total conversions over 16 months.",
+  },
+  {
+    id: "vsl-lead-gen",
+    industry: "Ecommerce · VSL Funnels",
+    icon: Megaphone,
+    client: "VSL Lead Gen",
+    location: "United States",
+    vertical: "Ecommerce",
+    challenge:
+      "DTC brand selling a high-ticket info product via Video Sales Letter (VSL) funnel. Existing Facebook Ads were burning budget on a single creative angle with no testing structure.",
+    approach:
+      "Built a 4-ad-set VSL funnel on Facebook Ads with angle testing: Retargeting (warm audience), Angle 1 (problem-aware), Angle 2 (solution-aware), Angle 3 (transformation). Each angle tested with 3 hooks, 2 thumbnails, and a single VSL.",
+    results: [
+      { metric: "Results (VSL Leads)", value: "531", delta: "+184%" },
+      { metric: "Reach", value: "43,187", delta: "new funnel" },
+      { metric: "Impressions", value: "98,645", delta: "new funnel" },
+      { metric: "Cost per result", value: "$8.44", delta: "−52%" },
+    ],
+    timeline: "3 months",
+    spend: "$1.5k/mo",
+    highlight: "531 VSL leads at $8.44 each — Retargeting angle won at $6.78 CPR.",
+  },
 ];
 
 export type PortfolioItem = {
@@ -883,6 +967,50 @@ export const portfolio: PortfolioItem[] = [
     metric: "$620K",
     metricLabel: "Purchase value",
     tags: ["Microsoft Ads", "Shopping", "UET", "Bing"],
+    accent: "brand",
+  },
+  {
+    id: "p15",
+    title: "Downioa",
+    category: "Ecommerce · Shopify DTC",
+    description:
+      "Shopify DTC brand scaled via Google Performance Max. 1.39K conversions, $259K conversion value, 764.35% actual ROAS. Server-side CAPI tracking with offline conversions.",
+    metric: "764%",
+    metricLabel: "Actual ROAS",
+    tags: ["Google PMax", "Shopify", "CAPI", "Server-side"],
+    accent: "fire",
+  },
+  {
+    id: "p16",
+    title: "Lead Gen · 13 Campaigns",
+    category: "Home Services · Multi-Campaign",
+    description:
+      "13-campaign lead-gen account across Google Ads. 488 conversions from 7 lead forms + 56 phone calls at $4.67K total spend over 6 months. Call tracking + offline conversion import.",
+    metric: "488",
+    metricLabel: "Conversions",
+    tags: ["Google Ads", "Lead Forms", "Call Tracking", "13 Campaigns"],
+    accent: "brand",
+  },
+  {
+    id: "p17",
+    title: "Call-Heavy Lead Gen",
+    category: "Home Services · Call-Heavy",
+    description:
+      "Lead-gen account optimized for phone call conversions. 184 tracked phone calls, 759 total conversions, 2.02% CTR over 16 months. Call-only campaigns + offline conv import.",
+    metric: "759",
+    metricLabel: "Conversions",
+    tags: ["Call-Only", "Offline Conv.", "Google Ads", "16 months"],
+    accent: "fire",
+  },
+  {
+    id: "p18",
+    title: "VSL Lead Gen",
+    category: "Ecommerce · VSL Funnels",
+    description:
+      "Video Sales Letter (VSL) lead-gen funnel on Facebook Ads. 531 VSL leads at $8.44 cost per result across 4 angle-tested ad sets. Retargeting + 3 creative angles.",
+    metric: "531",
+    metricLabel: "VSL Leads",
+    tags: ["Facebook Ads", "VSL", "4 Ad Sets", "Angle Testing"],
     accent: "brand",
   },
 ];
