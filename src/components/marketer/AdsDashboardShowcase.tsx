@@ -57,19 +57,16 @@ export function AdsDashboardShowcase() {
 
   const total = dashboards.length;
 
-  // Heading stays visible the whole time, just slides up slightly at the very end
+  // Heading fades out as dashboards zoom in — when dashboard is big, heading goes behind/fades
   const headingY = useTransform(scrollYProgress, [0, 0.85, 1], [0, 0, -40]);
-  const headingOpacity = useTransform(scrollYProgress, [0, 0.85, 0.97], [1, 1, 0]);
+  // Heading starts visible, fades as you scroll (goes behind the zooming dashboard)
+  const headingOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.03, 0.92, 1],
+    [1, 0.15, 0.15, 0]
+  );
 
   // We use a percentage-based x transform that's relative to the track's own width.
-  // The track is `w-max` (fits all 12 cards + gaps). We want:
-  //   - At scroll 0: first card centered in viewport
-  //   - At scroll 1: last card centered in viewport
-  // The track width = total * cardWidth + (total-1) * gap.
-  // Each card is ~88vw on mobile, ~800px on desktop. Gap is ~24-40px.
-  // We translate by -(total-1) / total of the track width.
-  // But we also need to offset by half a card width so the first card starts centered.
-  // Solution: use a wrapper that starts at 50vw and the track translates left.
   const translatePercent = ((total - 1) / total) * 100;
   const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${translatePercent}%`]);
 
@@ -82,10 +79,11 @@ export function AdsDashboardShowcase() {
     >
       {/* Pinned stage */}
       <div className="sticky top-0 h-screen w-full overflow-hidden px-4 sm:px-6">
-        {/* Heading — at the very top, right below navbar */}
+        {/* Heading — BEHIND dashboards (z-5). Fades to 15% opacity as soon as
+            you start scrolling, so zoomed dashboards appear on top of it. */}
         <motion.div
           style={{ y: headingY, opacity: headingOpacity }}
-          className="absolute top-16 left-0 right-0 text-center z-20 px-4"
+          className="absolute top-16 left-0 right-0 text-center z-[5] px-4 pointer-events-none"
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-3 py-1 text-[10px] font-mono uppercase tracking-[0.18em] text-brand mb-1.5">
             <BarChart3 className="h-3 w-3" />
@@ -101,10 +99,9 @@ export function AdsDashboardShowcase() {
           </p>
         </motion.div>
 
-        {/* Horizontal track — positioned well below heading to avoid overlap.
-            The outer div centers the first card at scroll=0.
-            The inner motion.div translates left as you scroll. */}
-        <div className="absolute top-[58%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[88vw] sm:w-[680px] lg:w-[740px]">
+        {/* Horizontal track — ABOVE heading (z-10). When dashboards zoom,
+            they appear on top of the faded heading text. */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[88vw] sm:w-[680px] lg:w-[740px] z-10">
           <motion.div
             style={{ x }}
             className="flex gap-6 sm:gap-10 w-max items-center"
