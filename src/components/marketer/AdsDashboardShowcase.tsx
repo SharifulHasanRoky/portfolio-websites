@@ -101,10 +101,10 @@ export function AdsDashboardShowcase() {
           </p>
         </motion.div>
 
-        {/* Horizontal track — positioned below heading.
+        {/* Horizontal track — positioned well below heading to avoid overlap.
             The outer div centers the first card at scroll=0.
             The inner motion.div translates left as you scroll. */}
-        <div className="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[88vw] sm:w-[700px] lg:w-[760px]">
+        <div className="absolute top-[58%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[88vw] sm:w-[680px] lg:w-[740px]">
           <motion.div
             style={{ x }}
             className="flex gap-6 sm:gap-10 w-max items-center"
@@ -847,7 +847,7 @@ function DashboardSlot({
         transformStyle: "preserve-3d",
         perspective: 1200,
       }}
-      className="w-[88vw] sm:w-[720px] lg:w-[800px] shrink-0"
+      className="w-[88vw] sm:w-[680px] lg:w-[740px] shrink-0"
     >
       {children}
     </motion.div>
