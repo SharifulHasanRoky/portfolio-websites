@@ -82,29 +82,29 @@ export function AdsDashboardShowcase() {
     >
       {/* Pinned stage */}
       <div className="sticky top-0 h-screen w-full overflow-hidden px-4 sm:px-6">
-        {/* Heading — at the very top, compact */}
+        {/* Heading — at the very top, right below navbar */}
         <motion.div
           style={{ y: headingY, opacity: headingOpacity }}
-          className="absolute top-[3vh] left-0 right-0 text-center z-20 pointer-events-none px-4"
+          className="absolute top-16 left-0 right-0 text-center z-20 px-4"
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-[11px] font-mono uppercase tracking-[0.18em] text-brand mb-3">
-            <BarChart3 className="h-3.5 w-3.5" />
-            Live ad accounts · real dashboards
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-3 py-1 text-[10px] font-mono uppercase tracking-[0.18em] text-brand mb-1.5">
+            <BarChart3 className="h-3 w-3" />
+            Real ad accounts · live data
           </div>
-          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-semibold leading-[1.05] tracking-tight max-w-4xl mx-auto">
-            This is what a{" "}
-            <span className="text-gradient-brand">profitable ad account</span>{" "}
-            actually looks like.
+          <h2 className="font-display text-xl sm:text-3xl md:text-4xl font-semibold leading-[1.1] tracking-tight max-w-3xl mx-auto">
+            Real dashboards from{" "}
+            <span className="text-gradient-brand">real ad accounts</span>
           </h2>
-          <p className="mt-2 max-w-xl mx-auto text-xs sm:text-sm text-muted-foreground">
-            {total} real dashboards. Google Ads, Facebook Ads, and Microsoft Ads.
+          <p className="mt-1 max-w-lg mx-auto text-xs sm:text-sm text-muted-foreground">
+            {total} dashboards · Google Ads, Facebook Ads &amp; Microsoft Ads.
+            Scroll to explore.
           </p>
         </motion.div>
 
-        {/* Horizontal track — vertically centered.
+        {/* Horizontal track — positioned below heading.
             The outer div centers the first card at scroll=0.
             The inner motion.div translates left as you scroll. */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[88vw] sm:w-[720px] lg:w-[800px]">
+        <div className="absolute top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[88vw] sm:w-[700px] lg:w-[760px]">
           <motion.div
             style={{ x }}
             className="flex gap-6 sm:gap-10 w-max items-center"
@@ -122,9 +122,12 @@ export function AdsDashboardShowcase() {
           </motion.div>
         </div>
 
+        {/* Bottom CTA button — connects to Portfolio */}
+        <BottomCTA scrollYProgress={scrollYProgress} />
+
         {/* Progress indicator */}
-        <div className="absolute bottom-6 left-0 right-0 flex justify-center">
-          <div className="w-48 h-1 rounded-full bg-border overflow-hidden">
+        <div className="absolute bottom-3 left-0 right-0 flex justify-center">
+          <div className="w-40 h-1 rounded-full bg-border overflow-hidden">
             <motion.div
               style={{ scaleX: scrollYProgress }}
               className="h-full bg-gradient-to-r from-brand to-fire origin-left"
@@ -133,6 +136,47 @@ export function AdsDashboardShowcase() {
         </div>
       </div>
     </section>
+  );
+}
+
+// ============================================================
+// BottomCTA — "View all in Portfolio" button at the bottom
+// ============================================================
+
+function BottomCTA({
+  scrollYProgress,
+}: {
+  scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
+}) {
+  const setView = useViewStore((s) => s.setView);
+  // Button always visible, but slides up slightly at the very end
+  const y = useTransform(scrollYProgress, [0.9, 1], [0, -8]);
+
+  return (
+    <motion.div
+      style={{ y }}
+      className="absolute bottom-10 left-0 right-0 flex justify-center z-20"
+    >
+      <button
+        type="button"
+        onClick={() => setView("portfolio")}
+        className="group inline-flex items-center gap-2 rounded-xl bg-foreground text-background px-5 py-2.5 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors shadow-lg"
+      >
+        View all in Portfolio
+        <svg
+          className="h-4 w-4 group-hover:translate-x-0.5 transition-transform"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </svg>
+      </button>
+    </motion.div>
   );
 }
 
@@ -762,39 +806,35 @@ function DashboardSlot({
   scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
   children: React.ReactNode;
 }) {
-  // Each dashboard occupies 1/total of the scroll.
-  // Off-center: scale 0.55 (small), centered: scale 1.2 (big).
-  // This creates a clear "zoom in when you scroll to it" effect.
-  const segmentSize = 1 / total;
-  const center = (index + 0.5) * segmentSize;
-  const start = index * segmentSize;
-  const end = (index + 1) * segmentSize;
-  // Add a small buffer so the zoom starts slightly before the segment
-  const buffer = segmentSize * 0.15;
+  // First dashboard centered at scroll=0, last at scroll=1, others evenly spaced.
+  // segmentSize = distance between consecutive dashboard centers.
+  const segmentSize = total > 1 ? 1 / (total - 1) : 1;
+  const center = index * segmentSize;
+  // Buffer defines how far from center the zoom starts
+  const buffer = segmentSize * 0.4;
 
   const scale = useTransform(
     scrollYProgress,
     [
-      Math.max(0, start - buffer),
+      Math.max(0, center - buffer),
       center,
-      Math.min(1, end + buffer),
+      Math.min(1, center + buffer),
     ],
     [0.55, 1.2, 0.55]
   );
   const opacity = useTransform(
     scrollYProgress,
     [
-      Math.max(0, start - buffer),
-      start + buffer * 0.5,
-      end - buffer * 0.5,
-      Math.min(1, end + buffer),
+      Math.max(0, center - buffer),
+      center - buffer * 0.4,
+      center + buffer * 0.4,
+      Math.min(1, center + buffer),
     ],
-    [0.25, 1, 1, 0.25]
+    [0.2, 1, 1, 0.2]
   );
-  // Subtle 3D tilt off-center, flat when centered
   const rotateY = useTransform(
     scrollYProgress,
-    [start, center, end],
+    [Math.max(0, center - buffer), center, Math.min(1, center + buffer)],
     [index % 2 === 0 ? -12 : 12, 0, index % 2 === 0 ? 12 : -12]
   );
 
