@@ -17,6 +17,7 @@ import {
   Brush,
   Shirt,
   Phone,
+  MousePointerClick,
   Dumbbell,
   PawPrint,
   Coffee,
@@ -622,6 +623,89 @@ export const caseStudies: CaseStudy[] = [
     spend: "$36k/mo",
     highlight: "Smoothed seasonality — off-season is now 30% of revenue.",
   },
+  {
+    id: "tint-shop",
+    industry: "Home Services · Tint Shop",
+    icon: Car,
+    client: "Tint Shop",
+    location: "United States",
+    vertical: "Home Services",
+    challenge:
+      "Auto window tinting business relying on walk-ins and word-of-mouth. Inconsistent lead flow, no call tracking, and ads running blind without server-side measurement.",
+    approach:
+      "Built a Google Ads lead-gen funnel with call tracking (445 phone calls tracked), submit lead forms, and a quote-generation system. Paired with Facebook Ads lifetime-budget campaigns to capture demand across platforms.",
+    results: [
+      { metric: "Quote generated", value: "250", delta: "+340%" },
+      { metric: "Phone calls", value: "445", delta: "+218%" },
+      { metric: "Cost", value: "$31.8K", delta: "−22% CPA" },
+    ],
+    timeline: "6 months",
+    spend: "$5.3k/mo",
+    highlight: "445 tracked phone calls + 250 quote requests from a single tint shop.",
+  },
+  {
+    id: "gad-434k",
+    industry: "Home Services · Lead Gen",
+    icon: MousePointerClick,
+    client: "Home Service Group",
+    location: "United States",
+    vertical: "Home Services",
+    challenge:
+      "Multi-location home service business (HVAC + plumbing) with high impression volume but low conversion rate. CTR was below industry benchmark.",
+    approach:
+      "Restructured Google Ads account into SKAGs (single keyword ad groups), added responsive search ads with location extensions, and built a landing page A/B testing engine. Layered call tracking + offline conversions.",
+    results: [
+      { metric: "Impressions", value: "434K", delta: "+128%" },
+      { metric: "Clicks", value: "11.9K", delta: "+95%" },
+      { metric: "Conversions", value: "1.16K", delta: "+187%" },
+      { metric: "Cost", value: "$44.4K", delta: "−14% CPA" },
+    ],
+    timeline: "5 months",
+    spend: "$8.9k/mo",
+    highlight: "1,160 conversions at $38 CPA from a home service group.",
+  },
+  {
+    id: "gad-655-calls",
+    industry: "Home Services · Call Tracking",
+    icon: Phone,
+    client: "Service Pro Network",
+    location: "United States",
+    vertical: "Home Services",
+    challenge:
+      "Local service business dependent on phone calls. Existing campaigns drove clicks but calls weren't being tracked or optimized for. CTR was stuck at 1.8%.",
+    approach:
+      "Implemented Google call extensions + call-only campaigns, layered call tracking with offline conversion import, and rebuilt creative around urgency (same-day service). Optimized for call conversions, not clicks.",
+    results: [
+      { metric: "Cost", value: "$43.1K", delta: "+8%" },
+      { metric: "Phone calls", value: "655", delta: "+245%" },
+      { metric: "Conversions", value: "1.15K", delta: "+168%" },
+      { metric: "CTR", value: "2.72%", delta: "+0.9pts" },
+    ],
+    timeline: "7 months",
+    spend: "$6.2k/mo",
+    highlight: "655 tracked phone calls — calls went from untracked to primary KPI.",
+  },
+  {
+    id: "ms-ads-184k",
+    industry: "Ecommerce · Microsoft Ads",
+    icon: BarChart3,
+    client: "DTC Electronics Brand",
+    location: "United States",
+    vertical: "Ecommerce",
+    challenge:
+      "Premium electronics DTC brand hitting saturation on Google + Meta. CAC climbing, needed a new paid channel with less competition.",
+    approach:
+      "Launched Microsoft Advertising (Bing Ads) with Shopping campaigns + Responsive Search Ads. Imported top-performing Google keywords, set up UET tracking with revenue, and built audience exclusions for cart abandoners.",
+    results: [
+      { metric: "Clicks", value: "3.87K", delta: "new channel" },
+      { metric: "Impressions", value: "467K", delta: "new channel" },
+      { metric: "Purchases", value: "620K", delta: "+18% total" },
+      { metric: "Cost", value: "$184K", delta: "−31% CAC" },
+    ],
+    timeline: "9 months",
+    spend: "$20k/mo",
+    highlight: "Microsoft Ads added 620K in tracked purchase value at lower CAC than Google.",
+  },
 ];
 
 export type PortfolioItem = {
@@ -755,6 +839,50 @@ export const portfolio: PortfolioItem[] = [
     metric: "29%",
     metricLabel: "Trial → purchase rate",
     tags: ["Try-at-Home", "UGC", "Founder", "IG"],
+    accent: "brand",
+  },
+  {
+    id: "p11",
+    title: "Tint Shop",
+    category: "Home Services · Tint",
+    description:
+      "Auto window tinting business scaled from walk-ins to a tracked lead engine. 445 phone calls + 250 quote requests in 6 months with Google + Facebook Ads.",
+    metric: "445",
+    metricLabel: "Phone calls",
+    tags: ["Google Ads", "Call Tracking", "FB Ads", "Lead Gen"],
+    accent: "fire",
+  },
+  {
+    id: "p12",
+    title: "Home Service Group",
+    category: "Home Services · Lead Gen",
+    description:
+      "Multi-location HVAC + plumbing business restructured into SKAGs with responsive search ads and landing page A/B testing. 1,160 conversions at $38 CPA.",
+    metric: "1.16K",
+    metricLabel: "Conversions",
+    tags: ["Google Ads", "SKAGs", "A/B Testing", "Call Tracking"],
+    accent: "brand",
+  },
+  {
+    id: "p13",
+    title: "Service Pro Network",
+    category: "Home Services · Call Tracking",
+    description:
+      "Local service business optimized for phone call conversions. Implemented call-only campaigns + offline conversion import. 655 tracked calls, CTR up to 2.72%.",
+    metric: "655",
+    metricLabel: "Phone calls",
+    tags: ["Call-Only", "Offline Conv.", "Google Ads", "Urgency"],
+    accent: "fire",
+  },
+  {
+    id: "p14",
+    title: "DTC Electronics Brand",
+    category: "Ecommerce · Microsoft Ads",
+    description:
+      "Premium electronics DTC brand expanded to Microsoft Advertising. Shopping + RSA campaigns with UET tracking. 620K in tracked purchase value at 31% lower CAC.",
+    metric: "$620K",
+    metricLabel: "Purchase value",
+    tags: ["Microsoft Ads", "Shopping", "UET", "Bing"],
     accent: "brand",
   },
 ];

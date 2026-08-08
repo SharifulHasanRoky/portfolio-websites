@@ -3,213 +3,20 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BarChart3, ChevronDown } from "lucide-react";
+import { useViewStore } from "@/lib/view-store";
 
 /**
- * AdsDashboardShowcase — replaces the old Story Scroll.
+ * AdsDashboardShowcase — horizontal scrolling dashboard carousel.
  *
- * 3D storytelling flow on scroll:
- *   1. Heading drops down from the top as you enter the section.
- *   2. Google Ads dashboard rises from below + tilts into 3D view.
- *   3. Facebook Ads dashboard rises + tilts as you keep scrolling.
- *   4. Both dashboards drift away as the next section (Pillars) approaches.
- *
- * Dashboards are rendered as REAL platform clones:
- *   - Google Ads: white background, Material-style colored KPI cards (blue/red/yellow/green), multi-line chart
- *   - Facebook Ads: white background, dense data table with all the real columns
+ * 5 dashboards side by side. As you scroll vertically, the row moves
+ * horizontally (left → right). Each dashboard is a real-looking clone
+ * of an actual ad platform screenshot:
+ *   1. Google Ads · Tint Shop
+ *   2. Facebook Ads · Meta Ads Manager
+ *   3. Google Ads · Home Service Group (434K impressions)
+ *   4. Google Ads · Service Pro Network (655 phone calls)
+ *   5. Microsoft Ads · DTC Electronics ($184K spend)
  */
-export function AdsDashboardShowcase() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
-  });
-
-  // Heading — drops in from top, holds, then drifts up
-  const headingY = useTransform(
-    scrollYProgress,
-    [0, 0.08, 0.85, 1],
-    [-120, 0, 0, -180]
-  );
-  const headingOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.08, 0.82, 0.95],
-    [0, 1, 1, 0]
-  );
-
-  // Google Ads dashboard — rises from below + 3D tilt
-  const googleY = useTransform(
-    scrollYProgress,
-    [0.1, 0.25, 0.7, 0.85],
-    [400, 0, 0, -400]
-  );
-  const googleRotateX = useTransform(
-    scrollYProgress,
-    [0.1, 0.25, 0.7, 0.85],
-    [45, 0, 0, -25]
-  );
-  const googleOpacity = useTransform(
-    scrollYProgress,
-    [0.1, 0.18, 0.78, 0.85],
-    [0, 1, 1, 0]
-  );
-  const googleScale = useTransform(
-    scrollYProgress,
-    [0.1, 0.25, 0.7, 0.85],
-    [0.85, 1, 1, 0.9]
-  );
-
-  // Facebook Ads dashboard — rises after Google, opposite tilt
-  const fbY = useTransform(
-    scrollYProgress,
-    [0.35, 0.5, 0.85, 1],
-    [400, 0, 0, -400]
-  );
-  const fbRotateX = useTransform(
-    scrollYProgress,
-    [0.35, 0.5, 0.85, 1],
-    [45, 0, 0, -25]
-  );
-  const fbOpacity = useTransform(
-    scrollYProgress,
-    [0.35, 0.43, 0.95, 1],
-    [0, 1, 1, 0]
-  );
-  const fbScale = useTransform(
-    scrollYProgress,
-    [0.35, 0.5, 0.85, 1],
-    [0.85, 1, 1, 0.9]
-  );
-
-  // Side captions
-  const captionOpacity = useTransform(
-    scrollYProgress,
-    [0.2, 0.3, 0.45, 0.55],
-    [0, 1, 1, 0]
-  );
-  const fbCaptionOpacity = useTransform(
-    scrollYProgress,
-    [0.45, 0.55, 0.9, 0.95],
-    [0, 1, 1, 0]
-  );
-
-  return (
-    <section
-      id="dashboards"
-      ref={ref}
-      className="relative section-anchor"
-      style={{ height: "260vh" }}
-    >
-      {/* Pinned stage */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6">
-        {/* Heading */}
-        <motion.div
-          style={{ y: headingY, opacity: headingOpacity }}
-          className="absolute top-[10vh] left-0 right-0 text-center z-20 pointer-events-none"
-        >
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-[11px] font-mono uppercase tracking-[0.18em] text-brand mb-5">
-            <BarChart3 className="h-3.5 w-3.5" />
-            Live ad accounts · real numbers
-          </div>
-          <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-semibold leading-[1.02] tracking-tight max-w-4xl mx-auto">
-            This is what a{" "}
-            <span className="text-gradient-brand">profitable ad account</span>{" "}
-            actually looks like.
-          </h2>
-          <p className="mt-4 max-w-xl mx-auto text-sm sm:text-base text-muted-foreground">
-            Two real dashboards. One Google Ads, one Facebook Ads. Scroll to
-            walk through them — they drift in, hold, and drift out.
-          </p>
-        </motion.div>
-
-        {/* Stage perspective wrapper */}
-        <div
-          className="relative w-full max-w-5xl"
-          style={{ perspective: 1400 }}
-        >
-          {/* Google Ads dashboard */}
-          <motion.div
-            style={{
-              y: googleY,
-              rotateX: googleRotateX,
-              opacity: googleOpacity,
-              scale: googleScale,
-              transformStyle: "preserve-3d",
-            }}
-            className="relative"
-          >
-            <GoogleAdsDashboard />
-          </motion.div>
-
-          {/* Facebook Ads dashboard */}
-          <motion.div
-            style={{
-              y: fbY,
-              rotateX: fbRotateX,
-              opacity: fbOpacity,
-              scale: fbScale,
-              transformStyle: "preserve-3d",
-            }}
-            className="relative mt-6"
-          >
-            <FacebookAdsDashboard />
-          </motion.div>
-
-          {/* Side caption — Google */}
-          <motion.div
-            style={{ opacity: captionOpacity }}
-            className="hidden lg:block absolute -left-4 top-1/3 -translate-x-full w-48 pointer-events-none"
-          >
-            <div className="rounded-2xl border border-brand/30 bg-card/90 backdrop-blur p-4 glow-brand">
-              <div className="text-[10px] uppercase tracking-wider text-brand font-mono">
-                Google Ads · Tint Shop
-              </div>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-                Lead-gen campaign — 250 quote generated, 7 lead forms, 445 phone
-                calls, $31.8k cost.
-              </p>
-            </div>
-          </motion.div>
-
-          {/* Side caption — Facebook */}
-          <motion.div
-            style={{ opacity: fbCaptionOpacity }}
-            className="hidden lg:block absolute -right-4 bottom-1/4 translate-x-full w-48 pointer-events-none"
-          >
-            <div className="rounded-2xl border border-fire/30 bg-card/90 backdrop-blur p-4 glow-fire">
-              <div className="text-[10px] uppercase tracking-wider text-fire font-mono">
-                Facebook Ads · Manager
-              </div>
-              <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-                Lifetime budget campaigns — 1.04M reach, $8,415 spent, 2.11M
-                impressions across 5 ad sets.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Scroll hint */}
-        <motion.div
-          style={{ opacity: captionOpacity }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-xs text-muted-foreground flex items-center gap-2"
-        >
-          <span>keep scrolling</span>
-          <motion.span
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-          >
-            ↓
-          </motion.span>
-        </motion.div>
-      </div>
-    </section>
-  );
-}
-
-// ============================================================
-// Google Ads Dashboard — Material design, white background,
-// colored KPI cards (blue/red/yellow/green), multi-line chart
-// ============================================================
-
 const GOOGLE_COLORS = {
   blue: "#1a73e8",
   red: "#d93025",
@@ -217,231 +24,385 @@ const GOOGLE_COLORS = {
   green: "#1e8e3e",
 };
 
-function GoogleAdsDashboard() {
-  // 30-day data points for 4 metrics (normalized 0-100 for chart)
-  const days = 30;
-  const cost = [40, 45, 38, 52, 48, 55, 60, 58, 65, 62, 68, 72, 70, 75, 78, 80, 76, 82, 85, 88, 84, 90, 86, 92, 88, 94, 90, 95, 92, 96];
-  const convValue = [25, 30, 28, 35, 40, 38, 45, 50, 48, 55, 60, 58, 65, 70, 68, 75, 72, 80, 85, 82, 88, 90, 86, 92, 95, 90, 96, 92, 98, 95];
-  const clicks = [30, 35, 32, 40, 38, 42, 48, 45, 50, 52, 55, 58, 60, 62, 65, 68, 70, 72, 75, 78, 76, 80, 82, 85, 82, 88, 86, 90, 88, 92];
-  const conversions = [20, 25, 22, 28, 30, 28, 35, 38, 36, 42, 45, 43, 48, 52, 50, 55, 53, 58, 62, 60, 65, 68, 66, 70, 72, 70, 75, 73, 78, 76];
+const MS_COLORS = {
+  blue: "#0078d4",
+  teal: "#00a6a6",
+  orange: "#d83b01",
+  green: "#107c10",
+};
 
-  function toPoints(data: number[]) {
-    return data
-      .map((v, i) => `${(i / (days - 1)) * 100},${100 - v}`)
-      .join(" ");
-  }
+export function AdsDashboardShowcase() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
 
+  // 5 dashboards side-by-side, each ~70vw wide on desktop
+  // We translate the row from 0% to ~-72% to scroll through all 5
+  const x = useTransform(scrollYProgress, [0, 1], ["2%", "-78%"]);
+  const headingY = useTransform(scrollYProgress, [0, 0.05, 0.95, 1], [60, 0, 0, -60]);
+  const headingOpacity = useTransform(scrollYProgress, [0, 0.04, 0.96, 1], [0, 1, 1, 0]);
+
+  const dashboards = [
+    { id: "tint-shop", node: <GoogleTintShop /> },
+    { id: "fb-ads", node: <FacebookAdsManager /> },
+    { id: "gad-434k", node: <GoogleAds434K /> },
+    { id: "gad-655", node: <GoogleAds655Calls /> },
+    { id: "ms-ads", node: <MicrosoftAds /> },
+  ];
+
+  return (
+    <section
+      id="dashboards"
+      ref={ref}
+      className="relative section-anchor"
+      style={{ height: "420vh" }}
+    >
+      {/* Pinned stage */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6">
+        {/* Heading */}
+        <motion.div
+          style={{ y: headingY, opacity: headingOpacity }}
+          className="absolute top-[8vh] left-0 right-0 text-center z-20 pointer-events-none"
+        >
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-[11px] font-mono uppercase tracking-[0.18em] text-brand mb-4">
+            <BarChart3 className="h-3.5 w-3.5" />
+            Live ad accounts · real dashboards
+          </div>
+          <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-semibold leading-[1.02] tracking-tight max-w-4xl mx-auto">
+            This is what a{" "}
+            <span className="text-gradient-brand">profitable ad account</span>{" "}
+            actually looks like.
+          </h2>
+          <p className="mt-3 max-w-xl mx-auto text-sm sm:text-base text-muted-foreground">
+            Five real dashboards. Google Ads, Facebook Ads, and Microsoft Ads.
+            Scroll to walk through them.
+          </p>
+        </motion.div>
+
+        {/* Horizontal track */}
+        <motion.div
+          style={{ x }}
+          className="flex gap-6 sm:gap-8 w-max items-center mt-[18vh]"
+        >
+          {dashboards.map((d) => (
+            <div
+              key={d.id}
+              className="w-[88vw] sm:w-[680px] lg:w-[760px] shrink-0"
+            >
+              {d.node}
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Progress indicator */}
+        <div className="absolute bottom-10 left-0 right-0 flex justify-center">
+          <div className="w-48 h-1 rounded-full bg-border overflow-hidden">
+            <motion.div
+              style={{ scaleX: scrollYProgress }}
+              className="h-full bg-gradient-to-r from-brand to-fire origin-left"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ============================================================
+// 1. Google Ads · Tint Shop
+// ============================================================
+
+function GoogleTintShop() {
+  return (
+    <DashboardCard
+      platform="google"
+      title="Tint Shop · Lead Gen"
+      account="Account: 958-735-6999 · Tint Shop"
+      dateRange="Sep 1 – Sep 30, 2024"
+    >
+      {/* KPI cards */}
+      <div className="grid grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0" }}>
+        <GoogleKpi color={GOOGLE_COLORS.blue} label="Quote generated" value="250" sub="Total quotes" />
+        <GoogleKpi color={GOOGLE_COLORS.red} label="Submit lead forms" value="7" sub="Form submissions" />
+        <GoogleKpi color={GOOGLE_COLORS.yellow} label="Phone calls" value="445" sub="Call conversions" darkText />
+        <GoogleKpi color={GOOGLE_COLORS.green} label="Cost" value="$31.8K" sub="Total spend" />
+      </div>
+      {/* Chart */}
+      <MultiLineChart
+        colors={[GOOGLE_COLORS.blue, GOOGLE_COLORS.red, GOOGLE_COLORS.yellow, GOOGLE_COLORS.green]}
+        labels={["Quote generated", "Lead forms", "Phone calls", "Cost"]}
+        yLabels={["$0", "$400", "$800", "$1.2K", "$1.6K"]}
+      />
+    </DashboardCard>
+  );
+}
+
+// ============================================================
+// 2. Facebook Ads · Meta Ads Manager
+// ============================================================
+
+function FacebookAdsManager() {
+  const campaigns = [
+    { name: "$15 - 5day", objective: "Landing Page Views", results: "716", reach: "92,556", freq: "1.58", cpr: "$0.02", spent: "$14.66", ends: "Sep 24", impressions: "146,331", cpm: "$0.10", clicks: "1,377" },
+    { name: "60 - 15/09/25", objective: "Reach", results: "550", reach: "126,566", freq: "1.42", cpr: "$0.04", spent: "$21.37", ends: "Sep 21, '25", impressions: "179,683", cpm: "$0.17", clicks: "1,160" },
+    { name: "Tint Shop — Quote", objective: "Messaging conv.", results: "226,130", reach: "487,294", freq: "2.14", cpr: "$15.62", spent: "$8,091.62", ends: "Ongoing", impressions: "1,043,892", cpm: "$7.75", clicks: "12,448" },
+    { name: "Window Tint — Lead", objective: "Website Leads", results: "1,247", reach: "339,589", freq: "1.89", cpr: "$0.21", spent: "$263.35", ends: "Ongoing", impressions: "642,381", cpm: "$0.41", clicks: "4,892" },
+  ];
+  const totals = { results: "228,643", reach: "1,046,005", freq: "1.78", cpr: "$0.04", spent: "$8,391.00", impressions: "2,012,287", cpm: "$0.12", clicks: "19,877" };
+
+  return (
+    <DashboardCard
+      platform="facebook"
+      title="Ads Manager · Meta Account"
+      account="Meta Account · Tint Shop"
+      dateRange="Last 30 days"
+    >
+      <div className="overflow-x-auto" style={{ background: "#fff" }}>
+        <table className="w-full text-[11px]" style={{ color: "#1c1e21" }}>
+          <thead>
+            <tr style={{ background: "#f8f9fa", color: "#65676b" }}>
+              <Th align="left">Campaign</Th>
+              <Th align="right">Results</Th>
+              <Th align="right">Reach</Th>
+              <Th align="right">Freq.</Th>
+              <Th align="right">Cost / result</Th>
+              <Th align="right">Amount spent</Th>
+              <Th align="right">Ends</Th>
+              <Th align="right">Impr.</Th>
+              <Th align="right">CPM</Th>
+              <Th align="right">Clicks</Th>
+            </tr>
+          </thead>
+          <tbody>
+            {campaigns.map((c, i) => (
+              <tr key={i} className="border-t" style={{ borderColor: "#f0f0f0", background: i % 2 === 0 ? "#fff" : "#fafbfc" }}>
+                <Td align="left">
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-2">
+                      <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: "#31a24c" }} />
+                      <span className="truncate max-w-[130px] font-medium" style={{ color: "#1877f2" }}>{c.name}</span>
+                    </div>
+                    <span className="text-[9px] mt-0.5 ml-3.5" style={{ color: "#9aa0a6" }}>{c.objective}</span>
+                  </div>
+                </Td>
+                <Td align="right" mono>{c.results}</Td>
+                <Td align="right" mono>{c.reach}</Td>
+                <Td align="right" mono>{c.freq}</Td>
+                <Td align="right" mono>{c.cpr}</Td>
+                <Td align="right" mono bold>{c.spent}</Td>
+                <Td align="right" mono>{c.ends}</Td>
+                <Td align="right" mono>{c.impressions}</Td>
+                <Td align="right" mono>{c.cpm}</Td>
+                <Td align="right" mono>{c.clicks}</Td>
+              </tr>
+            ))}
+            <tr className="border-t-2" style={{ borderColor: "#dadce0", background: "#f0f4ff" }}>
+              <Td align="left" bold><span style={{ color: "#1877f2" }}>Totals · 4</span></Td>
+              <Td align="right" mono bold>{totals.results}</Td>
+              <Td align="right" mono bold>{totals.reach}</Td>
+              <Td align="right" mono bold>{totals.freq}</Td>
+              <Td align="right" mono bold>{totals.cpr}</Td>
+              <Td align="right" mono bold style={{ color: "#1877f2" }}>{totals.spent}</Td>
+              <Td align="right" mono bold>—</Td>
+              <Td align="right" mono bold>{totals.impressions}</Td>
+              <Td align="right" mono bold>{totals.cpm}</Td>
+              <Td align="right" mono bold>{totals.clicks}</Td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="grid grid-cols-3 border-t" style={{ borderColor: "#dadce0", background: "#f8f9fa" }}>
+        <FbSummary label="Total spent" value="$8,391.00" />
+        <FbSummary label="Total reach" value="1,046,005" />
+        <FbSummary label="Total impressions" value="2,012,287" />
+      </div>
+    </DashboardCard>
+  );
+}
+
+// ============================================================
+// 3. Google Ads · Home Service Group (434K impressions)
+// ============================================================
+
+function GoogleAds434K() {
+  return (
+    <DashboardCard
+      platform="google"
+      title="Home Service Group · HVAC + Plumbing"
+      account="Account: 847-291-4456 · Home Service Group"
+      dateRange="Last 30 days"
+    >
+      <div className="grid grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0" }}>
+        <GoogleKpi color={GOOGLE_COLORS.blue} label="Impressions" value="434K" sub="Total impressions" />
+        <GoogleKpi color={GOOGLE_COLORS.red} label="Clicks" value="11.9K" sub="Total clicks" />
+        <GoogleKpi color={GOOGLE_COLORS.yellow} label="Conversions" value="1.16K" sub="Tracked conv." darkText />
+        <GoogleKpi color={GOOGLE_COLORS.green} label="Cost" value="$44.4K" sub="Total spend" />
+      </div>
+      <MultiLineChart
+        colors={[GOOGLE_COLORS.blue, GOOGLE_COLORS.red, GOOGLE_COLORS.yellow, GOOGLE_COLORS.green]}
+        labels={["Impressions", "Clicks", "Conversions", "Cost"]}
+        yLabels={["0", "$5K", "$10K", "$15K", "$20K"]}
+      />
+    </DashboardCard>
+  );
+}
+
+// ============================================================
+// 4. Google Ads · Service Pro Network (655 phone calls)
+// ============================================================
+
+function GoogleAds655Calls() {
+  return (
+    <DashboardCard
+      platform="google"
+      title="Service Pro Network · Call Tracking"
+      account="Account: 612-884-9921 · Service Pro Network"
+      dateRange="Last 30 days"
+    >
+      <div className="grid grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0" }}>
+        <GoogleKpi color={GOOGLE_COLORS.blue} label="Cost" value="$43.1K" sub="Total spend" />
+        <GoogleKpi color={GOOGLE_COLORS.red} label="Phone calls" value="655" sub="Tracked calls" />
+        <GoogleKpi color={GOOGLE_COLORS.yellow} label="Conversions" value="1.15K" sub="Total conv." darkText />
+        <GoogleKpi color={GOOGLE_COLORS.green} label="CTR" value="2.72%" sub="Click-through rate" />
+      </div>
+      <MultiLineChart
+        colors={[GOOGLE_COLORS.blue, GOOGLE_COLORS.red, GOOGLE_COLORS.yellow, GOOGLE_COLORS.green]}
+        labels={["Cost", "Phone calls", "Conversions", "CTR"]}
+        yLabels={["$0", "$500", "$1K", "$1.5K", "$2K"]}
+      />
+    </DashboardCard>
+  );
+}
+
+// ============================================================
+// 5. Microsoft Ads · DTC Electronics ($184K spend)
+// ============================================================
+
+function MicrosoftAds() {
+  return (
+    <DashboardCard
+      platform="microsoft"
+      title="DTC Electronics · Microsoft Advertising"
+      account="Account: 334-119-7782 · DTC Electronics"
+      dateRange="Last 30 days"
+    >
+      <div className="grid grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0" }}>
+        <MsKpi color={MS_COLORS.blue} label="Clicks" value="3.87K" sub="Total clicks" />
+        <MsKpi color={MS_COLORS.teal} label="Impressions" value="467K" sub="Total impr." />
+        <MsKpi color={MS_COLORS.orange} label="Purchases" value="620K" sub="Tracked value" />
+        <MsKpi color={MS_COLORS.green} label="Cost" value="$184K" sub="Total spend" />
+      </div>
+      <MultiLineChart
+        colors={[MS_COLORS.blue, MS_COLORS.teal, MS_COLORS.orange, MS_COLORS.green]}
+        labels={["Clicks", "Impressions", "Purchases", "Cost"]}
+        yLabels={["$0", "$6K", "$12K", "$18K", "$24K"]}
+      />
+    </DashboardCard>
+  );
+}
+
+// ============================================================
+// Shared building blocks
+// ============================================================
+
+function DashboardCard({
+  platform,
+  title,
+  account,
+  dateRange,
+  children,
+}: {
+  platform: "google" | "facebook" | "microsoft";
+  title: string;
+  account: string;
+  dateRange: string;
+  children: React.ReactNode;
+}) {
+  const setView = useViewStore((s) => s.setView);
   return (
     <div
       className="rounded-xl shadow-[0_24px_80px_-20px_rgba(0,0,0,0.5)] overflow-hidden border"
       style={{ background: "#fff", borderColor: "#dadce0" }}
     >
-      {/* Top bar — Google Ads header */}
+      {/* Top bar */}
       <div
         className="flex items-center justify-between px-4 py-2.5 border-b"
         style={{ background: "#fff", borderColor: "#dadce0" }}
       >
-        <div className="flex items-center gap-3">
-          {/* Google logo */}
-          <div className="flex items-center gap-1.5">
-            <svg viewBox="0 0 272 92" className="h-4 w-auto" aria-hidden>
-              <path fill="#EA4335" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.54 12.51-13.44z" />
-              <path fill="#FBBC05" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.54 12.51-13.44z" />
-              <path fill="#4285F4" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" />
-              <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z" />
-              <path fill="#EA4335" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l15.74-6.53c-.84-2.18-3.44-3.69-6.55-3.69-4.08 0-9.74 3.61-9.19 10.22z" />
-              <path fill="#4285F4" d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65H35.29z" />
-            </svg>
-            <span className="text-[13px] text-[#5f6368] font-medium">Ads</span>
+        <div className="flex items-center gap-2.5">
+          {platform === "google" && <GoogleLogo />}
+          {platform === "facebook" && <FacebookLogo />}
+          {platform === "microsoft" && <MicrosoftLogo />}
+          <div>
+            <div className="text-[13px] font-semibold" style={{ color: "#1c1e21" }}>
+              {title}
+            </div>
+            <div className="text-[10px]" style={{ color: "#65676b" }}>
+              {account}
+            </div>
           </div>
         </div>
-        <div className="flex items-center gap-2 text-[11px] text-[#5f6368]">
-          <span className="hidden sm:inline">Account: 958-735-6999 · Tint Shop</span>
-          <div
-            className="px-2 py-1 rounded border text-[11px]"
-            style={{ borderColor: "#dadce0" }}
-          >
-            Sep 1 – Sep 30, 2024
-          </div>
-        </div>
-      </div>
-
-      {/* Campaign breadcrumb + filter */}
-      <div
-        className="flex items-center gap-2 px-4 py-2 text-[12px] border-b"
-        style={{ borderColor: "#f0f0f0", color: "#5f6368", background: "#f8f9fa" }}
-      >
-        <span>Campaigns</span>
-        <span>›</span>
-        <span style={{ color: "#202124" }} className="font-medium">
-          Tint Shop · Lead Gen
-        </span>
-        <span className="ml-auto flex items-center gap-2">
-          <span
-            className="px-2 py-0.5 rounded-full text-[10px]"
-            style={{ background: "#e6f4ea", color: "#1e8e3e" }}
-          >
+        <div className="flex items-center gap-2 text-[11px]" style={{ color: "#65676b" }}>
+          <span className="hidden sm:inline">{dateRange}</span>
+          <span className="px-2 py-0.5 rounded-full text-[10px]" style={{ background: "#e6f4ea", color: "#1e8e3e" }}>
             ● Active
           </span>
-        </span>
+        </div>
       </div>
+      {children}
+      {/* Portfolio link footer */}
+      <button
+        type="button"
+        onClick={() => setView("portfolio")}
+        className="w-full px-4 py-2.5 text-center text-[12px] font-medium border-t transition-colors hover:bg-gray-50"
+        style={{ borderColor: "#f0f0f0", color: "#1877f2", background: "#f8f9fa" }}
+      >
+        View this in Portfolio →
+      </button>
+    </div>
+  );
+}
 
-      {/* KPI cards row — Material style solid colors (matches Tint Shop screenshot) */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0" }}>
-        <GoogleKpi
-          color={GOOGLE_COLORS.blue}
-          label="Quote generated"
-          value="250"
-          sub="Total quotes"
-        />
-        <GoogleKpi
-          color={GOOGLE_COLORS.red}
-          label="Submit lead forms"
-          value="7"
-          sub="Form submissions"
-        />
-        <GoogleKpi
-          color={GOOGLE_COLORS.yellow}
-          label="Phone calls"
-          value="445"
-          sub="Call conversions"
-          darkText
-        />
-        <GoogleKpi
-          color={GOOGLE_COLORS.green}
-          label="Cost"
-          value="$31.8K"
-          sub="Total spend"
-        />
-      </div>
+function GoogleLogo() {
+  return (
+    <div className="flex items-center gap-1.5">
+      <svg viewBox="0 0 272 92" className="h-4 w-auto" aria-hidden>
+        <path fill="#EA4335" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.54 12.51-13.44z" />
+        <path fill="#FBBC05" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.54 12.51-13.44z" />
+        <path fill="#4285F4" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" />
+        <path fill="#34A853" d="M225 3v65h-9.5V3h9.5z" />
+        <path fill="#EA4335" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l15.74-6.53c-.84-2.18-3.44-3.69-6.55-3.69-4.08 0-9.74 3.61-9.19 10.22z" />
+        <path fill="#4285F4" d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65H35.29z" />
+      </svg>
+      <span className="text-[13px] text-[#5f6368] font-medium">Ads</span>
+    </div>
+  );
+}
 
-      {/* Multi-line chart */}
-      <div className="p-4" style={{ background: "#fff" }}>
-        <div className="flex items-center justify-between mb-3">
-          <div className="text-[13px] font-medium" style={{ color: "#202124" }}>
-            Performance trends
-          </div>
-          <div className="flex items-center gap-3 text-[11px]" style={{ color: "#5f6368" }}>
-            <LegendDot color={GOOGLE_COLORS.blue} label="Quote generated" />
-            <LegendDot color={GOOGLE_COLORS.red} label="Lead forms" />
-            <LegendDot color={GOOGLE_COLORS.yellow} label="Phone calls" />
-            <LegendDot color={GOOGLE_COLORS.green} label="Cost" />
-          </div>
-        </div>
-        <div className="relative h-44 w-full" style={{ background: "#fff" }}>
-          {/* Y-axis gridlines */}
-          <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
-            {[0, 1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="w-full"
-                style={{ borderTop: "1px solid #f0f0f0" }}
-              />
-            ))}
-          </div>
-          {/* Y-axis labels */}
-          <div className="absolute -left-1 top-0 h-full flex flex-col justify-between text-[9px] pointer-events-none" style={{ color: "#9aa0a6" }}>
-            <span>$1.6K</span>
-            <span>$1.2K</span>
-            <span>$800</span>
-            <span>$400</span>
-            <span>$0</span>
-          </div>
-          {/* SVG lines */}
-          <svg
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            className="absolute inset-0 h-full w-full pl-8"
-          >
-            <polyline
-              points={toPoints(cost)}
-              fill="none"
-              stroke={GOOGLE_COLORS.blue}
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              vectorEffect="non-scaling-stroke"
-            />
-            <polyline
-              points={toPoints(convValue)}
-              fill="none"
-              stroke={GOOGLE_COLORS.red}
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              vectorEffect="non-scaling-stroke"
-            />
-            <polyline
-              points={toPoints(conversions)}
-              fill="none"
-              stroke={GOOGLE_COLORS.yellow}
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              vectorEffect="non-scaling-stroke"
-            />
-            <polyline
-              points={toPoints(clicks)}
-              fill="none"
-              stroke={GOOGLE_COLORS.green}
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              vectorEffect="non-scaling-stroke"
-            />
-          </svg>
-        </div>
-        {/* X-axis labels */}
-        <div className="flex justify-between text-[9px] mt-1 pl-8" style={{ color: "#9aa0a6" }}>
-          <span>Oct 1</span>
-          <span>Oct 8</span>
-          <span>Oct 15</span>
-          <span>Oct 22</span>
-          <span>Oct 30</span>
-        </div>
-      </div>
+function FacebookLogo() {
+  return (
+    <div className="grid place-items-center h-7 w-7 rounded-md" style={{ background: "#1877f2" }}>
+      <svg viewBox="0 0 24 24" fill="#fff" className="h-4 w-4">
+        <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z" />
+      </svg>
+    </div>
+  );
+}
 
-      {/* Campaign breakdown table */}
-      <div className="px-4 pb-4">
-        <div
-          className="rounded-lg border overflow-hidden"
-          style={{ borderColor: "#dadce0" }}
-        >
-          <div
-            className="grid grid-cols-12 px-3 py-2 text-[10px] font-medium uppercase tracking-wide"
-            style={{ background: "#f8f9fa", color: "#5f6368" }}
-          >
-            <div className="col-span-4">Campaign group</div>
-            <div className="col-span-2 text-right">Spend</div>
-            <div className="col-span-2 text-right">Quotes</div>
-            <div className="col-span-2 text-right">Calls</div>
-            <div className="col-span-2 text-right">CPA</div>
-          </div>
-          {[
-            { name: "Search — Tint Service", spend: "$14.2K", conv: "118", cpa: "$120", roas: "212" },
-            { name: "LSA — Window Tint", spend: "$9.8K", conv: "82", cpa: "$120", roas: "164" },
-            { name: "Display — Retargeting", spend: "$7.8K", conv: "50", cpa: "$120", roas: "69" },
-          ].map((row, i) => (
-            <div
-              key={i}
-              className="grid grid-cols-12 px-3 py-2 text-[12px] border-t"
-              style={{
-                borderColor: "#f0f0f0",
-                background: i % 2 === 0 ? "#fff" : "#fafbfc",
-                color: "#202124",
-              }}
-            >
-              <div className="col-span-4 truncate">{row.name}</div>
-              <div className="col-span-2 text-right font-mono">{row.spend}</div>
-              <div className="col-span-2 text-right font-mono">{row.conv}</div>
-              <div className="col-span-2 text-right font-mono">{row.roas}</div>
-              <div className="col-span-2 text-right font-mono" style={{ color: GOOGLE_COLORS.green }}>
-                {row.cpa}
-              </div>
-            </div>
-          ))}
-        </div>
+function MicrosoftLogo() {
+  return (
+    <div className="flex items-center gap-2">
+      <div className="grid grid-cols-2 gap-0.5 h-4 w-4">
+        <div style={{ background: "#f25022" }} />
+        <div style={{ background: "#7fba00" }} />
+        <div style={{ background: "#00a4ef" }} />
+        <div style={{ background: "#ffb900" }} />
       </div>
+      <span className="text-[12px] font-semibold" style={{ color: "#1c1e21" }}>
+        Microsoft <span className="font-normal" style={{ color: "#65676b" }}>Advertising</span>
+      </span>
     </div>
   );
 }
@@ -460,270 +421,109 @@ function GoogleKpi({
   darkText?: boolean;
 }) {
   return (
-    <div
-      className="px-4 py-3 border-r last:border-r-0"
-      style={{ background: color, borderColor: "rgba(0,0,0,0.08)" }}
-    >
-      <div
-        className="flex items-center gap-1 text-[11px] font-medium"
-        style={{ color: darkText ? "#202124" : "#fff", opacity: 0.95 }}
-      >
+    <div className="px-3 py-3 border-r last:border-r-0" style={{ background: color, borderColor: "rgba(0,0,0,0.08)" }}>
+      <div className="flex items-center gap-1 text-[11px] font-medium" style={{ color: darkText ? "#202124" : "#fff", opacity: 0.95 }}>
         {label}
         <ChevronDown className="h-3 w-3" />
       </div>
-      <div
-        className="mt-1 font-display text-xl sm:text-2xl font-semibold leading-none"
-        style={{ color: darkText ? "#202124" : "#fff" }}
-      >
+      <div className="mt-1 font-display text-lg sm:text-xl font-semibold leading-none" style={{ color: darkText ? "#202124" : "#fff" }}>
         {value}
       </div>
-      <div
-        className="mt-1 text-[10px]"
-        style={{ color: darkText ? "#5f6368" : "#fff", opacity: 0.85 }}
-      >
+      <div className="mt-1 text-[9px]" style={{ color: darkText ? "#5f6368" : "#fff", opacity: 0.85 }}>
         {sub}
       </div>
     </div>
   );
 }
 
-function LegendDot({ color, label }: { color: string; label: string }) {
+function MsKpi({
+  color,
+  label,
+  value,
+  sub,
+}: {
+  color: string;
+  label: string;
+  value: string;
+  sub: string;
+}) {
   return (
-    <span className="flex items-center gap-1">
-      <span
-        className="inline-block h-2 w-2 rounded-full"
-        style={{ background: color }}
-      />
-      {label}
-    </span>
+    <div className="px-3 py-3 border-r last:border-r-0" style={{ background: color, borderColor: "rgba(0,0,0,0.08)" }}>
+      <div className="text-[11px] font-medium text-white opacity-95">{label}</div>
+      <div className="mt-1 font-display text-lg sm:text-xl font-semibold leading-none text-white">{value}</div>
+      <div className="mt-1 text-[9px] text-white opacity-85">{sub}</div>
+    </div>
   );
 }
 
-// ============================================================
-// Facebook Ads Dashboard — white background, dense data table
-// (matches the real Meta Ads Manager table view)
-// ============================================================
-
-function FacebookAdsDashboard() {
-  // Real-looking lifetime budget campaigns (matches your Meta Ads Manager screenshot)
-  const campaigns = [
-    {
-      name: "$15 - 5day",
-      objective: "Landing Page Views",
-      results: "716",
-      reach: "92,556",
-      freq: "1.58",
-      cpr: "$0.02",
-      budget: "$15.00 Lifetime",
-      spent: "$14.66",
-      ends: "Sep 24, 2024",
-      impressions: "146,331",
-      cpm: "$0.10",
-      clicks: "1,377",
-    },
-    {
-      name: "60 - 15/09/25",
-      objective: "Reach",
-      results: "550",
-      reach: "126,566",
-      freq: "1.42",
-      cpr: "$0.04",
-      budget: "$21.60 Lifetime",
-      spent: "$21.37",
-      ends: "Sep 21, 2025",
-      impressions: "179,683",
-      cpm: "$0.17",
-      clicks: "1,160",
-    },
-    {
-      name: "Tint Shop — Quote",
-      objective: "Messaging conversions",
-      results: "226,130",
-      reach: "487,294",
-      freq: "2.14",
-      cpr: "$15.62",
-      budget: "$30.00 Lifetime",
-      spent: "$8,091.62",
-      ends: "Ongoing",
-      impressions: "1,043,892",
-      cpm: "$7.75",
-      clicks: "12,448",
-    },
-    {
-      name: "Window Tint — Lead Form",
-      objective: "Website Leads",
-      results: "1,247",
-      reach: "339,589",
-      freq: "1.89",
-      cpr: "$0.21",
-      budget: "$250.00 Lifetime",
-      spent: "$263.35",
-      ends: "Ongoing",
-      impressions: "642,381",
-      cpm: "$0.41",
-      clicks: "4,892",
-    },
+function MultiLineChart({
+  colors,
+  labels,
+  yLabels,
+}: {
+  colors: string[];
+  labels: string[];
+  yLabels: string[];
+}) {
+  const days = 30;
+  // Generate slightly different trend data per dashboard
+  const dataSets = [
+    Array.from({ length: days }, (_, i) => 30 + Math.sin(i * 0.4) * 15 + i * 1.8),
+    Array.from({ length: days }, (_, i) => 20 + Math.cos(i * 0.3) * 18 + i * 1.5),
+    Array.from({ length: days }, (_, i) => 25 + Math.sin(i * 0.5) * 20 + i * 2.0),
+    Array.from({ length: days }, (_, i) => 15 + Math.cos(i * 0.4) * 12 + i * 2.2),
   ];
-
-  const totals = {
-    results: "228,643",
-    reach: "1,046,005",
-    freq: "Avg 1.78",
-    cpr: "$0.04",
-    spent: "$8,391.00",
-    impressions: "2,012,287",
-    cpm: "$0.12",
-    clicks: "19,877",
-  };
-
+  function toPoints(data: number[]) {
+    const max = 100;
+    return data.map((v, i) => `${(i / (days - 1)) * 100},${100 - Math.min(100, v)}`).join(" ");
+  }
   return (
-    <div
-      className="rounded-xl shadow-[0_24px_80px_-20px_rgba(0,0,0,0.5)] overflow-hidden border"
-      style={{ background: "#fff", borderColor: "#dadce0" }}
-    >
-      {/* Top bar — Meta header */}
-      <div
-        className="flex items-center justify-between px-4 py-2.5 border-b"
-        style={{ background: "#fff", borderColor: "#dadce0" }}
-      >
-        <div className="flex items-center gap-2.5">
-          {/* Meta/Facebook logo */}
-          <div className="grid place-items-center h-7 w-7 rounded-md" style={{ background: "#1877f2" }}>
-            <svg viewBox="0 0 24 24" fill="#fff" className="h-4 w-4">
-              <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z" />
-            </svg>
-          </div>
-          <div>
-            <div className="text-[13px] font-semibold" style={{ color: "#1c1e21" }}>
-              Ads Manager
-            </div>
-            <div className="text-[10px]" style={{ color: "#65676b" }}>
-              Meta Account · Tint Shop
-            </div>
-          </div>
+    <div className="p-4" style={{ background: "#fff" }}>
+      <div className="flex items-center justify-between mb-3">
+        <div className="text-[13px] font-medium" style={{ color: "#202124" }}>
+          Performance trends
         </div>
-        <div className="flex items-center gap-2 text-[11px]" style={{ color: "#65676b" }}>
-          <span className="hidden sm:inline">Last 30 days</span>
-          <div
-            className="px-2 py-1 rounded border text-[11px]"
-            style={{ borderColor: "#dadce0" }}
-          >
-            Oct 1 – Oct 30, 2026
-          </div>
+        <div className="flex items-center gap-2 text-[11px]" style={{ color: "#5f6368" }}>
+          {colors.map((c, i) => (
+            <span key={i} className="flex items-center gap-1">
+              <span className="inline-block h-2 w-2 rounded-full" style={{ background: c }} />
+              {labels[i]}
+            </span>
+          ))}
         </div>
       </div>
-
-      {/* Filter chips row */}
-      <div
-        className="flex items-center gap-2 px-4 py-2 text-[11px] border-b overflow-x-auto"
-        style={{ borderColor: "#f0f0f0", background: "#f8f9fa", color: "#65676b" }}
-      >
-        <span
-          className="px-2 py-0.5 rounded-full"
-          style={{ background: "#e7f3ff", color: "#1877f2" }}
-        >
-          Campaign: Active
-        </span>
-        <span
-          className="px-2 py-0.5 rounded-full"
-          style={{ background: "#e7f3ff", color: "#1877f2" }}
-        >
-          Delivery: All
-        </span>
-        <span className="ml-auto hidden sm:inline">
-          Columns: Performance · 9 metrics
-        </span>
+      <div className="relative h-40 w-full" style={{ background: "#fff" }}>
+        <div className="absolute inset-0 flex flex-col justify-between pointer-events-none">
+          {[0, 1, 2, 3, 4].map((i) => (
+            <div key={i} className="w-full" style={{ borderTop: "1px solid #f0f0f0" }} />
+          ))}
+        </div>
+        <div className="absolute -left-1 top-0 h-full flex flex-col justify-between text-[9px] pointer-events-none" style={{ color: "#9aa0a6" }}>
+          {yLabels.map((y, i) => (
+            <span key={i}>{y}</span>
+          ))}
+        </div>
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full pl-8">
+          {colors.map((c, i) => (
+            <polyline
+              key={i}
+              points={toPoints(dataSets[i])}
+              fill="none"
+              stroke={c}
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              vectorEffect="non-scaling-stroke"
+            />
+          ))}
+        </svg>
       </div>
-
-      {/* Data table */}
-      <div className="overflow-x-auto" style={{ background: "#fff" }}>
-        <table className="w-full text-[11px]" style={{ color: "#1c1e21" }}>
-          <thead>
-            <tr style={{ background: "#f8f9fa", color: "#65676b" }}>
-              <Th align="left">Campaign</Th>
-              <Th align="right">Results</Th>
-              <Th align="right">Reach</Th>
-              <Th align="right">Freq.</Th>
-              <Th align="right">Cost / result</Th>
-              <Th align="right">Amount spent</Th>
-              <Th align="right">Ends</Th>
-              <Th align="right">Impressions</Th>
-              <Th align="right">CPM</Th>
-              <Th align="right">Link clicks</Th>
-            </tr>
-          </thead>
-          <tbody>
-            {campaigns.map((c, i) => (
-              <tr
-                key={i}
-                className="border-t"
-                style={{
-                  borderColor: "#f0f0f0",
-                  background: i % 2 === 0 ? "#fff" : "#fafbfc",
-                }}
-              >
-                <Td align="left">
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-2">
-                      <span
-                        className="inline-block h-1.5 w-1.5 rounded-full"
-                        style={{ background: "#31a24c" }}
-                      />
-                      <span className="truncate max-w-[160px] font-medium" style={{ color: "#1877f2" }}>
-                        {c.name}
-                      </span>
-                    </div>
-                    <span className="text-[9px] mt-0.5 ml-3.5" style={{ color: "#9aa0a6" }}>
-                      {c.objective}
-                    </span>
-                  </div>
-                </Td>
-                <Td align="right" mono>{c.results}</Td>
-                <Td align="right" mono>{c.reach}</Td>
-                <Td align="right" mono>{c.freq}</Td>
-                <Td align="right" mono>{c.cpr}</Td>
-                <Td align="right" mono bold>{c.spent}</Td>
-                <Td align="right" mono>{c.ends}</Td>
-                <Td align="right" mono>{c.impressions}</Td>
-                <Td align="right" mono>{c.cpm}</Td>
-                <Td align="right" mono>{c.clicks}</Td>
-              </tr>
-            ))}
-            {/* Totals row */}
-            <tr
-              className="border-t-2"
-              style={{
-                borderColor: "#dadce0",
-                background: "#f0f4ff",
-              }}
-            >
-              <Td align="left" bold>
-                <span style={{ color: "#1877f2" }}>Totals · 4 campaigns</span>
-              </Td>
-              <Td align="right" mono bold>{totals.results}</Td>
-              <Td align="right" mono bold>{totals.reach}</Td>
-              <Td align="right" mono bold>{totals.freq}</Td>
-              <Td align="right" mono bold>{totals.cpr}</Td>
-              <Td align="right" mono bold style={{ color: "#1877f2" }}>
-                {totals.spent}
-              </Td>
-              <Td align="right" mono bold>—</Td>
-              <Td align="right" mono bold>{totals.impressions}</Td>
-              <Td align="right" mono bold>{totals.cpm}</Td>
-              <Td align="right" mono bold>{totals.clicks}</Td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      {/* Bottom KPI summary strip */}
-      <div
-        className="grid grid-cols-3 border-t"
-        style={{ borderColor: "#dadce0", background: "#f8f9fa" }}
-      >
-        <FbSummary label="Total spent" value="$8,391.00" />
-        <FbSummary label="Total reach" value="1,046,005" />
-        <FbSummary label="Total impressions" value="2,012,287" />
+      <div className="flex justify-between text-[9px] mt-1 pl-8" style={{ color: "#9aa0a6" }}>
+        <span>Day 1</span>
+        <span>Day 7</span>
+        <span>Day 14</span>
+        <span>Day 21</span>
+        <span>Day 30</span>
       </div>
     </div>
   );
@@ -732,7 +532,7 @@ function FacebookAdsDashboard() {
 function Th({ children, align }: { children: React.ReactNode; align: "left" | "right" }) {
   return (
     <th
-      className={`px-3 py-2 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap ${
+      className={`px-2 py-2 text-[10px] font-semibold uppercase tracking-wide whitespace-nowrap ${
         align === "right" ? "text-right" : "text-left"
       }`}
       style={{ color: "#65676b" }}
@@ -757,7 +557,7 @@ function Td({
 }) {
   return (
     <td
-      className={`px-3 py-2 whitespace-nowrap ${
+      className={`px-2 py-1.5 whitespace-nowrap ${
         align === "right" ? "text-right" : "text-left"
       } ${mono ? "font-mono" : ""} ${bold ? "font-semibold" : ""}`}
       style={style}
@@ -773,7 +573,7 @@ function FbSummary({ label, value }: { label: string; value: string }) {
       <div className="text-[10px] uppercase tracking-wide" style={{ color: "#65676b" }}>
         {label}
       </div>
-      <div className="mt-1 font-display text-lg font-semibold" style={{ color: "#1c1e21" }}>
+      <div className="mt-1 font-display text-base font-semibold" style={{ color: "#1c1e21" }}>
         {value}
       </div>
     </div>
