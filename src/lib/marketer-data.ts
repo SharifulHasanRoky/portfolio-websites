@@ -1264,7 +1264,6 @@ export type NavLink = {
 };
 
 export const navLinks: NavLink[] = [
-  { label: "Story", kind: "scroll", target: "#story" },
   { label: "Pillars", kind: "scroll", target: "#pillars" },
   { label: "Numbers", kind: "scroll", target: "#numbers" },
   { label: "About", kind: "view", target: "about" },

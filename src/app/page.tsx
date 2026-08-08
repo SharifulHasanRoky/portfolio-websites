@@ -7,7 +7,7 @@ import { Navbar } from "@/components/marketer/Navbar";
 import { Hero } from "@/components/marketer/Hero";
 import { IndustriesMarquee } from "@/components/marketer/IndustriesMarquee";
 import { FeaturedCaseStudies } from "@/components/marketer/FeaturedCaseStudies";
-import { StoryScroll } from "@/components/marketer/StoryScroll";
+import { AdsDashboardShowcase } from "@/components/marketer/AdsDashboardShowcase";
 import { Pillars } from "@/components/marketer/Pillars";
 import { NumbersShowcase } from "@/components/marketer/NumbersShowcase";
 import { TestimonialsSlider } from "@/components/marketer/TestimonialsSlider";
@@ -85,7 +85,7 @@ export default function Home() {
               <Hero />
               <IndustriesMarquee />
               <FeaturedCaseStudies />
-              <StoryScroll />
+              <AdsDashboardShowcase />
               <Pillars />
               <NumbersShowcase />
               <TestimonialsSlider />
