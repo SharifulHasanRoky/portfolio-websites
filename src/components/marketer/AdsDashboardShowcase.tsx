@@ -161,11 +161,11 @@ export function AdsDashboardShowcase() {
           >
             <div className="rounded-2xl border border-brand/30 bg-card/90 backdrop-blur p-4 glow-brand">
               <div className="text-[10px] uppercase tracking-wider text-brand font-mono">
-                Google Ads · PMax
+                Google Ads · Tint Shop
               </div>
               <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-                Performance Max — $352k spend, $1.36M conv. value, 3.87x ROAS
-                over 6 months.
+                Lead-gen campaign — 250 quote generated, 7 lead forms, 445 phone
+                calls, $31.8k cost.
               </p>
             </div>
           </motion.div>
@@ -177,11 +177,11 @@ export function AdsDashboardShowcase() {
           >
             <div className="rounded-2xl border border-fire/30 bg-card/90 backdrop-blur p-4 glow-fire">
               <div className="text-[10px] uppercase tracking-wider text-fire font-mono">
-                Facebook Ads · Adv+
+                Facebook Ads · Manager
               </div>
               <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-                Advantage+ Shopping — 8 campaigns, $43.8k spend, 2.58M reach,
-                $13.41 cost per result.
+                Lifetime budget campaigns — 1.04M reach, $8,415 spent, 2.11M
+                impressions across 5 ad sets.
               </p>
             </div>
           </motion.div>
@@ -256,12 +256,12 @@ function GoogleAdsDashboard() {
           </div>
         </div>
         <div className="flex items-center gap-2 text-[11px] text-[#5f6368]">
-          <span className="hidden sm:inline">Last 30 days</span>
+          <span className="hidden sm:inline">Account: 958-735-6999 · Tint Shop</span>
           <div
             className="px-2 py-1 rounded border text-[11px]"
             style={{ borderColor: "#dadce0" }}
           >
-            Oct 1 – Oct 30, 2026
+            Sep 1 – Sep 30, 2024
           </div>
         </div>
       </div>
@@ -274,7 +274,7 @@ function GoogleAdsDashboard() {
         <span>Campaigns</span>
         <span>›</span>
         <span style={{ color: "#202124" }} className="font-medium">
-          Performance Max · Q3 Scale
+          Tint Shop · Lead Gen
         </span>
         <span className="ml-auto flex items-center gap-2">
           <span
@@ -286,32 +286,32 @@ function GoogleAdsDashboard() {
         </span>
       </div>
 
-      {/* KPI cards row — Material style solid colors */}
+      {/* KPI cards row — Material style solid colors (matches Tint Shop screenshot) */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 border-b" style={{ borderColor: "#dadce0" }}>
         <GoogleKpi
           color={GOOGLE_COLORS.blue}
-          label="Cost"
-          value="$352K"
-          sub="Total spend"
+          label="Quote generated"
+          value="250"
+          sub="Total quotes"
         />
         <GoogleKpi
           color={GOOGLE_COLORS.red}
-          label="Conv. value"
-          value="1.36M"
-          sub="Revenue tracked"
+          label="Submit lead forms"
+          value="7"
+          sub="Form submissions"
         />
         <GoogleKpi
           color={GOOGLE_COLORS.yellow}
-          label="Conversions"
-          value="5.39K"
-          sub="Total purchases"
+          label="Phone calls"
+          value="445"
+          sub="Call conversions"
           darkText
         />
         <GoogleKpi
           color={GOOGLE_COLORS.green}
-          label="Conv. value / cost"
-          value="3.87"
-          sub="ROAS (return on ad spend)"
+          label="Cost"
+          value="$31.8K"
+          sub="Total spend"
         />
       </div>
 
@@ -322,10 +322,10 @@ function GoogleAdsDashboard() {
             Performance trends
           </div>
           <div className="flex items-center gap-3 text-[11px]" style={{ color: "#5f6368" }}>
-            <LegendDot color={GOOGLE_COLORS.blue} label="Cost" />
-            <LegendDot color={GOOGLE_COLORS.red} label="Conv. value" />
-            <LegendDot color={GOOGLE_COLORS.yellow} label="Conversions" />
-            <LegendDot color={GOOGLE_COLORS.green} label="Clicks" />
+            <LegendDot color={GOOGLE_COLORS.blue} label="Quote generated" />
+            <LegendDot color={GOOGLE_COLORS.red} label="Lead forms" />
+            <LegendDot color={GOOGLE_COLORS.yellow} label="Phone calls" />
+            <LegendDot color={GOOGLE_COLORS.green} label="Cost" />
           </div>
         </div>
         <div className="relative h-44 w-full" style={{ background: "#fff" }}>
@@ -341,10 +341,10 @@ function GoogleAdsDashboard() {
           </div>
           {/* Y-axis labels */}
           <div className="absolute -left-1 top-0 h-full flex flex-col justify-between text-[9px] pointer-events-none" style={{ color: "#9aa0a6" }}>
-            <span>$19K</span>
-            <span>$14K</span>
-            <span>$9.5K</span>
-            <span>$4.75K</span>
+            <span>$1.6K</span>
+            <span>$1.2K</span>
+            <span>$800</span>
+            <span>$400</span>
             <span>$0</span>
           </div>
           {/* SVG lines */}
@@ -413,14 +413,14 @@ function GoogleAdsDashboard() {
           >
             <div className="col-span-4">Campaign group</div>
             <div className="col-span-2 text-right">Spend</div>
-            <div className="col-span-2 text-right">Conv.</div>
+            <div className="col-span-2 text-right">Quotes</div>
+            <div className="col-span-2 text-right">Calls</div>
             <div className="col-span-2 text-right">CPA</div>
-            <div className="col-span-2 text-right">ROAS</div>
           </div>
           {[
-            { name: "Shopping — Products", spend: "$168K", conv: "2.4K", cpa: "$70", roas: "4.2x" },
-            { name: "Search — Brand + Category", spend: "$112K", conv: "1.8K", cpa: "$62", roas: "3.6x" },
-            { name: "Video — YouTube Awareness", spend: "$72K", conv: "1.2K", cpa: "$60", roas: "3.9x" },
+            { name: "Search — Tint Service", spend: "$14.2K", conv: "118", cpa: "$120", roas: "212" },
+            { name: "LSA — Window Tint", spend: "$9.8K", conv: "82", cpa: "$120", roas: "164" },
+            { name: "Display — Retargeting", spend: "$7.8K", conv: "50", cpa: "$120", roas: "69" },
           ].map((row, i) => (
             <div
               key={i}
@@ -434,9 +434,9 @@ function GoogleAdsDashboard() {
               <div className="col-span-4 truncate">{row.name}</div>
               <div className="col-span-2 text-right font-mono">{row.spend}</div>
               <div className="col-span-2 text-right font-mono">{row.conv}</div>
-              <div className="col-span-2 text-right font-mono">{row.cpa}</div>
+              <div className="col-span-2 text-right font-mono">{row.roas}</div>
               <div className="col-span-2 text-right font-mono" style={{ color: GOOGLE_COLORS.green }}>
-                {row.roas}
+                {row.cpa}
               </div>
             </div>
           ))}
@@ -505,65 +505,75 @@ function LegendDot({ color, label }: { color: string; label: string }) {
 // ============================================================
 
 function FacebookAdsDashboard() {
+  // Real-looking lifetime budget campaigns (matches your Meta Ads Manager screenshot)
   const campaigns = [
     {
-      name: "Advantage+ Shopping — Q3",
-      status: "Active",
-      results: "2,847",
-      reach: "1.24M",
-      freq: "2.8",
-      cpr: "$13.41",
-      budget: "$890 / day",
-      spent: "$26,420",
-      impressions: "3.48M",
-      cpm: "$7.59",
+      name: "$15 - 5day",
+      objective: "Landing Page Views",
+      results: "716",
+      reach: "92,556",
+      freq: "1.58",
+      cpr: "$0.02",
+      budget: "$15.00 Lifetime",
+      spent: "$14.66",
+      ends: "Sep 24, 2024",
+      impressions: "146,331",
+      cpm: "$0.10",
+      clicks: "1,377",
     },
     {
-      name: "Retargeting — Cart Abandoners",
-      status: "Active",
-      results: "1,205",
-      reach: "684K",
-      freq: "4.2",
-      cpr: "$8.92",
-      budget: "$320 / day",
-      spent: "$10,580",
-      impressions: "2.87M",
-      cpm: "$3.69",
+      name: "60 - 15/09/25",
+      objective: "Reach",
+      results: "550",
+      reach: "126,566",
+      freq: "1.42",
+      cpr: "$0.04",
+      budget: "$21.60 Lifetime",
+      spent: "$21.37",
+      ends: "Sep 21, 2025",
+      impressions: "179,683",
+      cpm: "$0.17",
+      clicks: "1,160",
     },
     {
-      name: "Lookalike — Purchasers 2%",
-      status: "Active",
-      results: "642",
-      reach: "412K",
-      freq: "1.9",
-      cpr: "$11.27",
-      budget: "$180 / day",
-      spent: "$5,260",
-      impressions: "782K",
-      cpm: "$6.73",
+      name: "Tint Shop — Quote",
+      objective: "Messaging conversions",
+      results: "226,130",
+      reach: "487,294",
+      freq: "2.14",
+      cpr: "$15.62",
+      budget: "$30.00 Lifetime",
+      spent: "$8,091.62",
+      ends: "Ongoing",
+      impressions: "1,043,892",
+      cpm: "$7.75",
+      clicks: "12,448",
     },
     {
-      name: "UGC Creator Campaign",
-      status: "Active",
-      results: "489",
-      reach: "248K",
-      freq: "1.4",
-      cpr: "$9.84",
-      budget: "$120 / day",
-      spent: "$1,609",
-      impressions: "347K",
-      cpm: "$4.64",
+      name: "Window Tint — Lead Form",
+      objective: "Website Leads",
+      results: "1,247",
+      reach: "339,589",
+      freq: "1.89",
+      cpr: "$0.21",
+      budget: "$250.00 Lifetime",
+      spent: "$263.35",
+      ends: "Ongoing",
+      impressions: "642,381",
+      cpm: "$0.41",
+      clicks: "4,892",
     },
   ];
 
   const totals = {
-    results: "5,183",
-    reach: "2.58M",
-    freq: "Avg 2.6",
-    cpr: "$11.05",
-    spent: "$43,869",
-    impressions: "7.48M",
-    cpm: "$5.86",
+    results: "228,643",
+    reach: "1,046,005",
+    freq: "Avg 1.78",
+    cpr: "$0.04",
+    spent: "$8,391.00",
+    impressions: "2,012,287",
+    cpm: "$0.12",
+    clicks: "19,877",
   };
 
   return (
@@ -588,7 +598,7 @@ function FacebookAdsDashboard() {
               Ads Manager
             </div>
             <div className="text-[10px]" style={{ color: "#65676b" }}>
-              Advantage+ Shopping · Q3 Scale
+              Meta Account · Tint Shop
             </div>
           </div>
         </div>
@@ -636,9 +646,10 @@ function FacebookAdsDashboard() {
               <Th align="right">Freq.</Th>
               <Th align="right">Cost / result</Th>
               <Th align="right">Amount spent</Th>
+              <Th align="right">Ends</Th>
               <Th align="right">Impressions</Th>
               <Th align="right">CPM</Th>
-              <Th align="right">Budget</Th>
+              <Th align="right">Link clicks</Th>
             </tr>
           </thead>
           <tbody>
@@ -652,12 +663,19 @@ function FacebookAdsDashboard() {
                 }}
               >
                 <Td align="left">
-                  <div className="flex items-center gap-2">
-                    <span
-                      className="inline-block h-1.5 w-1.5 rounded-full"
-                      style={{ background: "#31a24c" }}
-                    />
-                    <span className="truncate max-w-[180px]">{c.name}</span>
+                  <div className="flex flex-col">
+                    <div className="flex items-center gap-2">
+                      <span
+                        className="inline-block h-1.5 w-1.5 rounded-full"
+                        style={{ background: "#31a24c" }}
+                      />
+                      <span className="truncate max-w-[160px] font-medium" style={{ color: "#1877f2" }}>
+                        {c.name}
+                      </span>
+                    </div>
+                    <span className="text-[9px] mt-0.5 ml-3.5" style={{ color: "#9aa0a6" }}>
+                      {c.objective}
+                    </span>
                   </div>
                 </Td>
                 <Td align="right" mono>{c.results}</Td>
@@ -665,9 +683,10 @@ function FacebookAdsDashboard() {
                 <Td align="right" mono>{c.freq}</Td>
                 <Td align="right" mono>{c.cpr}</Td>
                 <Td align="right" mono bold>{c.spent}</Td>
+                <Td align="right" mono>{c.ends}</Td>
                 <Td align="right" mono>{c.impressions}</Td>
                 <Td align="right" mono>{c.cpm}</Td>
-                <Td align="right" mono>{c.budget}</Td>
+                <Td align="right" mono>{c.clicks}</Td>
               </tr>
             ))}
             {/* Totals row */}
@@ -688,9 +707,10 @@ function FacebookAdsDashboard() {
               <Td align="right" mono bold style={{ color: "#1877f2" }}>
                 {totals.spent}
               </Td>
+              <Td align="right" mono bold>—</Td>
               <Td align="right" mono bold>{totals.impressions}</Td>
               <Td align="right" mono bold>{totals.cpm}</Td>
-              <Td align="right" mono bold>—</Td>
+              <Td align="right" mono bold>{totals.clicks}</Td>
             </tr>
           </tbody>
         </table>
@@ -701,9 +721,9 @@ function FacebookAdsDashboard() {
         className="grid grid-cols-3 border-t"
         style={{ borderColor: "#dadce0", background: "#f8f9fa" }}
       >
-        <FbSummary label="Total spent" value="$43,869.43" />
-        <FbSummary label="Total results" value="5,183" />
-        <FbSummary label="Avg. cost per result" value="$11.05" />
+        <FbSummary label="Total spent" value="$8,391.00" />
+        <FbSummary label="Total reach" value="1,046,005" />
+        <FbSummary label="Total impressions" value="2,012,287" />
       </div>
     </div>
   );
