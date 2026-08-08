@@ -66,20 +66,19 @@ export function CaseStudies({ hideHeading = false }: { hideHeading?: boolean }) 
           ))}
         </div>
 
-        <div className="mt-10 grid lg:grid-cols-12 gap-6">
-          {/* Industry list (left) */}
-          <div className="lg:col-span-4 xl:col-span-3">
-            <div className="lg:sticky lg:top-24 max-h-[70vh] overflow-y-auto pr-1">
-              <div className="space-y-2">
-                {filtered.map((c) => {
-                  const active = selected.id === c.id;
-                  return (
-                    <button
-                      key={c.id}
-                      onClick={() => onSelect(c)}
-                      className={cn(
-                        "w-full text-left rounded-2xl border p-3 sm:p-4 transition-all group",
-                        active
+        <div className="mt-10 grid lg:grid-cols-12 gap-6 items-start">
+          {/* Industry list (left) — scrollable container, doesn't grow the page height */}
+          <div className="lg:col-span-4 xl:col-span-3 lg:sticky lg:top-24">
+            <div className="max-h-[calc(100vh-8rem)] overflow-y-auto pr-1 space-y-2 lg:max-h-[calc(100vh-8rem)]">
+              {filtered.map((c) => {
+                const active = selected.id === c.id;
+                return (
+                  <button
+                    key={c.id}
+                    onClick={() => onSelect(c)}
+                    className={cn(
+                      "w-full text-left rounded-2xl border p-3 sm:p-4 transition-all group",
+                      active
                           ? "border-brand/50 bg-card/80 glow-brand"
                           : "border-border bg-card/40 hover:bg-card/70"
                       )}
@@ -118,11 +117,10 @@ export function CaseStudies({ hideHeading = false }: { hideHeading?: boolean }) 
                   );
                 })}
               </div>
-            </div>
           </div>
 
-          {/* Case detail (right) */}
-          <div className="lg:col-span-8 xl:col-span-9">
+          {/* Case detail (right) — sticky so it stays visible while list flows */}
+          <div className="lg:col-span-8 xl:col-span-9 lg:sticky lg:top-24 self-start">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selected.id}
