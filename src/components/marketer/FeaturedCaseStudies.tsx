@@ -24,9 +24,9 @@ export function FeaturedCaseStudies() {
     >
       <div className="mx-auto max-w-7xl relative">
         <SectionHeading
-          eyebrow="Featured wins · 2 of 23 case studies"
+          eyebrow="Featured wins · 2 of 30+ case studies"
           title="Two featured engagements — an Australian Shopify store at 13x ROI, and a Calgary cleaning company booking 100 leads a month."
-          description="Two real client stories across very different business models: an Australian Shopify ecommerce brand scaled from 2x to 13x ROI, and a Calgary cleaning company hitting 100 qualified leads per month. Same system, very different numbers. Click through to the full case studies page for all 23."
+          description="Two real client stories across very different business models: an Australian Shopify ecommerce brand scaled from 2x to 13x ROI, and a Calgary cleaning company hitting 100 qualified leads per month. Same system, very different numbers. Click through to the full case studies page for all 30+."
         />
 
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6">
@@ -177,7 +177,7 @@ export function FeaturedCaseStudies() {
             onClick={() => setView("cases")}
             className="inline-flex items-center gap-2 rounded-xl bg-foreground text-background px-6 py-3.5 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors group"
           >
-            See all 23 case studies
+            See all 30+ case studies
             <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
         </motion.div>

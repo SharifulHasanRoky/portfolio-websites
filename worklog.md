@@ -38,3 +38,28 @@ Stage Summary:
 - Book a Call: confirmed all buttons use Calendly link — no setView("book") anywhere
 - Bonus cleanup: fixed headlineMetrics, NumbersShowcase stats, Footer email/LinkedIn, layout.tsx SITE_URL/email, llms.txt, sitemap.xml, robots.txt, site.webmanifest — all old/reverted references purged
 - Build passes successfully
+
+---
+Task ID: 2
+Agent: main
+Task: Expand case studies + portfolio to 30+ items each, focusing on ecommerce
+
+Work Log:
+- Read full caseStudies array (12 existing items) and portfolio array (12 existing items)
+- Identified user-mentioned ecommerce companies from CV entries and testimonials: Skycoms, Golfinex, Gearovo, Hypr Fuel, Scuba Xpress, Pixi AI, Car Formula, FX Edu, Reli Group, Winhub, MarwaridHR, TNS Global, Safe Food, Clockwork Synergy, Htown Printing Service
+- Wrote a Node.js script at /home/z/my-project/scripts/expand-companies.cjs to insert new entries before the closing `];` of each array
+- Script first run had a slice-ordering bug (caseStudies end pos < portfolio start pos) which caused duplicate portfolio declaration
+- Fixed the bug by re-ordering the slice to insert caseStudies text first (at smaller position), then portfolio text
+- Re-ran the script — successfully inserted 19 new case studies (15 ecommerce + 4 home services) and 19 new portfolio items (15 ecommerce + 4 home services)
+- Updated CaseStudiesPage.tsx title: "12 case studies" → "30+ case studies"
+- Updated CaseStudies.tsx in-section heading: "12 case studies" → "30+ case studies"
+- Updated FeaturedCaseStudies.tsx: eyebrow "2 of 23 case studies" → "2 of 30+ case studies", description "all 23" → "all 30+", button text "See all 23 case studies" → "See all 30+ case studies"
+- Build successful
+
+Stage Summary:
+- Case studies: 12 → 31 items (15 new ecommerce + 4 new home services)
+- Portfolio: 12 → 31 items (15 new ecommerce + 4 new home services)
+- All user-mentioned companies from CV entries are now represented: Skycoms, Golfinex, Gearovo, Hypr Fuel, Scuba Xpress, Pixi AI, Car Formula, FX Edu, Reli Group, Winhub, MarwaridHR, TNS Global, Safe Food, Clockwork Synergy, Htown Printing Service
+- Home services extras: Home Repairs 24, Handyman Services, Right Now Painting, Best Handyman Services SG
+- All UI text updated to reflect new counts
+- Build passes successfully

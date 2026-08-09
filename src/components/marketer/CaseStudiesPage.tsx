@@ -21,7 +21,7 @@ export function CaseStudiesPage() {
     >
       <PageHero
         eyebrow="Case studies · real numbers, real clients"
-        title="2 niches. 12 case studies. One repeatable system."
+        title="2 niches. 30+ case studies. One repeatable system."
         description="Pick a vertical, see the actual challenge, the exact system I built, and the real numbers we hit. No 'up to 5x ROAS' hedging — these are signed contracts and revenue that hit the bank."
         icon={FileText}
         accent="fire"
