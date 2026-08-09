@@ -116,12 +116,12 @@ export const pillars: Pillar[] = [
     subtitle: "GA4 + Server-side + Warehouse = one source of truth.",
     icon: Gauge,
     description:
-      "iOS 14.5 killed platform attribution. I rebuilt measurement around server-side tagging, a unified data warehouse (BigQuery / Snowflake), and modeled conversions — so decisions are made on real revenue, not on what Meta wants you to believe. Your dashboard finally tells the truth.",
+      "iOS 14.5 killed platform attribution. I rebuilt measurement around server-side tagging, Triple Whale / Hyros for attribution, and modeled conversions — so decisions are made on real revenue, not on what Meta wants you to believe. Your dashboard finally tells the truth.",
     bullets: [
       "Server-side GTM + Conversions API on every channel",
       "Unified warehouse: ad spend + Shopify + Stripe in one model",
       "MMM + incrementality tests for channels above $50k/mo",
-      "Live Looker / Hex dashboard your CFO will actually open",
+      "Live dashboards your CFO will actually open",
     ],
     accent: "fire",
   },
@@ -641,33 +641,43 @@ export type SkillBlock = {
 
 export const skills: SkillBlock[] = [
   {
-    category: "Paid Channels",
+    category: "Technical Expertise",
     items: [
-      { name: "Meta Ads (FB + IG)", level: 96 },
-      { name: "Google Ads (Search, PMax, LSA)", level: 94 },
-      { name: "TikTok / Reels Spark Ads", level: 88 },
-      { name: "YouTube TrueView", level: 84 },
-      { name: "LinkedIn Ads (B2B)", level: 78 },
+      { name: "Google Ads (Search, Display, YouTube)", level: 95 },
+      { name: "Facebook Ads / Meta Ads", level: 96 },
+      { name: "Google Analytics & Tracking", level: 92 },
+      { name: "Google Tag Manager, Data Layer", level: 90 },
+      { name: "Conversion API, Server-side tracking", level: 90 },
+      { name: "Ad Trafficking", level: 92 },
     ],
   },
   {
-    category: "Measurement",
+    category: "Analytics & Research",
     items: [
-      { name: "GA4 + Server-side GTM", level: 92 },
-      { name: "Conversions API (Meta/Google)", level: 90 },
-      { name: "BigQuery / Snowflake modeling", level: 80 },
-      { name: "MMM + Incrementality", level: 76 },
-      { name: "Looker / Hex dashboards", level: 85 },
+      { name: "Google Trends / Market Research", level: 90 },
+      { name: "Microsoft Clarity", level: 88 },
+      { name: "SimilarWeb", level: 85 },
+      { name: "SEMrush", level: 90 },
+      { name: "Market & Competitors Analysis", level: 90 },
     ],
   },
   {
-    category: "Lifecycle & Stack",
+    category: "AI & Creative Tools",
     items: [
-      { name: "Klaviyo email/SMS", level: 93 },
-      { name: "Recharge subscriptions", level: 86 },
-      { name: "GoHighLevel (local)", level: 90 },
-      { name: "Shopify / Shopify Plus", level: 91 },
-      { name: "HubSpot / Salesforce", level: 75 },
+      { name: "ChatGPT / Claude / Gemini", level: 95 },
+      { name: "Canva Pro", level: 92 },
+      { name: "Copy.ai / Jasper AI", level: 88 },
+      { name: "Madgicx", level: 82 },
+    ],
+  },
+  {
+    category: "Soft Skills",
+    items: [
+      { name: "Teamwork", level: 95 },
+      { name: "Time Management", level: 92 },
+      { name: "Leadership", level: 88 },
+      { name: "Fast Learner", level: 95 },
+      { name: "Problem Solver", level: 90 },
     ],
   },
 ];
@@ -854,7 +864,7 @@ export const faqs: FAQ[] = [
     id: "faq4",
     question: "How do you handle iOS 14 attribution issues?",
     answer:
-      "I rebuilt measurement around server-side tagging (GTM Server-Side + Conversions API on Meta and Google), a unified data warehouse (BigQuery or Snowflake), and modeled conversions. Your dashboard finally tells the truth — not what Meta wants you to believe. I also run incrementality tests on any channel spending more than $50k/mo.",
+      "I rebuilt measurement around server-side tagging (GTM Server-Side + Conversions API on Meta and Google), Triple Whale / Hyros for attribution, and modeled conversions. Your dashboard finally tells the truth — not what Meta wants you to believe. I also run incrementality tests on any channel spending more than $50k/mo.",
   },
   {
     id: "faq5",
@@ -975,16 +985,48 @@ export const dailyTools: DailyTool[] = [
   { name: "Google Ads", purpose: "Search, PMax, LSA for home services", category: "Paid" },
   { name: "TikTok Ads", purpose: "Spark Ads, creator partnerships, UGC", category: "Paid" },
   { name: "YouTube Ads", purpose: "Long-form education, founder content", category: "Paid" },
-  { name: "GA4 + Server-side GTM", purpose: "Source-of-truth measurement, CAPI", category: "Measurement" },
-  { name: "BigQuery", purpose: "Unified warehouse: spend + Shopify + Stripe", category: "Measurement" },
-  { name: "Looker / Hex", purpose: "Live dashboards clients actually open", category: "Measurement" },
   { name: "Klaviyo", purpose: "Email + SMS lifecycle engine", category: "Lifecycle" },
-  { name: "Recharge", purpose: "Subscription management + retention", category: "Lifecycle" },
-  { name: "GoHighLevel", purpose: "Local services CRM + automation", category: "Lifecycle" },
-  { name: "Figma", purpose: "Creative briefs + landing page design", category: "Creative" },
-  { name: "CapCut + Premiere", purpose: "UGC editing, ad creative", category: "Creative" },
-  { name: "Notion", purpose: "SOPs, creative backlogs, client documentation", category: "Ops" },
-  { name: "Linear", purpose: "Experiment backlog, ICE-ranked growth tests", category: "Ops" },
+  { name: "GA4 + Server-side GTM", purpose: "Source-of-truth measurement, CAPI", category: "Measurement" },
+];
+
+// ===== AI Tools =====
+export type AITool = {
+  name: string;
+  purpose: string;
+  category: "AI Assistants" | "Creative & Content" | "Analytics & Tracking" | "Competitor Research" | "Automation";
+};
+
+export const aiTools: AITool[] = [
+  { name: "ChatGPT", purpose: "Strategy ideation, copywriting, ad scripts, data analysis", category: "AI Assistants" },
+  { name: "Claude", purpose: "Long-form content, creative briefs, funnel analysis", category: "AI Assistants" },
+  { name: "Claude Coworks", purpose: "Collaborative AI workflows for client projects", category: "AI Assistants" },
+  { name: "Manus AI", purpose: "Autonomous task execution for marketing ops", category: "AI Assistants" },
+  { name: "Z AI", purpose: "AI-powered campaign optimization and creative insights", category: "AI Assistants" },
+  { name: "Gemini", purpose: "Google ecosystem AI — ad copy, audience insights, campaign analysis", category: "AI Assistants" },
+  { name: "Grok", purpose: "Real-time social insights, trend monitoring, X (Twitter) analysis", category: "AI Assistants" },
+  { name: "OpenClaw", purpose: "AI-driven competitive intelligence and market analysis", category: "AI Assistants" },
+  { name: "Canva", purpose: "Ad creative, social graphics, thumbnails, landing page mockups", category: "Creative & Content" },
+  { name: "InVideo", purpose: "Video ad creation, UGC-style content, social video editing", category: "Creative & Content" },
+  { name: "Copy.ai", purpose: "Ad copy generation, headlines, email subject lines at scale", category: "Creative & Content" },
+  { name: "Jasper AI", purpose: "Brand voice copywriting, long-form ads, landing page copy", category: "Creative & Content" },
+  { name: "Google Tag Manager", purpose: "Server-side tagging, CAPI implementation, conversion tracking", category: "Analytics & Tracking" },
+  { name: "Google Analytics 4", purpose: "Source-of-truth measurement, cross-platform attribution", category: "Analytics & Tracking" },
+  { name: "Microsoft Clarity", purpose: "Session recordings, heatmaps, user behavior analysis", category: "Analytics & Tracking" },
+  { name: "Hyros", purpose: "Ad attribution, call tracking, offline conversion import", category: "Analytics & Tracking" },
+  { name: "Triple Whale", purpose: "DTC ecommerce attribution, pixel tracking, MMM", category: "Analytics & Tracking" },
+  { name: "SegMetrics", purpose: "Lead attribution, funnel reporting, customer journey analysis", category: "Analytics & Tracking" },
+  { name: "Wicked Reports", purpose: "Long-term ROI tracking, cohort analysis, LTV attribution", category: "Analytics & Tracking" },
+  { name: "Madgicx", purpose: "AI-powered Meta Ads optimization, automated bidding, audience discovery", category: "Analytics & Tracking" },
+  { name: "Semrush", purpose: "Competitor ad analysis, market research, PPC intelligence", category: "Competitor Research" },
+  { name: "AdSpy", purpose: "Facebook + Instagram ad spy, creative inspiration, angle discovery", category: "Competitor Research" },
+  { name: "SpyFu", purpose: "Google Ads competitor research, PPC spy, ad analysis", category: "Competitor Research" },
+  { name: "Ads Library", purpose: "Meta Ads Transparency — see all active ads from any advertiser", category: "Competitor Research" },
+  { name: "Google Trends", purpose: "Search trend analysis, seasonal demand, geographic interest", category: "Competitor Research" },
+  { name: "Google Ads Transparency", purpose: "See all Google Ads from any advertiser, creative research", category: "Competitor Research" },
+  { name: "Keyword Planner", purpose: "Google search volume, CPC estimates, ad group ideas", category: "Competitor Research" },
+  { name: "Google Flow", purpose: "Visualize user journeys, funnel drop-offs, conversion paths", category: "Competitor Research" },
+  { name: "GoHighLevel", purpose: "CRM, automation, lead routing, SMS/email sequences for home services", category: "Automation" },
+  { name: "Metricool", purpose: "Social media scheduling, analytics, cross-platform reporting", category: "Automation" },
 ];
 
 export const aboutBio = {
