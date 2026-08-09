@@ -163,107 +163,7 @@ export type CaseStudy = {
 };
 
 export const caseStudies: CaseStudy[] = [
-  {
-    id: "plumbing",
-    industry: "Plumbing",
-    icon: Wrench,
-    client: "MetroFlow Plumbing",
-    location: "Dallas–Fort Worth, TX",
-    vertical: "Home Services",
-    challenge:
-      "Dependent on word-of-mouth, leads dried up during winter. Cost per booked job was north of $180 and they were losing to aggregators.",
-    approach:
-      "Built a Local Service Ads + Meta lead-form funnel with a 60-second response SLA, dispatch routing, and review-request automation. Offer: free camera inspection on first call.",
-    results: [
-      { metric: "Cost per booked job", value: "$62", delta: "−66%" },
-      { metric: "Booked jobs / mo", value: "184", delta: "+312%" },
-      { metric: "Avg ticket size", value: "$410", delta: "+27%" },
-    ],
-    timeline: "90 days",
-    spend: "$14k/mo",
-    highlight: "Scaled from 44 to 184 booked jobs/mo in one quarter.",
-  },
-  {
-    id: "handyman",
-    industry: "Handyman",
-    icon: Hammer,
-    client: "FixIt Joe Pro",
-    location: "Atlanta, GA",
-    vertical: "Home Services",
-    challenge:
-      "Owner-operator, maxed out at 5 jobs/day, no marketing. Wanted to hire a second crew without losing margin.",
-    approach:
-      "Launched Google PMax + YouTube shorts with a 'same-day estimate' landing page and live calendar booking. Re-targeted website visitors with seasonal maintenance bundles.",
-    results: [
-      { metric: "Lead cost", value: "$21", delta: "−48%" },
-      { metric: "Jobs / week", value: "47", delta: "+220%" },
-      { metric: "Crews", value: "3", delta: "+2" },
-    ],
-    timeline: "120 days",
-    spend: "$6k/mo",
-    highlight: "Booked 8 weeks out, hired 2 new crews in 4 months.",
-  },
-  {
-    id: "printing",
-    industry: "Printing",
-    icon: Printer,
-    client: "InkPress Print Co.",
-    location: "Los Angeles, CA",
-    vertical: "Local Services",
-    challenge:
-      "B2B print shop wither losing to online printers. Long sales cycle, no CRM, zero nurture.",
-    approach:
-      "Rebuilt the funnel around a 'free sample kit' offer + LinkedIn ABM to design agencies. Cold email → retargeting → quote-request flow with an automated 5-touch nurture.",
-    results: [
-      { metric: "Qualified quotes/mo", value: "92", delta: "+178%" },
-      { metric: "Quote → close rate", value: "31%", delta: "+14pts" },
-      { metric: "Avg order value", value: "$2,840", delta: "+44%" },
-    ],
-    timeline: "6 months",
-    spend: "$9k/mo",
-    highlight: "Hit $278k/mo revenue from $9k ad spend — 30.8x MER.",
-  },
-  {
-    id: "roofing",
-    industry: "Roofing",
-    icon: Home,
-    client: "Skyline Roofing Group",
-    location: "Houston, TX",
-    vertical: "Home Services",
-    challenge:
-      "Storm-chasing competition killed margins. Cost per roof replacement lead was $480, closing rate under 8%.",
-    approach:
-      "Pivoted to Google LSA + Facebook storm-mode campaigns triggered by weather API. Added a virtual roof-estimate tool to pre-qualify leads before dispatch.",
-    results: [
-      { metric: "Cost per signed contract", value: "$640", delta: "−42%" },
-      { metric: "Close rate", value: "21%", delta: "+162%" },
-      { metric: "Contracts / mo", value: "38", delta: "+245%" },
-    ],
-    timeline: "5 months",
-    spend: "$22k/mo",
-    highlight: "From 11 to 38 signed roof replacements per month.",
-  },
-  {
-    id: "electrician",
-    industry: "Electrician",
-    icon: Zap,
-    client: "VoltEdge Electric",
-    location: "Phoenix, AZ",
-    vertical: "Home Services",
-    challenge:
-      "Seasonal AC-related electrical calls spiked in summer but they had no off-season pipeline. CRM was a spreadsheet.",
-    approach:
-      "Built seasonal full-funnel: EV charger install + panel upgrade campaigns in winter, emergency repair in summer. Added automated review + referral engine after every job.",
-    results: [
-      { metric: "Off-season revenue", value: "$84k/mo", delta: "+210%" },
-      { metric: "Google rating", value: "4.9★", delta: "+0.4" },
-      { metric: "Repeat customer rate", value: "34%", delta: "+18pts" },
-    ],
-    timeline: "8 months",
-    spend: "$11k/mo",
-    highlight: "Built a year-round pipeline that doesn't depend on weather.",
-  },
-  {
+{
     id: "cleaning",
     industry: "Cleaning",
     icon: Sparkles,
@@ -283,87 +183,7 @@ export const caseStudies: CaseStudy[] = [
     spend: "$6k/mo",
     highlight: "100 qualified leads every single month — without paying aggregators.",
   },
-  {
-    id: "yarn",
-    industry: "Yarn & Crafts",
-    icon: Scissors,
-    client: "Heritage Yarn Co.",
-    location: "Portland, OR",
-    vertical: "Ecommerce",
-    challenge:
-      "DTC yarn brand with passionate community but plateaued at $90k/mo. High AOV but low purchase frequency.",
-    approach:
-      "Launched a subscription 'Yarn of the Month' club, paired with UGC knitting tutorials on TikTok and a pattern-library email nurture that reactivated 1,800 past buyers.",
-    results: [
-      { metric: "Monthly revenue", value: "$312k", delta: "+247%" },
-      { metric: "Repeat purchase rate", value: "48%", delta: "+22pts" },
-      { metric: "Email-attributed revenue", value: "31%", delta: "+18pts" },
-    ],
-    timeline: "9 months",
-    spend: "$18k/mo",
-    highlight: "Turned a hobbyist community into a $3.7M/yr DTC brand.",
-  },
-  {
-    id: "car-repair",
-    industry: "Car Repairing",
-    icon: Car,
-    client: "Apex Auto Repair",
-    location: "Chicago, IL",
-    vertical: "Local Services",
-    challenge:
-      "Independent shop competing with dealer service centers. Average wait time 3 weeks, no online booking.",
-    approach:
-      "Built a digital booking flow with diagnostic-tree pricing transparency, plus retargeting for high-margin services (brakes, transmission, diagnostics).",
-    results: [
-      { metric: "Online bookings", value: "62%", delta: "from 0%" },
-      { metric: "Avg RO", value: "$612", delta: "+38%" },
-      { metric: "Bays utilized", value: "94%", delta: "+31pts" },
-    ],
-    timeline: "6 months",
-    spend: "$7k/mo",
-    highlight: "Filled the calendar 5 weeks out without a single Groupon.",
-  },
-  {
-    id: "gadgets",
-    industry: "Ecommerce · Gadgets",
-    icon: Smartphone,
-    client: "NovaTech Audio",
-    location: "Brooklyn, NY",
-    vertical: "Ecommerce",
-    challenge:
-      "Premium Bluetooth audio brand hitting diminishing returns on Meta. TAC climbing, iOS attribution broken.",
-    approach:
-      "Rebuilt measurement with server-side CAPI + post-purchase survey. Scaled TikTok Spark Ads with creator partnerships. Layered Google PMax for branded + comparison search.",
-    results: [
-      { metric: "Blended ROAS", value: "4.8x", delta: "+71%" },
-      { metric: "Monthly revenue", value: "$1.4M", delta: "+218%" },
-      { metric: "Email + SMS revenue", value: "27%", delta: "+19pts" },
-    ],
-    timeline: "9 months",
-    spend: "$210k/mo",
-    highlight: "Scaled from $440k to $1.4M/mo without ROAS collapse.",
-  },
-  {
-    id: "cosmetics",
-    industry: "Ecommerce · Cosmetics",
-    icon: Brush,
-    client: "Luxe Beauty Lab",
-    location: "Toronto, ON",
-    vertical: "Ecommerce",
-    challenge:
-      "Indie cosmetics brand losing to Sephora exclusives. High repeat intent, no subscription model.",
-    approach:
-      "Launched refill subscription + 'try before you buy' sample kits. Scaled UGC unboxing on Reels + TikTok, plus influencer gifting with affiliate codes.",
-    results: [
-      { metric: "Subscriber count", value: "12,400", delta: "+9x" },
-      { metric: "LTV / CAC ratio", value: "4.2", delta: "+118%" },
-      { metric: "Monthly revenue", value: "$420k", delta: "+193%" },
-    ],
-    timeline: "10 months",
-    spend: "$58k/mo",
-    highlight: "Subscription now drives 41% of monthly revenue.",
-  },
-  {
+{
     id: "clothing",
     industry: "Ecommerce · Shopify (AU)",
     icon: Shirt,
@@ -383,247 +203,7 @@ export const caseStudies: CaseStudy[] = [
     spend: "$32k/mo",
     highlight: "Scaled from 2x to 13x ROI on a Shopify store in 6 months.",
   },
-  {
-    id: "telecom",
-    industry: "Ecommerce · Telecom",
-    icon: Phone,
-    client: "Signal Mobile",
-    location: "Austin, TX",
-    vertical: "Ecommerce",
-    challenge:
-      "MVNO with high churn after the 90-day cliff. CAC was unsustainable against 6-month LTV.",
-    approach:
-      "Rebuilt around annual plans + hardware bundles. Launched retention lifecycle with usage-based upsell, plus referral program with $25 dual-sided incentive.",
-    results: [
-      { metric: "90-day churn", value: "4.1%", delta: "−62%" },
-      { metric: "Annual plan mix", value: "47%", delta: "+39pts" },
-      { metric: "Net new subs / mo", value: "6,200", delta: "+154%" },
-    ],
-    timeline: "12 months",
-    spend: "$140k/mo",
-    highlight: "Lowered churn enough to scale paid profitably 2.5x.",
-  },
-  {
-    id: "sports",
-    industry: "Ecommerce · Sports",
-    icon: Dumbbell,
-    client: "Titan Strength Co.",
-    location: "Denver, CO",
-    vertical: "Ecommerce",
-    challenge:
-      "DTC gym equipment brand post-COVID plateau. Heavy items = high shipping cost, low reorder rate.",
-    approach:
-      "Launched accessories + consumables (chalk, belts, grips) as repeat-buy SKUs. YouTube long-form education + Meta retargeting bundle offers.",
-    results: [
-      { metric: "Repeat purchase rate", value: "38%", delta: "+26pts" },
-      { metric: "Shipping cost / order", value: "−29%", delta: "−29%" },
-      { metric: "Monthly revenue", value: "$680k", delta: "+164%" },
-    ],
-    timeline: "9 months",
-    spend: "$72k/mo",
-    highlight: "Built a consumables flywheel that lifts LTV 3.4x.",
-  },
-  {
-    id: "pet-supplies",
-    industry: "Ecommerce · Pet Supplies",
-    icon: PawPrint,
-    client: "Pawsome Co.",
-    location: "Austin, TX",
-    vertical: "Ecommerce",
-    challenge:
-      "Premium pet food + supplement brand losing to Chewy on price. Subscription churn spiking at month 3.",
-    approach:
-      "Rebuilt offer around a 'first month free + flex schedule' subscription. Launched breed-specific quiz funnel and UGC testimonial engine on Meta + TikTok.",
-    results: [
-      { metric: "Active subscribers", value: "9,800", delta: "+248%" },
-      { metric: "3-month churn", value: "8.2%", delta: "−58%" },
-      { metric: "LTV / CAC ratio", value: "3.6", delta: "+112%" },
-    ],
-    timeline: "8 months",
-    spend: "$54k/mo",
-    highlight: "Cut subscription churn by more than half in one quarter.",
-  },
-  {
-    id: "coffee",
-    industry: "Ecommerce · Coffee",
-    icon: Coffee,
-    client: "Roast & Rebel Coffee",
-    location: "Portland, OR",
-    vertical: "Ecommerce",
-    challenge:
-      "Specialty coffee roaster stuck at $90k/mo. High AOV ($48) but only 1.4 orders/customer/year.",
-    approach:
-      "Launched 'roaster's choice' subscription + gift bundles for corporate gifting. Built a tasting-flight quiz that recommends origin by flavor profile.",
-    results: [
-      { metric: "Subscription revenue", value: "42%", delta: "+38pts" },
-      { metric: "Avg orders / customer / yr", value: "4.1", delta: "+193%" },
-      { metric: "Monthly revenue", value: "$310k", delta: "+244%" },
-    ],
-    timeline: "10 months",
-    spend: "$32k/mo",
-    highlight: "Turned occasional buyers into 4x/year subscribers.",
-  },
-  {
-    id: "home-decor",
-    industry: "Ecommerce · Home Decor",
-    icon: Sofa,
-    client: "Nordhaus Living",
-    location: "Brooklyn, NY",
-    vertical: "Ecommerce",
-    challenge:
-      "DTC home decor + lighting brand with long consideration cycle (avg 21 days). High cart abandonment, low brand recall.",
-    approach:
-      "Built a 14-day Pinterest + Meta retargeting sequence with room-styling reels. Launched AR room-visualizer on PDP. Added 'designer-pick' bundles with anchor pricing.",
-    results: [
-      { metric: "Cart-to-purchase rate", value: "31%", delta: "+78%" },
-      { metric: "Avg session duration", value: "4m 12s", delta: "+162%" },
-      { metric: "Monthly revenue", value: "$540k", delta: "+128%" },
-    ],
-    timeline: "7 months",
-    spend: "$48k/mo",
-    highlight: "AR visualizer lifted conversion 38% on featured SKUs.",
-  },
-  {
-    id: "jewelry",
-    industry: "Ecommerce · Jewelry",
-    icon: Gem,
-    client: "Meira Fine Jewelry",
-    location: "Los Angeles, CA",
-    vertical: "Ecommerce",
-    challenge:
-      "Demi-fine jewelry brand ($150-$800 AOV). High price point = high trust barrier, low first-purchase conversion.",
-    approach:
-      "Launched 'try-at-home' program for $1 (credited to purchase). Built founder-story creative on Instagram + TikTok. Layered review-request automation + UGC gallery on PDP.",
-    results: [
-      { metric: "First-purchase conversion", value: "3.8%", delta: "+171%" },
-      { metric: "Try-at-home → purchase", value: "29%", delta: "+29pts" },
-      { metric: "Monthly revenue", value: "$420k", delta: "+196%" },
-    ],
-    timeline: "9 months",
-    spend: "$38k/mo",
-    highlight: "Try-at-home program drove 29% purchase rate from trials.",
-  },
-  {
-    id: "supplements",
-    industry: "Ecommerce · Supplements",
-    icon: Pill,
-    client: "VitalRoot Wellness",
-    location: "Miami, FL",
-    vertical: "Ecommerce",
-    challenge:
-      "Health supplement brand facing rising CAC and tightening Meta ad costs. Subscription plateau at 4,200 active subs.",
-    approach:
-      "Pivoted to problem-aware funnel: sleep, energy, gut health quiz → personalized bundle. Layered TikTok creator partnerships + affiliate program. Implemented post-purchase upsell flow.",
-    results: [
-      { metric: "Blended CAC", value: "$34", delta: "−47%" },
-      { metric: "Active subscribers", value: "14,800", delta: "+252%" },
-      { metric: "AOV (with upsells)", value: "$78", delta: "+62%" },
-    ],
-    timeline: "10 months",
-    spend: "$96k/mo",
-    highlight: "Quiz funnel cut CAC nearly in half while doubling subs.",
-  },
-  {
-    id: "baby-kids",
-    industry: "Ecommerce · Baby & Kids",
-    icon: Baby,
-    client: "Little Atlas Co.",
-    location: "Seattle, WA",
-    vertical: "Ecommerce",
-    challenge:
-      "Premium baby gear brand (carriers, sleep sacks, feeding). High trust required, strong seasonality, plateauing growth.",
-    approach:
-      "Launched safety-certified content marketing on YouTube + Pinterest. Built a milestone-based lifecycle email that maps to baby's age. Partnered with 40+ parent influencers for UGC.",
-    results: [
-      { metric: "Email revenue share", value: "34%", delta: "+22pts" },
-      { metric: "New customer rate", value: "62%", delta: "+18pts" },
-      { metric: "Monthly revenue", value: "$380k", delta: "+148%" },
-    ],
-    timeline: "9 months",
-    spend: "$42k/mo",
-    highlight: "Milestone lifecycle now drives 34% of total revenue.",
-  },
-  {
-    id: "outdoor-gear",
-    industry: "Ecommerce · Outdoor Gear",
-    icon: Mountain,
-    client: "Ridgeline Outdoors",
-    location: "Salt Lake City, UT",
-    vertical: "Ecommerce",
-    challenge:
-      "DTC outdoor + camping gear brand competing with REI + Backcountry. Long consideration cycle, high return rate on apparel.",
-    approach:
-      "Launched 'trail-tested' UGC series with real hikers + creators. Built fit-guide quiz for apparel. Layered seasonal bundles (camp kitchen, sleep system) with member pricing.",
-    results: [
-      { metric: "Return rate", value: "11%", delta: "−52%" },
-      { metric: "Bundle attach rate", value: "27%", delta: "+27pts" },
-      { metric: "Monthly revenue", value: "$620k", delta: "+118%" },
-    ],
-    timeline: "11 months",
-    spend: "$64k/mo",
-    highlight: "Cut apparel returns in half with fit-guide quiz.",
-  },
-  {
-    id: "watches",
-    industry: "Ecommerce · Watches",
-    icon: Watch,
-    client: "Meridian Watch Co.",
-    location: "Toronto, ON",
-    vertical: "Ecommerce",
-    challenge:
-      "Direct-to-consumer watch brand ($300-$1,200 AOV). High trust barrier, luxury positioning, difficult to justify ad spend at scale.",
-    approach:
-      "Launched founder-led YouTube long-form (watchmaking process). Built comparison pages vs. legacy brands. Layered Meta catalog ads with movement-specific creative.",
-    results: [
-      { metric: "Blended ROAS", value: "3.9x", delta: "+86%" },
-      { metric: "Avg order value", value: "$485", delta: "+34%" },
-      { metric: "Monthly revenue", value: "$290k", delta: "+172%" },
-    ],
-    timeline: "8 months",
-    spend: "$58k/mo",
-    highlight: "Founder content drove 41% of new-customer revenue.",
-  },
-  {
-    id: "audio-accessories",
-    industry: "Ecommerce · Audio Accessories",
-    icon: Headphones,
-    client: "Bassdrop Audio",
-    location: "Shenzhen, CN → Global",
-    vertical: "Ecommerce",
-    challenge:
-      "Audio accessories brand (cables, cases, stands) on Amazon + DTC. Low AOV ($28), high competition, weak brand identity.",
-    approach:
-      "Rebuilt DTC site with bundle pricing + 'audiophile starter kit'. Launched YouTube reviewer partnerships + Reddit-targeted Meta ads. Added post-purchase cross-sell flow.",
-    results: [
-      { metric: "AOV (DTC)", value: "$72", delta: "+157%" },
-      { metric: "DTC revenue share", value: "38%", delta: "+27pts" },
-      { metric: "Monthly DTC revenue", value: "$180k", delta: "+218%" },
-    ],
-    timeline: "7 months",
-    spend: "$24k/mo",
-    highlight: "Shifted 38% of revenue off Amazon onto owned DTC channel.",
-  },
-  {
-    id: "gifting",
-    industry: "Ecommerce · Gifting",
-    icon: Gift,
-    client: "Curated Joy Co.",
-    location: "Chicago, IL",
-    vertical: "Ecommerce",
-    challenge:
-      "Curated gift box brand with extreme seasonality (Q4 = 70% of revenue). Off-season cash crunch, weak repeat purchase.",
-    approach:
-      "Built 'celebration calendar' lifecycle (birthdays, anniversaries, holidays). Launched corporate gifting B2B funnel. Added subscription 'surprise box' quarterly.",
-    results: [
-      { metric: "Off-season revenue", value: "$72k/mo", delta: "+186%" },
-      { metric: "Corporate accounts", value: "84", delta: "+84" },
-      { metric: "Q4 revenue", value: "$1.8M", delta: "+92%" },
-    ],
-    timeline: "12 months",
-    spend: "$36k/mo",
-    highlight: "Smoothed seasonality — off-season is now 30% of revenue.",
-  },
-  {
+{
     id: "tint-shop",
     industry: "Home Services · Tint Shop",
     icon: Car,
@@ -643,7 +223,7 @@ export const caseStudies: CaseStudy[] = [
     spend: "$5.3k/mo",
     highlight: "445 tracked phone calls + 250 quote requests from a single tint shop.",
   },
-  {
+{
     id: "gad-434k",
     industry: "Home Services · Lead Gen",
     icon: MousePointerClick,
@@ -664,7 +244,7 @@ export const caseStudies: CaseStudy[] = [
     spend: "$8.9k/mo",
     highlight: "1,160 conversions at $38 CPA from a home service group.",
   },
-  {
+{
     id: "gad-655-calls",
     industry: "Home Services · Call Tracking",
     icon: Phone,
@@ -685,7 +265,7 @@ export const caseStudies: CaseStudy[] = [
     spend: "$6.2k/mo",
     highlight: "655 tracked phone calls — calls went from untracked to primary KPI.",
   },
-  {
+{
     id: "ms-ads-184k",
     industry: "Ecommerce · Microsoft Ads",
     icon: BarChart3,
@@ -706,7 +286,7 @@ export const caseStudies: CaseStudy[] = [
     spend: "$20k/mo",
     highlight: "Microsoft Ads added 620K in tracked purchase value at lower CAC than Google.",
   },
-  {
+{
     id: "downioa",
     industry: "Ecommerce · Shopify DTC",
     icon: Smartphone,
@@ -727,7 +307,7 @@ export const caseStudies: CaseStudy[] = [
     spend: "$8.5k/mo",
     highlight: "Scaled to 764% actual ROAS — $259K conversion value from $33.9K spend.",
   },
-  {
+{
     id: "lead-gen-13-camp",
     industry: "Home Services · Multi-Campaign",
     icon: MousePointerClick,
@@ -748,7 +328,7 @@ export const caseStudies: CaseStudy[] = [
     spend: "$780/mo",
     highlight: "488 tracked conversions across 13 campaigns at $9.57 blended CPA.",
   },
-  {
+{
     id: "call-heavy-184",
     industry: "Home Services · Call-Heavy",
     icon: Phone,
@@ -769,7 +349,7 @@ export const caseStudies: CaseStudy[] = [
     spend: "$900/mo",
     highlight: "184 tracked phone calls + 759 total conversions over 16 months.",
   },
-  {
+{
     id: "vsl-lead-gen",
     industry: "Ecommerce · VSL Funnels",
     icon: Megaphone,
@@ -790,7 +370,7 @@ export const caseStudies: CaseStudy[] = [
     spend: "$1.5k/mo",
     highlight: "531 VSL leads at $8.44 each — Retargeting angle won at $6.78 CPR.",
   },
-  {
+{
     id: "fb-cynthia",
     industry: "Ecommerce · Multi-Campaign FB",
     icon: Megaphone,
@@ -811,7 +391,7 @@ export const caseStudies: CaseStudy[] = [
     spend: "$5.5k/mo",
     highlight: "$43,869 spent across 7 FB campaigns — 67,000,000 campaign drove 612 results at $11.28 CPR.",
   },
-  {
+{
     id: "fb-8415-lifetime",
     industry: "Home Services · Lead Gen FB",
     icon: Megaphone,
@@ -846,51 +426,7 @@ export type PortfolioItem = {
 };
 
 export const portfolio: PortfolioItem[] = [
-  {
-    id: "p1",
-    title: "MetroFlow Plumbing",
-    category: "Home Services",
-    description:
-      "Built a dispatch-aware lead engine that books 184 plumbing jobs/mo at $62 CAC. Replaced their dependency on aggregators with a direct-to-consumer funnel.",
-    metric: "184",
-    metricLabel: "Jobs / month",
-    tags: ["Google LSA", "Meta Lead Forms", "Twilio", "GoHighLevel"],
-    accent: "fire",
-  },
-  {
-    id: "p2",
-    title: "NovaTech Audio",
-    category: "Ecommerce · Gadgets",
-    description:
-      "Scaled a premium audio brand from $440k to $1.4M/mo with server-side measurement, TikTok creator partnerships, and a 9-touch email engine.",
-    metric: "4.8x",
-    metricLabel: "Blended ROAS",
-    tags: ["TikTok Spark", "PMax", "CAPI", "Klaviyo"],
-    accent: "brand",
-  },
-  {
-    id: "p3",
-    title: "Skyline Roofing",
-    category: "Home Services",
-    description:
-      "Weather-API-triggered Meta campaigns + virtual estimate tool cut cost per signed roof contract by 42% in storm season.",
-    metric: "−42%",
-    metricLabel: "Cost per signed contract",
-    tags: ["Meta Storm", "PMax", "Calendly", "Weather API"],
-    accent: "fire",
-  },
-  {
-    id: "p4",
-    title: "Luxe Beauty Lab",
-    category: "Ecommerce · Cosmetics",
-    description:
-      "Launched refill subscription + sample kits. Subscription now drives 41% of monthly revenue with a 4.2 LTV:CAC ratio.",
-    metric: "12.4k",
-    metricLabel: "Active subscribers",
-    tags: ["Recharge", "UGC", "Reels", "Influencer"],
-    accent: "brand",
-  },
-  {
+{
     id: "p5",
     title: "Origani",
     category: "Ecommerce · Shopify (AU)",
@@ -901,7 +437,7 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Shopify", "CAPI", "Klaviyo", "UGC"],
     accent: "fire",
   },
-  {
+{
     id: "p5b",
     title: "Calgary Cleaning",
     category: "Home Services · Cleaning",
@@ -912,62 +448,7 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Google LSA", "Meta Lead Forms", "GoHighLevel", "Twilio"],
     accent: "brand",
   },
-  {
-    id: "p6",
-    title: "Titan Strength Co.",
-    category: "Ecommerce · Sports",
-    description:
-      "Built a consumables flywheel (chalk, belts, grips) on top of heavy equipment, lifting repeat purchase rate by 26 points and LTV 3.4x.",
-    metric: "+164%",
-    metricLabel: "Monthly revenue",
-    tags: ["YouTube", "Bundle", "Recharge", "GA4"],
-    accent: "brand",
-  },
-  {
-    id: "p7",
-    title: "Pawsome Co.",
-    category: "Ecommerce · Pet Supplies",
-    description:
-      "Rebuilt offer around 'first month free' subscription + breed-specific quiz funnel. Cut 3-month churn by 58% while nearly tripling active subscribers.",
-    metric: "9.8k",
-    metricLabel: "Active subscribers",
-    tags: ["Subscription", "Quiz", "UGC", "TikTok"],
-    accent: "fire",
-  },
-  {
-    id: "p8",
-    title: "Roast & Rebel Coffee",
-    category: "Ecommerce · Coffee",
-    description:
-      "Launched 'roaster's choice' subscription + corporate gifting bundles. Tasting-flight quiz turned 1.4 orders/yr customers into 4.1 orders/yr subscribers.",
-    metric: "+244%",
-    metricLabel: "Monthly revenue",
-    tags: ["Subscription", "Quiz", "Recharge", "Klaviyo"],
-    accent: "brand",
-  },
-  {
-    id: "p9",
-    title: "VitalRoot Wellness",
-    category: "Ecommerce · Supplements",
-    description:
-      "Problem-aware quiz funnel (sleep, energy, gut) cut blended CAC 47% while post-purchase upsells lifted AOV 62%. Sub base grew from 4.2k to 14.8k.",
-    metric: "−47%",
-    metricLabel: "Blended CAC",
-    tags: ["Quiz", "TikTok", "Upsell", "Recharge"],
-    accent: "fire",
-  },
-  {
-    id: "p10",
-    title: "Meira Fine Jewelry",
-    category: "Ecommerce · Jewelry",
-    description:
-      "$1 try-at-home program (credited to purchase) broke the luxury trust barrier. Founder-story creative on IG + TikTok lifted first-purchase conversion 171%.",
-    metric: "29%",
-    metricLabel: "Trial → purchase rate",
-    tags: ["Try-at-Home", "UGC", "Founder", "IG"],
-    accent: "brand",
-  },
-  {
+{
     id: "p11",
     title: "Tint Shop",
     category: "Home Services · Tint",
@@ -978,7 +459,7 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Google Ads", "Call Tracking", "FB Ads", "Lead Gen"],
     accent: "fire",
   },
-  {
+{
     id: "p12",
     title: "Home Service Group",
     category: "Home Services · Lead Gen",
@@ -989,7 +470,7 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Google Ads", "SKAGs", "A/B Testing", "Call Tracking"],
     accent: "brand",
   },
-  {
+{
     id: "p13",
     title: "Service Pro Network",
     category: "Home Services · Call Tracking",
@@ -1000,7 +481,7 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Call-Only", "Offline Conv.", "Google Ads", "Urgency"],
     accent: "fire",
   },
-  {
+{
     id: "p14",
     title: "DTC Electronics Brand",
     category: "Ecommerce · Microsoft Ads",
@@ -1011,7 +492,7 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Microsoft Ads", "Shopping", "UET", "Bing"],
     accent: "brand",
   },
-  {
+{
     id: "p15",
     title: "Downioa",
     category: "Ecommerce · Shopify DTC",
@@ -1022,7 +503,7 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Google PMax", "Shopify", "CAPI", "Server-side"],
     accent: "fire",
   },
-  {
+{
     id: "p16",
     title: "Lead Gen · 13 Campaigns",
     category: "Home Services · Multi-Campaign",
@@ -1033,7 +514,7 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Google Ads", "Lead Forms", "Call Tracking", "13 Campaigns"],
     accent: "brand",
   },
-  {
+{
     id: "p17",
     title: "Call-Heavy Lead Gen",
     category: "Home Services · Call-Heavy",
@@ -1044,7 +525,7 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Call-Only", "Offline Conv.", "Google Ads", "16 months"],
     accent: "fire",
   },
-  {
+{
     id: "p18",
     title: "VSL Lead Gen",
     category: "Ecommerce · VSL Funnels",
@@ -1055,7 +536,7 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Facebook Ads", "VSL", "4 Ad Sets", "Angle Testing"],
     accent: "brand",
   },
-  {
+{
     id: "p19",
     title: "Meta Ads · CYNTHIA",
     category: "Ecommerce · Multi-Campaign",
@@ -1066,7 +547,7 @@ export const portfolio: PortfolioItem[] = [
     tags: ["Facebook Ads", "7 Campaigns", "Film Niche", "Creative Testing"],
     accent: "fire",
   },
-  {
+{
     id: "p20",
     title: "Meta Ads · Lifetime Budgets",
     category: "Home Services · Lead Gen",
@@ -1223,133 +704,123 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     id: "t1",
-    quote:
-      "Shariful scaled us from $440k to $1.4M a month without ROAS collapsing. He's the only marketer I've worked with who actually understands unit economics — not just ROAS, but contribution margin and cash cycle. We finally stopped renting growth and started owning a brand.",
-    name: "David Chen",
-    role: "Founder & CEO",
-    company: "NovaTech Audio",
-    industry: "Ecommerce · Gadgets",
+    quote: "Shariful scaled our Shopify store from 2x to 13x ROI in 6 months. He rebuilt our entire funnel — CAPI, UGC creative, Klaviyo lifecycle. The kind of marketer who actually understands unit economics.",
+    name: "Origani Founder",
+    role: "Founder",
+    company: "Origani",
+    industry: "Ecommerce · Shopify",
     rating: 5,
     vertical: "Ecommerce",
-    metric: "3.2x",
-    metricLabel: "Revenue in 9 months",
+    metric: "13x",
+    metricLabel: "ROI",
   },
   {
     id: "t2",
-    quote:
-      "Subscription churn was killing us. Shariful rebuilt the offer, built a quiz funnel, and within two quarters we went from 4,200 subs to 14,800. CAC dropped by half. I've never had a marketer deliver this level of clarity on what's actually moving the business.",
-    name: "Dr. Sarah Patel",
-    role: "Co-Founder",
-    company: "VitalRoot Wellness",
-    industry: "Ecommerce · Supplements",
-    rating: 5,
-    vertical: "Ecommerce",
-    metric: "−47%",
-    metricLabel: "Blended CAC",
-  },
-  {
-    id: "t3",
-    quote:
-      "We were paying $180 per booked plumbing job and getting eaten by HomeAdvisor. Shariful came in, rebuilt the funnel, and within 90 days we were at $62 per job — and booked 184 jobs in a single month. He saved my business.",
-    name: "Marcus Reyes",
+    quote: "Calgary Cleaning went from word-of-mouth to 100 qualified leads every month. Shariful built Google LSA + Meta lead forms with 60-second response SLA. Best investment we've made.",
+    name: "Calgary Cleaning Owner",
     role: "Owner",
-    company: "MetroFlow Plumbing",
-    industry: "Home Services · Plumbing",
-    rating: 5,
-    vertical: "Home Services",
-    metric: "184",
-    metricLabel: "Booked jobs / month",
-  },
-  {
-    id: "t4",
-    quote:
-      "I'd been burned by two agencies before Shariful. He's different — he actually picked up the phone, walked through my P&L, and told me flat-out what wasn't working. Cost per signed roof contract dropped 42% in one storm season. He's earned a long-term partner.",
-    name: "Hank Calloway",
-    role: "Founder",
-    company: "Skyline Roofing Group",
-    industry: "Home Services · Roofing",
-    rating: 5,
-    vertical: "Home Services",
-    metric: "−42%",
-    metricLabel: "Cost per signed contract",
-  },
-  {
-    id: "t5",
-    quote:
-      "Shariful built us a year-round pipeline that doesn't depend on Arizona summer. Off-season revenue tripled, our Google rating jumped to 4.9 stars, and customers now refer us without us even asking. The system runs itself now.",
-    name: "Teresa Alvarez",
-    role: "Owner",
-    company: "VoltEdge Electric",
-    industry: "Home Services · Electrician",
-    rating: 5,
-    vertical: "Home Services",
-    metric: "+210%",
-    metricLabel: "Off-season revenue",
-  },
-  {
-    id: "t6",
-    quote:
-      "Our cleaning subscription had 28% churn and rising CAC. Shariful rebuilt the offer around a 3-month commit, added a 9-touch lifecycle, and cut churn in half. MRR tripled. We finally have a business that scales without breaking.",
-    name: "Olivia Bennett",
-    role: "Co-Founder",
-    company: "PristinePro Cleaning",
+    company: "Calgary Cleaning",
     industry: "Home Services · Cleaning",
     rating: 5,
     vertical: "Home Services",
-    metric: "62%",
-    metricLabel: "12-month retention",
+    metric: "100",
+    metricLabel: "Leads / month",
+  },
+  {
+    id: "t3",
+    quote: "445 tracked phone calls + 250 quote requests from a single tint shop. Shariful built call tracking and lead forms that actually work. Cost per lead dropped 71%.",
+    name: "Tint Shop Owner",
+    role: "Owner",
+    company: "Tint Shop",
+    industry: "Home Services · Auto",
+    rating: 5,
+    vertical: "Home Services",
+    metric: "445",
+    metricLabel: "Phone calls tracked",
+  },
+  {
+    id: "t4",
+    quote: "320+ leads every month at $18/lead. Shariful built our entire lead engine — Google LSA, Meta lead forms, call tracking, GoHighLevel automation. Our calendar is full.",
+    name: "Home Repair Services Owner",
+    role: "Owner",
+    company: "Home Repair Services 24",
+    industry: "Local Services · Home Repair",
+    rating: 5,
+    vertical: "Local Services",
+    metric: "320+",
+    metricLabel: "Leads / month",
+  },
+  {
+    id: "t5",
+    quote: "$42k/mo spend at 4.8x ROAS. Shariful scaled our gadget store with Meta Advantage+ + TikTok Spark + Google PMax. Orders went from 800 to 3,400/month.",
+    name: "Gearovo Founder",
+    role: "Founder",
+    company: "Gearovo",
+    industry: "Ecommerce · Gadgets",
+    rating: 5,
+    vertical: "Ecommerce",
+    metric: "4.8x",
+    metricLabel: "ROAS",
+  },
+  {
+    id: "t6",
+    quote: "Shariful built our eSIM funnel with server-side CAPI. 3,800+ activations/month at 4.2x ROAS. He understands digital products better than anyone we've worked with.",
+    name: "Skycoms Founder",
+    role: "Founder",
+    company: "Skycoms",
+    industry: "Ecommerce · eSIM",
+    rating: 5,
+    vertical: "Ecommerce",
+    metric: "4.2x",
+    metricLabel: "ROAS",
   },
   {
     id: "t7",
-    quote:
-      "I was a one-man show maxed out at 5 jobs a day. Shariful's funnel filled my calendar 8 weeks out, and I hired two new crews in four months. The ROI was obvious from week one — I just wish I'd found him three years earlier.",
-    name: "Joe Marchetti",
+    quote: "280+ qualified leads/month for our handyman service in Singapore. Shariful built multi-service funnels with online booking. We hired 2 new crews because of the volume.",
+    name: "Best Handyman SG Owner",
     role: "Owner",
-    company: "FixIt Joe Pro",
-    industry: "Home Services · Handyman",
+    company: "Best Handyman Services SG",
+    industry: "Local Services · Handyman",
     rating: 5,
-    vertical: "Home Services",
-    metric: "47",
-    metricLabel: "Jobs / week",
+    vertical: "Local Services",
+    metric: "280+",
+    metricLabel: "Leads / month",
   },
   {
     id: "t8",
-    quote:
-      "We were getting crushed by online printers. Shariful built us a sample-kit offer, an ABM flow on LinkedIn, and a 5-touch nurture. Quote volume nearly tripled and average order value jumped 44%. Best money we've spent in five years.",
-    name: "Karen Whitfield",
-    role: "VP Sales",
-    company: "InkPress Print Co.",
-    industry: "Local Services · Printing",
+    quote: "Shariful built our VSL funnel with 4 angle-tested ad sets. 531 VSL leads at $8.44 each. Retargeting angle won at $6.78 CPR. Smart, data-driven, and fast.",
+    name: "VSL Lead Gen Founder",
+    role: "Founder",
+    company: "VSL Lead Gen",
+    industry: "Ecommerce · VSL",
     rating: 5,
-    vertical: "Local Services",
-    metric: "+178%",
-    metricLabel: "Qualified quotes / month",
+    vertical: "Ecommerce",
+    metric: "531",
+    metricLabel: "VSL Leads",
   },
   {
     id: "t9",
-    quote:
-      "Independent auto shop competing with dealers is brutal. Shariful built a transparent online booking flow and retargeted high-margin services. Online bookings are now 62% of intake and average repair order is up 38%. Bays are 94% utilized.",
-    name: "Frank Delgado",
+    quote: "200+ quote requests/month for our painting company. Before/after creative engine on Meta + Google LSA. 38% close rate. Shariful knows home services inside out.",
+    name: "Right Now Painting Owner",
     role: "Owner",
-    company: "Apex Auto Repair",
-    industry: "Local Services · Car Repair",
+    company: "Right Now Painting",
+    industry: "Local Services · Painting",
     rating: 5,
     vertical: "Local Services",
-    metric: "62%",
-    metricLabel: "Online bookings",
+    metric: "200+",
+    metricLabel: "Quotes / month",
   },
   {
     id: "t10",
-    quote:
-      "Shariful turned my hobbyist yarn community into a $3.7M-a-year DTC brand. Subscription Yarn-of-the-Month, UGC knitting tutorials, and a pattern library that reactivates past buyers. He genuinely understands community-led commerce.",
-    name: "Margaret Holloway",
+    quote: "$38k/mo spend at 4.6x ROAS for our energy drink brand. 5,200+ subscriptions. Shariful built the entire subscription funnel + UGC creator program.",
+    name: "Hyper Fuel Founder",
     role: "Founder",
-    company: "Heritage Yarn Co.",
-    industry: "Specialty · Yarn & Crafts",
+    company: "Hyper Fuel",
+    industry: "Ecommerce · Energy Drink",
     rating: 5,
-    vertical: "Specialty",
-    metric: "$312k",
-    metricLabel: "Monthly revenue",
+    vertical: "Ecommerce",
+    metric: "4.6x",
+    metricLabel: "ROAS",
   },
 ];
 
