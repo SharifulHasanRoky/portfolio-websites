@@ -43,8 +43,8 @@ export function CaseStudies({ hideHeading = false }: { hideHeading?: boolean }) 
         {!hideHeading && (
           <SectionHeading
             eyebrow="Case studies · real numbers, real clients"
-            title="14 industries. One repeatable system. Zero vanity metrics."
-            description="Pick an industry, see the actual challenge, the exact system I built, and the real numbers we hit. No 'up to 5x ROAS' hedging — these are the deals, signed contracts, and revenue that hit the bank."
+            title="2 niches. 12 case studies. One repeatable system."
+            description="Pick a vertical, see the actual challenge, the exact system I built, and the real numbers we hit. No 'up to 5x ROAS' hedging — these are signed contracts and revenue that hit the bank."
           />
         )}
 

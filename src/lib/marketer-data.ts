@@ -593,10 +593,10 @@ export const cvEntries: CVEntry[] = [
     company: "Verce",
     location: "Remote · worldwide",
     summary:
-      "Oversaw and optimized Google and Facebook ad campaigns for local and international brands including Reli Group, Winhub, MarwaridHR, TNS Global, I Fix Fast, Jamuna Gas, and more.",
+      "Oversaw and optimized Google and Facebook ad campaigns for local and international brands including Reli Group, Winhub, MarwaridHR, TNS Global, and more.",
     achievements: [
       "Oversaw Google and Facebook ad campaigns for multiple brands",
-      "Worked with Reli Group, Winhub, MarwaridHR, TNS Global, I Fix Fast, Jamuna Gas",
+      "Worked with Reli Group, Winhub, MarwaridHR, TNS Global",
       "Utilized Google Analytics and SEMrush for web analytics and performance tracking",
       "Provided daily progress reports to clients",
       "Conducted weekly status meetings with clients and team members",
@@ -690,8 +690,8 @@ export type HeadlineMetric = {
 };
 
 export const headlineMetrics: HeadlineMetric[] = [
-  { label: "Ad spend managed", value: "6.5", suffix: "M+", caption: "Across 22 brands in 18 months" },
-  { label: "Niches worked", value: "50", suffix: "+", caption: "From plumbing to luxury watches" },
+  { label: "Companies worked with", value: "150", suffix: "+", caption: "Ecommerce + home services brands worldwide" },
+  { label: "Core niches", value: "2", suffix: "", caption: "Ecommerce & Home Services — that's it" },
   { label: "Countries served", value: "60", suffix: "+", caption: "US, CA, UK, AU & 56 more" },
   { label: "Client retention", value: "94", suffix: "%", caption: "12-month rolling retention rate" },
 ];
@@ -1071,7 +1071,7 @@ export const personalTimeline: TimelineChapter[] = [
     year: "2023",
     title: "Joined Verce",
     description:
-      "Joined Verce as Digital Marketing Executive. Oversaw Google and Facebook ad campaigns for local and international brands including Reli Group, Winhub, MarwaridHR, TNS Global, I Fix Fast, Jamuna Gas.",
+      "Joined Verce as Digital Marketing Executive. Oversaw Google and Facebook ad campaigns for local and international brands including Reli Group, Winhub, MarwaridHR, TNS Global.",
   },
   {
     year: "2025",

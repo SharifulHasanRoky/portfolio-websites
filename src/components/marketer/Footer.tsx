@@ -5,8 +5,6 @@ import {
   ArrowUp,
   Mail,
   Linkedin,
-  Twitter,
-  Youtube,
   MapPin,
 } from "lucide-react";
 import { navLinks, type NavLink } from "@/lib/marketer-data";
@@ -152,38 +150,22 @@ export function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <a
-                  href="mailto:shariful@roky.studio"
+                  href="mailto:sharifulhasanrocky@gmail.com"
                   className="inline-flex items-center gap-2 text-sm text-foreground/80 hover:text-brand transition-colors"
                 >
                   <Mail className="h-4 w-4" />
-                  shariful@roky.studio
+                  sharifulhasanrocky@gmail.com
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://linkedin.com/in/sharifulhasanroky"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-foreground/80 hover:text-brand transition-colors"
                 >
                   <Linkedin className="h-4 w-4" />
                   LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-sm text-foreground/80 hover:text-brand transition-colors"
-                >
-                  <Twitter className="h-4 w-4" />
-                  Twitter / X
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-sm text-foreground/80 hover:text-brand transition-colors"
-                >
-                  <Youtube className="h-4 w-4" />
-                  YouTube
                 </a>
               </li>
             </ul>

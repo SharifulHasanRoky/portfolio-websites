@@ -1,10 +1,10 @@
-# Shariful Hasan Roky — Performance Marketer
+# Shariful Hasan Roky — Revenue Growth Strategist
 
-> Performance marketer for home services and DTC ecommerce brands. Managed $6.5M+ in tracked ad spend across 22 brands in 18 months.
+> Revenue growth strategist for ecommerce and home services brands. 4+ years, 150+ companies, 2 niches, 60+ countries.
 
 ## Who I am
 
-I'm Shariful Hasan Roky, an independent performance marketer based in Dhaka, Bangladesh. I build full-funnel paid + lifecycle systems for home services owners and DTC ecommerce founders across the US, Canada, UK, and Australia.
+I'm Shariful Hasan Roky, an independent revenue growth strategist based in Feni, Bangladesh. I build full-funnel paid + lifecycle systems for ecommerce founders and home services owners across the US, Canada, UK, and Australia.
 
 ## What I do
 
@@ -14,91 +14,88 @@ I run a 6-chapter system for every client, in this order: **campaign → busines
 - **Business**: Unit economics, CAC:LTV modeling, offer engineering, cash-cycle aware budget pacing.
 - **Scaling**: Horizontal + vertical scaling, budget laddering (20% bumps every 48-72h), SOP-ized so it survives team churn.
 - **Numbers**: Revenue, MER (blended ROAS), blended CAC, payback period — the only four numbers that move a business.
-- **Measurements**: Server-side GTM + Conversions API, unified data warehouse (BigQuery/Snowflake), MMM + incrementality for channels above $50k/mo.
+- **Measurements**: Server-side GTM + Conversions API, offline conversion import, call tracking, MMM + incrementality for channels above $50k/mo.
 - **Growth**: Lifecycle email/SMS, brand creative, referral loops, quarterly growth experiments.
 
-## Numbers (last 18 months)
+## Numbers
 
-- Ad spend managed: **$6.5M+** across 22 brands
-- Average client revenue lift: **168%** within first 6 months
-- Client retention (12-month rolling): **94%**
-- Industries served: **14+** (home services, DTC, local, specialty)
+- Companies worked with: **150+** across ecommerce and home services
+- Years of experience: **4+**
+- Core niches: **2** (Ecommerce & Home Services)
+- Countries served: **60+**
 
-## Case studies (23 total)
+## Case studies (12 total)
 
 ### Featured (2)
-- **Atelier Nord** — Sydney, Australia. Premium menswear Shopify store. Cut returns from 38% to 14% (−63%) with AR size-finder + size-quiz funnel. Mobile conversion +143%. AOV +72%.
-- **PristinePro Cleaning** — Calgary, AB, Canada. Subscription residential cleaning. Subscription CAC $48 (−57%). 12-month retention 62% (+24pts). MRR $96k (+187%).
+- **Origani** — Sydney, Australia. Australian Shopify ecommerce store. Scaled from 2x to 13x ROI in 6 months. $420k/mo revenue (+540%). Blended CAC $18 (−62%).
+- **Calgary Cleaning** — Calgary, AB, Canada. Local residential cleaning. 100 qualified leads per month at $24/lead (−71%). Booking rate 48%.
 
 ### Other ecommerce case studies
-- NovaTech Audio (gadgets) — Brooklyn, NY. $440k → $1.4M/mo. 4.8x blended ROAS.
-- Luxe Beauty Lab (cosmetics) — Toronto, ON. 12.4k subscribers. 4.2 LTV:CAC.
-- Signal Mobile (telecom) — Austin, TX. 90-day churn −62%. 6,200 net new subs/mo.
-- Titan Strength Co. (sports) — Denver, CO. Repeat purchase rate +26pts. $680k/mo.
-- Pawsome Co. (pet supplies) — Austin, TX. 9,800 subs (+248%). 3-mo churn −58%.
-- Roast & Rebel Coffee — Portland, OR. $310k/mo (+244%). 4.1 orders/customer/yr.
-- Nordhaus Living (home decor) — Brooklyn, NY. $540k/mo (+128%). AR visualizer +38% conv.
-- Meira Fine Jewelry — Los Angeles, CA. $1 try-at-home → 29% purchase rate.
-- VitalRoot Wellness (supplements) — Miami, FL. CAC −47%. 14.8k subs (from 4.2k).
-- Little Atlas Co. (baby & kids) — Seattle, WA. $380k/mo (+148%). Email = 34% revenue.
-- Ridgeline Outdoors (outdoor gear) — Salt Lake City, UT. $620k/mo (+118%). Returns −52%.
-- Meridian Watch Co. — Toronto, ON. 3.9x ROAS. Founder content = 41% new revenue.
-- Bassdrop Audio (audio accessories) — Shenzhen → Global. AOV +157%. 38% DTC share.
-- Curated Joy Co. (gifting) — Chicago, IL. Off-season +186%. Q4 revenue $1.8M.
-- Heritage Yarn Co. (yarn & crafts) — Portland, OR. $312k/mo (+247%).
+- DTC Electronics Brand — United States. Microsoft Advertising expansion. 620K tracked purchase value, CAC −31%.
+- Downioa — United States. Shopify DTC. Google PMax + server-side CAPI. 1.39K conversions, $259K conversion value, 764% actual ROAS.
+- VSL Lead Gen — United States. Video Sales Letter funnel on Facebook Ads. 531 VSL leads at $8.44 each. 4 angle-tested ad sets.
+- Meta Ads · CYNTHIA — United States. Film niche ecommerce, 7 parallel FB campaigns. $43,869 spend, 666,980 reach, 2.58M impressions.
 
-### Home services & local case studies
-- MetroFlow Plumbing — Dallas-Fort Worth, TX. 184 booked jobs/mo. CAC $62 (−66%).
-- FixIt Joe Pro (handyman) — Atlanta, GA. 47 jobs/week. Lead cost $21 (−48%).
-- InkPress Print Co. (printing) — Los Angeles, CA. 92 qualified quotes/mo (+178%).
-- Skyline Roofing Group — Houston, TX. 38 signed contracts/mo (+245%). Cost per signed contract −42%.
-- VoltEdge Electric — Phoenix, AZ. Off-season revenue +210%. Google rating 4.9★.
-- Apex Auto Repair — Chicago, IL. 62% online bookings. Avg RO $612 (+38%).
+### Home services case studies
+- Tint Shop — United States. Auto window tinting. 445 tracked phone calls + 250 quote requests in 6 months.
+- Home Service Group — United States. Multi-location HVAC + plumbing. 434K impressions, 1.16K conversions at $38 CPA.
+- Service Pro Network — United States. Call-only campaigns. 655 tracked calls, CTR 2.72%.
+- Lead Gen · 13 Campaigns — United States. 13-campaign lead-gen account. 488 conversions, 7 lead forms + 56 phone calls tracked.
+- Call-Heavy Lead Gen — United States. 184 tracked phone calls, 759 total conversions over 16 months.
+- Meta Ads · Lifetime Budgets — United States. 8 lifetime-budget FB campaigns. $8,415 spend, 1,046,005 reach, 2,116,059 impressions.
 
 ## Testimonials (10)
 
 First 2 ecommerce, next 8 home services/local/specialty. Including:
-- David Chen, Founder & CEO, NovaTech Audio — "Rakib scaled us from $440k to $1.4M a month without ROAS collapsing."
-- Dr. Sarah Patel, Co-Founder, VitalRoot Wellness — "Within two quarters we went from 4,200 subs to 14,800. CAC dropped by half."
-- Marcus Reyes, Owner, MetroFlow Plumbing — "Within 90 days we were at $62 per job — and booked 184 jobs in a single month. He saved my business."
-- Hank Calloway, Founder, Skyline Roofing Group — "Cost per signed roof contract dropped 42% in one storm season. He's earned a long-term partner."
+- Origani Founder — "Shariful scaled our Shopify store from 2x to 13x ROI in 6 months. He rebuilt our entire funnel — CAPI, UGC creative, Klaviyo lifecycle."
+- Calgary Cleaning Owner — "Calgary Cleaning went from word-of-mouth to 100 qualified leads every month. Shariful built Google LSA + Meta lead forms with 60-second response SLA."
+- Tint Shop Owner — "445 tracked phone calls + 250 quote requests from a single tint shop. Shariful built call tracking and lead forms that actually work."
+- Gearovo Founder — "$42k/mo spend at 4.8x ROAS. Shariful scaled our gadget store with Meta Advantage+ + TikTok Spark + Google PMax."
 
 (Full 10 testimonials on the home page testimonials slider.)
 
 ## How I work
 
-- Remote-first, based in Dhaka, Bangladesh (GMT+6)
-- Async with one live 30-min call per week
+- Remote-first, based in Feni, Bangladesh (Asia/Dhaka, GMT+6)
+- Async with one live call per week
 - Slack for day-to-day, Loom for walk-throughs, written monthly reports
 - Direct ownership — no junior account managers, no agency handoff
-- 90-day initial engagement, then month-to-month with 30 days' notice
-- Minimum engagement: $5k/mo ad spend
+- 2 new client spots per quarter
 
-## Industries served
+## Niches served
 
-Plumbing, handyman, printing, roofing, electrician, cleaning, yarn & crafts, car repair, ecommerce (gadgets, cosmetics, clothing, telecom, sports, pet supplies, coffee, home decor, jewelry, supplements, baby & kids, outdoor gear, watches, audio accessories, gifting), HVAC, pest control, landscaping, pet care, fitness.
+- **Ecommerce**: Shopify DTC — gadgets, cosmetics, clothing, supplements, pet supplies, coffee, jewelry, telecom, sports, home decor, baby & kids, outdoor gear, watches, audio accessories, gifting, yarn & crafts
+- **Home Services**: plumbing, roofing, electrician, cleaning, handyman, HVAC, car repair, pest control, landscaping, painting
 
-## Tools I use daily
+## Daily tools
 
 - Paid: Meta Ads, Google Ads (Search, PMax, LSA), TikTok Ads, YouTube Ads
-- Measurement: GA4 + Server-side GTM, BigQuery, Looker/Hex
-- Lifecycle: Klaviyo, Recharge, GoHighLevel
-- Creative: Figma, CapCut + Premiere
-- Ops: Notion, Linear
+- Measurement: GA4 + Server-side GTM, Microsoft Clarity
+- Lifecycle: Klaviyo, GoHighLevel
+
+## AI tools (30 across 5 categories)
+
+- AI Assistants: ChatGPT, Claude, Claude Coworks, Manus AI, Z AI, Gemini, Grok, OpenClaw
+- Creative & Content: Canva, InVideo, Copy.ai, Jasper AI
+- Analytics & Tracking: GTM, GA4, Microsoft Clarity, Hyros, Triple Whale, SegMetrics, Wicked Reports, Madgicx
+- Competitor Research: Semrush, AdSpy, SpyFu, Ads Library, Google Trends, Google Ads Transparency, Keyword Planner, Google Flow
+- Automation: GoHighLevel, Metricool
 
 ## Contact
 
-- Email: rakib@hasan.studio
-- Location: Dhaka, Bangladesh
+- Email: sharifulhasanrocky@gmail.com
+- Phone: +8801538363143
+- LinkedIn: linkedin.com/in/sharifulhasanroky
+- Location: Feni, Bangladesh
 - Availability: 2 new client spots per quarter
-- Book a free 30-min strategy call: https://sharifulroky.studio/ (click "Book a Call")
+- Book a free 15-minute strategy call: https://calendly.com/sharifulhasanroky/free15miniuteconsultancy
 
 ## Site structure
 
-This site is a single-page Next.js 16 application with client-side view switching. The navbar exposes: Story, Pillars, Numbers, About, Portfolio, Case Studies, CV, Book a Call. All content is rendered into the DOM on initial page load and accessible to JavaScript-capable crawlers.
+This site is a single-page Next.js 16 application with client-side view switching. The navbar exposes: Pillars, Numbers, About, Portfolio, Case Studies, CV, Book a Call. All content is rendered into the DOM on initial page load and accessible to JavaScript-capable crawlers.
 
 ## Links
 
-- Homepage: https://sharifulroky.studio/
-- Sitemap: https://sharifulroky.studio/sitemap.xml
-- Robots: https://sharifulroky.studio/robots.txt
+- Homepage: https://sharifulroky.com/
+- Sitemap: https://sharifulroky.com/sitemap.xml
+- Robots: https://sharifulroky.com/robots.txt

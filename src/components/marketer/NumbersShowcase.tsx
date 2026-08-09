@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, BarChart3, DollarSign, Users2, Repeat } from "lucide-react";
+import { ArrowUpRight, BarChart3, Users2, Repeat } from "lucide-react";
 import { headlineMetrics } from "@/lib/marketer-data";
 import { SectionHeading } from "./SectionHeading";
 import { TiltCard } from "./TiltCard";
@@ -21,15 +21,13 @@ type Stat = {
 
 const stats: Stat[] = [
   {
-    label: "Ad spend managed",
-    value: 6.5,
-    decimals: 1,
-    prefix: "$",
-    suffix: "M+",
-    caption: "18 months · 22 brands",
-    icon: DollarSign,
+    label: "Companies worked with",
+    value: 150,
+    suffix: "+",
+    caption: "Ecommerce + home services worldwide",
+    icon: Users2,
     accent: "brand",
-    detail: "Tracked server-side, reconciled against your P&L every Monday.",
+    detail: "Real brands across 60+ countries — from Shopify DTC to local service businesses.",
   },
   {
     label: "Avg client revenue lift",
@@ -70,7 +68,7 @@ export function NumbersShowcase() {
         <SectionHeading
           eyebrow="04 / Numbers that mean money"
           title="The only four numbers that actually move a business."
-          description="I track revenue, marketing efficiency ratio (MER), blended CAC, and payback period. Clicks and platform ROAS are leading indicators — these four are results. Everything below is from real client work over the last 18 months."
+          description="I track revenue, marketing efficiency ratio (MER), blended CAC, and payback period. Clicks and platform ROAS are leading indicators — these four are results. Everything below is from real client work."
         />
 
         {/* Headline metrics strip — quick-scan row of the headline numbers */}

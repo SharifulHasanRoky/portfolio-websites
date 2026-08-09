@@ -21,14 +21,14 @@ export function CaseStudiesPage() {
     >
       <PageHero
         eyebrow="Case studies · real numbers, real clients"
-        title="14 industries. One repeatable system. Zero vanity metrics."
-        description="Pick an industry, see the actual challenge, the exact system I built, and the real numbers we hit. No 'up to 5x ROAS' hedging — these are signed contracts and revenue that hit the bank."
+        title="2 niches. 12 case studies. One repeatable system."
+        description="Pick a vertical, see the actual challenge, the exact system I built, and the real numbers we hit. No 'up to 5x ROAS' hedging — these are signed contracts and revenue that hit the bank."
         icon={FileText}
         accent="fire"
         stats={[
           { label: "Case studies", value: String(caseStudies.length) },
-          { label: "Verticals", value: "4" },
-          { label: "Spend managed", value: "$8.4M+" },
+          { label: "Core niches", value: "2" },
+          { label: "Countries", value: "60+" },
         ]}
       />
       <CaseStudies hideHeading />

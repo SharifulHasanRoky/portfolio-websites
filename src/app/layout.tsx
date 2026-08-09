@@ -22,8 +22,8 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const SITE_URL = "https://sharifulroky.studio";
-const SITE_NAME = "Shariful Hasan Roky — Performance Marketing Studio";
+const SITE_URL = "https://sharifulroky.com";
+const SITE_NAME = "Shariful Hasan Roky — Revenue Growth Studio";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -158,7 +158,7 @@ const personJsonLd = {
     addressLocality: "Feni",
     addressCountry: "Bangladesh",
   },
-  email: "mailto:shariful@roky.studio",
+  email: "mailto:sharifulhasanrocky@gmail.com",
   knowsAbout: [
     "Performance Marketing",
     "Paid Social (Meta, TikTok, YouTube)",
@@ -201,7 +201,7 @@ const professionalServiceJsonLd = {
     "Independent performance marketing studio for home services and DTC ecommerce brands.",
   url: SITE_URL,
   image: `${SITE_URL}/marketer-portrait.webp`,
-  email: "shariful@roky.studio",
+  email: "sharifulhasanrocky@gmail.com",
   priceRange: "$$$",
   areaServed: ["US", "CA", "UK", "AU"],
   serviceType: [

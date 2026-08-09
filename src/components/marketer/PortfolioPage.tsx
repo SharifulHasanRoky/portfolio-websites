@@ -21,14 +21,14 @@ export function PortfolioPage() {
     >
       <PageHero
         eyebrow="Portfolio · selected work"
-        title="Brands I've scaled — across home services, DTC, and local."
-        description="Each card is a real engagement with real numbers. From 184 plumbing jobs/mo at $62 CAC, to scaling a premium audio brand from $440k to $1.4M/mo without ROAS collapse. Filter by vertical inside the case studies page for the full story."
+        title="Brands I've scaled — ecommerce & home services."
+        description="Each card is a real engagement with real numbers. From 100 cleaning leads/mo at $24 CPL in Calgary, to scaling an Australian Shopify store from 2x to 13x ROI in 6 months. Filter by vertical inside the case studies page for the full story."
         icon={Briefcase}
         accent="brand"
         stats={[
           { label: "Brands shipped", value: String(portfolio.length) },
-          { label: "Industries", value: "14+" },
-          { label: "Avg revenue lift", value: "168%" },
+          { label: "Core niches", value: "2" },
+          { label: "Countries served", value: "60+" },
         ]}
       />
       {/* Render the existing Portfolio grid (without its own SectionHeading) */}

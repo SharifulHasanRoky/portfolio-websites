@@ -1,5 +1,5 @@
-# robots.txt for sharifulroky.studio
-# Owner: Rakib Hasan — rakib@hasan.studio
+# robots.txt for sharifulroky.com
+# Owner: Shariful Hasan Roky — sharifulhasanrocky@gmail.com
 
 # ===== Search Engines =====
 User-agent: Googlebot
@@ -95,4 +95,4 @@ User-agent: *
 Allow: /
 
 # ===== Sitemap =====
-Sitemap: https://sharifulroky.studio/sitemap.xml
+Sitemap: https://sharifulroky.com/sitemap.xml

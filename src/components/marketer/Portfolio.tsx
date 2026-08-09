@@ -22,7 +22,7 @@ export function Portfolio({ hideHeading = false }: { hideHeading?: boolean }) {
         {!hideHeading && (
           <SectionHeading
             eyebrow="Portfolio · selected work"
-            title="A snapshot of brands I've scaled — across home services, DTC, and local."
+            title="A snapshot of brands I've scaled — ecommerce & home services."
             description="Each card below is a real engagement. Click through to the case studies section for the full story: challenge, approach, numbers, and timeline."
           />
         )}
