@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://sharifulroky.com/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sharifulroky.com/marketer-portrait.webp</image:loc>
+      <image:title>Shariful Hasan Roky — Revenue Growth Strategist</image:title>
+      <image:caption>Revenue growth strategist for ecommerce &amp; home services. 4+ years, 150+ companies, 2 niches, 60+ countries.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Although these are client-side views, the content is rendered into the DOM
+       on initial load and accessible via the navbar — search engines and AI crawlers
+       using a headless browser will see this content. -->
+
+</urlset>

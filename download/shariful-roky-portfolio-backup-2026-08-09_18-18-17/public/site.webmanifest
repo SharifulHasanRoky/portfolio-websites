@@ -1,0 +1,21 @@
+{
+  "name": "Shariful Hasan Roky — Revenue Growth Strategist",
+  "short_name": "Shariful Hasan Roky",
+  "description": "Revenue growth strategist for ecommerce & home services brands. 4+ years, 150+ companies, 2 niches, 60+ countries.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0d14",
+  "theme_color": "#0a0d14",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["business", "marketing", "productivity"],
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

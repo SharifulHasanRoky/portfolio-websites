@@ -1,0 +1,101 @@
+# Shariful Hasan Roky — Revenue Growth Strategist
+
+> Revenue growth strategist for ecommerce and home services brands. 4+ years, 150+ companies, 2 niches, 60+ countries.
+
+## Who I am
+
+I'm Shariful Hasan Roky, an independent revenue growth strategist based in Feni, Bangladesh. I build full-funnel paid + lifecycle systems for ecommerce founders and home services owners across the US, Canada, UK, and Australia.
+
+## What I do
+
+I run a 6-chapter system for every client, in this order: **campaign → business → scaling → numbers → measurements → growth**. Skip one and scale breaks at month 9.
+
+- **Campaign**: Hook-led creative testing on Meta, Google, TikTok, YouTube. Server-side tracking with CAPI. Weekly creative refresh.
+- **Business**: Unit economics, CAC:LTV modeling, offer engineering, cash-cycle aware budget pacing.
+- **Scaling**: Horizontal + vertical scaling, budget laddering (20% bumps every 48-72h), SOP-ized so it survives team churn.
+- **Numbers**: Revenue, MER (blended ROAS), blended CAC, payback period — the only four numbers that move a business.
+- **Measurements**: Server-side GTM + Conversions API, offline conversion import, call tracking, MMM + incrementality for channels above $50k/mo.
+- **Growth**: Lifecycle email/SMS, brand creative, referral loops, quarterly growth experiments.
+
+## Numbers
+
+- Companies worked with: **150+** across ecommerce and home services
+- Years of experience: **4+**
+- Core niches: **2** (Ecommerce & Home Services)
+- Countries served: **60+**
+
+## Case studies (12 total)
+
+### Featured (2)
+- **Origani** — Sydney, Australia. Australian Shopify ecommerce store. Scaled from 2x to 13x ROI in 6 months. $420k/mo revenue (+540%). Blended CAC $18 (−62%).
+- **Calgary Cleaning** — Calgary, AB, Canada. Local residential cleaning. 100 qualified leads per month at $24/lead (−71%). Booking rate 48%.
+
+### Other ecommerce case studies
+- DTC Electronics Brand — United States. Microsoft Advertising expansion. 620K tracked purchase value, CAC −31%.
+- Downioa — United States. Shopify DTC. Google PMax + server-side CAPI. 1.39K conversions, $259K conversion value, 764% actual ROAS.
+- VSL Lead Gen — United States. Video Sales Letter funnel on Facebook Ads. 531 VSL leads at $8.44 each. 4 angle-tested ad sets.
+- Meta Ads · CYNTHIA — United States. Film niche ecommerce, 7 parallel FB campaigns. $43,869 spend, 666,980 reach, 2.58M impressions.
+
+### Home services case studies
+- Tint Shop — United States. Auto window tinting. 445 tracked phone calls + 250 quote requests in 6 months.
+- Home Service Group — United States. Multi-location HVAC + plumbing. 434K impressions, 1.16K conversions at $38 CPA.
+- Service Pro Network — United States. Call-only campaigns. 655 tracked calls, CTR 2.72%.
+- Lead Gen · 13 Campaigns — United States. 13-campaign lead-gen account. 488 conversions, 7 lead forms + 56 phone calls tracked.
+- Call-Heavy Lead Gen — United States. 184 tracked phone calls, 759 total conversions over 16 months.
+- Meta Ads · Lifetime Budgets — United States. 8 lifetime-budget FB campaigns. $8,415 spend, 1,046,005 reach, 2,116,059 impressions.
+
+## Testimonials (10)
+
+First 2 ecommerce, next 8 home services/local/specialty. Including:
+- Origani Founder — "Shariful scaled our Shopify store from 2x to 13x ROI in 6 months. He rebuilt our entire funnel — CAPI, UGC creative, Klaviyo lifecycle."
+- Calgary Cleaning Owner — "Calgary Cleaning went from word-of-mouth to 100 qualified leads every month. Shariful built Google LSA + Meta lead forms with 60-second response SLA."
+- Tint Shop Owner — "445 tracked phone calls + 250 quote requests from a single tint shop. Shariful built call tracking and lead forms that actually work."
+- Gearovo Founder — "$42k/mo spend at 4.8x ROAS. Shariful scaled our gadget store with Meta Advantage+ + TikTok Spark + Google PMax."
+
+(Full 10 testimonials on the home page testimonials slider.)
+
+## How I work
+
+- Remote-first, based in Feni, Bangladesh (Asia/Dhaka, GMT+6)
+- Async with one live call per week
+- Slack for day-to-day, Loom for walk-throughs, written monthly reports
+- Direct ownership — no junior account managers, no agency handoff
+- 2 new client spots per quarter
+
+## Niches served
+
+- **Ecommerce**: Shopify DTC — gadgets, cosmetics, clothing, supplements, pet supplies, coffee, jewelry, telecom, sports, home decor, baby & kids, outdoor gear, watches, audio accessories, gifting, yarn & crafts
+- **Home Services**: plumbing, roofing, electrician, cleaning, handyman, HVAC, car repair, pest control, landscaping, painting
+
+## Daily tools
+
+- Paid: Meta Ads, Google Ads (Search, PMax, LSA), TikTok Ads, YouTube Ads
+- Measurement: GA4 + Server-side GTM, Microsoft Clarity
+- Lifecycle: Klaviyo, GoHighLevel
+
+## AI tools (30 across 5 categories)
+
+- AI Assistants: ChatGPT, Claude, Claude Coworks, Manus AI, Z AI, Gemini, Grok, OpenClaw
+- Creative & Content: Canva, InVideo, Copy.ai, Jasper AI
+- Analytics & Tracking: GTM, GA4, Microsoft Clarity, Hyros, Triple Whale, SegMetrics, Wicked Reports, Madgicx
+- Competitor Research: Semrush, AdSpy, SpyFu, Ads Library, Google Trends, Google Ads Transparency, Keyword Planner, Google Flow
+- Automation: GoHighLevel, Metricool
+
+## Contact
+
+- Email: sharifulhasanrocky@gmail.com
+- Phone: +8801538363143
+- LinkedIn: linkedin.com/in/sharifulhasanroky
+- Location: Feni, Bangladesh
+- Availability: 2 new client spots per quarter
+- Book a free 15-minute strategy call: https://calendly.com/sharifulhasanroky/free15miniuteconsultancy
+
+## Site structure
+
+This site is a single-page Next.js 16 application with client-side view switching. The navbar exposes: Pillars, Numbers, About, Portfolio, Case Studies, CV, Book a Call. All content is rendered into the DOM on initial page load and accessible to JavaScript-capable crawlers.
+
+## Links
+
+- Homepage: https://sharifulroky.com/
+- Sitemap: https://sharifulroky.com/sitemap.xml
+- Robots: https://sharifulroky.com/robots.txt
