@@ -22,9 +22,9 @@ export function CVSection({ hideHeading = false }: { hideHeading?: boolean }) {
       <div className="mx-auto max-w-7xl relative">
         {!hideHeading && (
           <SectionHeading
-            eyebrow="CV · 8 years, 4 chapters"
-            title="From SMB SEO to running $6.5M in tracked spend — the path."
-            description="A condensed CV. If you want the long-form version with references, hit the button below."
+            eyebrow="CV · 4 years, 4 roles"
+            title="Revenue growth strategist — 4+ years, 150+ companies, 2 niches."
+            description="Real work experience, real skills, real numbers."
           />
         )}
 
@@ -124,10 +124,10 @@ export function CVSection({ hideHeading = false }: { hideHeading?: boolean }) {
               <div className="mt-4 space-y-3">
                 <div>
                   <div className="text-sm font-medium">
-                    B.B.A. in Marketing
+                    Bachelor of Business Studies (BBS)
                   </div>
                   <div className="text-xs text-muted-foreground">
-                    University of Dhaka · 2013 – 2017
+                    Feni Govt. College under NU · 2016 – 2021
                   </div>
                 </div>
                 <div className="pt-3 border-t border-border/60">

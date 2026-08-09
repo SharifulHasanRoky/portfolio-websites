@@ -204,9 +204,8 @@ export function AboutPage() {
       <section className="relative px-4 sm:px-6 py-16 sm:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
-            eyebrow="Personal timeline · 13 years, 6 chapters"
-            title="How I got from $5/hr SEO to running $6.5M+ in tracked spend."
-            description="Not a resume. The actual story — including the parts I'd do differently."
+            eyebrow="Personal timeline · 4 years, 5 chapters"
+            title="How I got from day one to 150+ companies served."
           />
 
           <div className="mt-14 relative">
@@ -313,7 +312,7 @@ export function AboutPage() {
                 <Briefcase className="h-6 w-6 text-brand" />
                 <div className="mt-3 font-display font-semibold">Spreadsheets for fun</div>
                 <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">
-                  Probably the only person in Dhaka who genuinely enjoys building financial models. I model everything — including my own coffee habit.
+                  Probably the only person in Feni who genuinely enjoys building financial models. I model everything — including my own coffee habit.
                 </p>
               </div>
             </div>

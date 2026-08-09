@@ -1091,63 +1091,65 @@ export type CVEntry = {
 
 export const cvEntries: CVEntry[] = [
   {
-    period: "2023 — Present",
-    role: "Founder & Head of Growth",
-    company: "Independent Studio",
-    location: "Remote · serving 60+ countries",
+    period: "Feb 2025 — Apr 2026",
+    role: "Sr. Digital Marketing Executive",
+    company: "Arvion",
+    location: "Remote · worldwide",
     summary:
-      "Independent performance marketing studio serving home services and DTC ecommerce brands between $100k and $5M/mo. Direct ownership of paid spend, measurement, and lifecycle.",
+      "Worked with 40+ brands including Skycoms, Golfinex, Gearovo, Hypr Fuel, Scuba Xpress, Pixi AI, Car Formula, and FX Edu. Managed paid media strategy, executed Google Ads and Meta Ads campaigns, set up tracking and analytics, and led junior team members.",
     achievements: [
-      "Managed $6.5M+ in tracked ad spend across 22 brands in 18 months",
-      "Average client revenue lift of 168% within first 6 months of engagement",
-      "Built proprietary measurement dashboard used by every client",
-      "Maintained 94% client retention rate over 18 months",
+      "Worked with 40+ brands across ecommerce and home services",
+      "Managed paid media strategy across Google and Meta Ads",
+      "Executed and optimized Google Ads and Meta Ads campaigns",
+      "Set up and maintained tracking, analytics, and conversion measurement",
+      "Led and supervised junior team members to maintain speed and quality",
     ],
-    stack: ["Meta", "Google Ads", "TikTok", "GA4 + SS", "BigQuery", "Klaviyo", "Recharge", "GoHighLevel"],
+    stack: ["Google Ads", "Meta Ads", "Google Analytics", "SEMrush", "GTM", "Conversion API", "Microsoft Clarity"],
   },
   {
-    period: "2021 — 2023",
-    role: "Head of Performance Marketing",
-    company: "Northbridge DTC Holdings",
-    location: "Toronto, ON",
+    period: "Nov 2023 — Nov 2024",
+    role: "Digital Marketing Executive",
+    company: "Verce",
+    location: "Remote · worldwide",
     summary:
-      "Led paid + lifecycle for a portfolio of 4 DTC brands ($18M aggregate ARR). Owned a 6-person team and a $1.1M/mo media budget.",
+      "Oversaw and optimized Google and Facebook ad campaigns for local and international brands including Reli Group, Winhub, MarwaridHR, TNS Global, I Fix Fast, Jamuna Gas, and more.",
     achievements: [
-      "Scaled portfolio revenue from $7M to $18M ARR in 22 months",
-      "Reduced blended CAC by 34% across the portfolio",
-      "Launched subscription programs on 3 brands; subscription now 31% of portfolio revenue",
-      "Hired and trained a 6-person performance team (paid, lifecycle, creative)",
+      "Oversaw Google and Facebook ad campaigns for multiple brands",
+      "Worked with Reli Group, Winhub, MarwaridHR, TNS Global, I Fix Fast, Jamuna Gas",
+      "Utilized Google Analytics and SEMrush for web analytics and performance tracking",
+      "Provided daily progress reports to clients",
+      "Conducted weekly status meetings with clients and team members",
     ],
-    stack: ["Meta", "Google", "TikTok", "Shopify", "Klaviyo", "Recharge", "Looker", "Snowflake"],
+    stack: ["Google Ads", "Facebook Ads", "Google Analytics", "SEMrush"],
   },
   {
-    period: "2019 — 2021",
-    role: "Senior Paid Media Manager",
-    company: "Lumen Growth Agency",
-    location: "Austin, TX",
+    period: "Jan 2022 — Oct 2023",
+    role: "Digital Marketing Executive",
+    company: "ByteCodeSoft",
+    location: "Remote · worldwide",
     summary:
-      "Owned paid social + paid search for home services and local lead-gen clients. Built the agency's first server-side tracking implementation.",
+      "Executed and optimized Google and Facebook ad campaigns for multiple clients, focusing on lead generation, conversion rates, and revenue growth.",
     achievements: [
-      "Managed $2.8M/yr in paid spend across 14 home-service clients",
-      "Cut average cost per lead by 41% in first 90 days of engagement",
-      "Built reusable creative testing framework adopted agency-wide",
-      "Launched agency's Google LSA + Local Service Ads practice",
+      "Executed and optimized Google and Facebook ad campaigns for multiple clients",
+      "Worked with Safe Food, Clockwork Synergy, Home Repairs 24, Handyman Services, Htown Printing Service",
+      "Monitored and analyzed web analytics using Google Analytics and Facebook Insights",
+      "Led weekly status meetings to review campaign performance",
     ],
-    stack: ["Meta", "Google Ads", "LSA", "CallRail", "GoHighLevel", "GA4"],
+    stack: ["Google Ads", "Facebook Ads", "Google Analytics", "Facebook Insights"],
   },
   {
-    period: "2017 — 2019",
-    role: "Digital Marketing Specialist",
-    company: "Brightway Consulting",
-    location: "Dhaka, BD → Remote",
+    period: "Jun 2021 — Dec 2021",
+    role: "Digital Marketing Executive",
+    company: "Alberto Pro & iSmart BD",
+    location: "Remote",
     summary:
-      "Cut my teeth on SMB marketing: SEO, paid social, email, and funnel builds for local service businesses and early-stage ecommerce.",
+      "Strategically managed Google Ads campaigns to boost high-quality leads for clients. Actively managed Facebook ad campaigns and analyzed web analytics data.",
     achievements: [
-      "Generated 2,400+ qualified leads for local service clients in year one",
-      "Built first Shopify funnel that did $1M in 12 months for a cosmetics client",
-      "Learned the unit-economics-first approach that still drives my work today",
+      "Strategically managed Google Ads campaigns to boost high-quality leads",
+      "Actively managed several Facebook ad campaigns",
+      "Analyzed and optimized web analytics data using Google Analytics and Google Ads reporting",
     ],
-    stack: ["Facebook Ads", "Google Ads", "Shopify", "Mailchimp", "WordPress"],
+    stack: ["Google Ads", "Facebook Ads", "Google Analytics"],
   },
 ];
 
@@ -1222,7 +1224,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t1",
     quote:
-      "Rakib scaled us from $440k to $1.4M a month without ROAS collapsing. He's the only marketer I've worked with who actually understands unit economics — not just ROAS, but contribution margin and cash cycle. We finally stopped renting growth and started owning a brand.",
+      "Shariful scaled us from $440k to $1.4M a month without ROAS collapsing. He's the only marketer I've worked with who actually understands unit economics — not just ROAS, but contribution margin and cash cycle. We finally stopped renting growth and started owning a brand.",
     name: "David Chen",
     role: "Founder & CEO",
     company: "NovaTech Audio",
@@ -1235,7 +1237,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t2",
     quote:
-      "Subscription churn was killing us. Rakib rebuilt the offer, built a quiz funnel, and within two quarters we went from 4,200 subs to 14,800. CAC dropped by half. I've never had a marketer deliver this level of clarity on what's actually moving the business.",
+      "Subscription churn was killing us. Shariful rebuilt the offer, built a quiz funnel, and within two quarters we went from 4,200 subs to 14,800. CAC dropped by half. I've never had a marketer deliver this level of clarity on what's actually moving the business.",
     name: "Dr. Sarah Patel",
     role: "Co-Founder",
     company: "VitalRoot Wellness",
@@ -1248,7 +1250,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t3",
     quote:
-      "We were paying $180 per booked plumbing job and getting eaten by HomeAdvisor. Rakib came in, rebuilt the funnel, and within 90 days we were at $62 per job — and booked 184 jobs in a single month. He saved my business.",
+      "We were paying $180 per booked plumbing job and getting eaten by HomeAdvisor. Shariful came in, rebuilt the funnel, and within 90 days we were at $62 per job — and booked 184 jobs in a single month. He saved my business.",
     name: "Marcus Reyes",
     role: "Owner",
     company: "MetroFlow Plumbing",
@@ -1261,7 +1263,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t4",
     quote:
-      "I'd been burned by two agencies before Rakib. He's different — he actually picked up the phone, walked through my P&L, and told me flat-out what wasn't working. Cost per signed roof contract dropped 42% in one storm season. He's earned a long-term partner.",
+      "I'd been burned by two agencies before Shariful. He's different — he actually picked up the phone, walked through my P&L, and told me flat-out what wasn't working. Cost per signed roof contract dropped 42% in one storm season. He's earned a long-term partner.",
     name: "Hank Calloway",
     role: "Founder",
     company: "Skyline Roofing Group",
@@ -1274,7 +1276,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t5",
     quote:
-      "Rakib built us a year-round pipeline that doesn't depend on Arizona summer. Off-season revenue tripled, our Google rating jumped to 4.9 stars, and customers now refer us without us even asking. The system runs itself now.",
+      "Shariful built us a year-round pipeline that doesn't depend on Arizona summer. Off-season revenue tripled, our Google rating jumped to 4.9 stars, and customers now refer us without us even asking. The system runs itself now.",
     name: "Teresa Alvarez",
     role: "Owner",
     company: "VoltEdge Electric",
@@ -1287,7 +1289,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t6",
     quote:
-      "Our cleaning subscription had 28% churn and rising CAC. Rakib rebuilt the offer around a 3-month commit, added a 9-touch lifecycle, and cut churn in half. MRR tripled. We finally have a business that scales without breaking.",
+      "Our cleaning subscription had 28% churn and rising CAC. Shariful rebuilt the offer around a 3-month commit, added a 9-touch lifecycle, and cut churn in half. MRR tripled. We finally have a business that scales without breaking.",
     name: "Olivia Bennett",
     role: "Co-Founder",
     company: "PristinePro Cleaning",
@@ -1300,7 +1302,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t7",
     quote:
-      "I was a one-man show maxed out at 5 jobs a day. Rakib's funnel filled my calendar 8 weeks out, and I hired two new crews in four months. The ROI was obvious from week one — I just wish I'd found him three years earlier.",
+      "I was a one-man show maxed out at 5 jobs a day. Shariful's funnel filled my calendar 8 weeks out, and I hired two new crews in four months. The ROI was obvious from week one — I just wish I'd found him three years earlier.",
     name: "Joe Marchetti",
     role: "Owner",
     company: "FixIt Joe Pro",
@@ -1313,7 +1315,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t8",
     quote:
-      "We were getting crushed by online printers. Rakib built us a sample-kit offer, an ABM flow on LinkedIn, and a 5-touch nurture. Quote volume nearly tripled and average order value jumped 44%. Best money we've spent in five years.",
+      "We were getting crushed by online printers. Shariful built us a sample-kit offer, an ABM flow on LinkedIn, and a 5-touch nurture. Quote volume nearly tripled and average order value jumped 44%. Best money we've spent in five years.",
     name: "Karen Whitfield",
     role: "VP Sales",
     company: "InkPress Print Co.",
@@ -1326,7 +1328,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t9",
     quote:
-      "Independent auto shop competing with dealers is brutal. Rakib built a transparent online booking flow and retargeted high-margin services. Online bookings are now 62% of intake and average repair order is up 38%. Bays are 94% utilized.",
+      "Independent auto shop competing with dealers is brutal. Shariful built a transparent online booking flow and retargeted high-margin services. Online bookings are now 62% of intake and average repair order is up 38%. Bays are 94% utilized.",
     name: "Frank Delgado",
     role: "Owner",
     company: "Apex Auto Repair",
@@ -1339,7 +1341,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "t10",
     quote:
-      "Rakib turned my hobbyist yarn community into a $3.7M-a-year DTC brand. Subscription Yarn-of-the-Month, UGC knitting tutorials, and a pattern library that reactivates past buyers. He genuinely understands community-led commerce.",
+      "Shariful turned my hobbyist yarn community into a $3.7M-a-year DTC brand. Subscription Yarn-of-the-Month, UGC knitting tutorials, and a pattern library that reactivates past buyers. He genuinely understands community-led commerce.",
     name: "Margaret Holloway",
     role: "Founder",
     company: "Heritage Yarn Co.",
@@ -1412,10 +1414,10 @@ export type AboutStat = {
 };
 
 export const aboutStats: AboutStat[] = [
-  { label: "Years in performance marketing", value: "8+", caption: "From SMB SEO to $6.5M+ tracked spend" },
-  { label: "Niches worked", value: "50+", caption: "From plumbing to luxury watches" },
-  { label: "Countries served", value: "60+", caption: "US, CA, UK, AU, and 56 more" },
-  { label: "Client retention (12mo)", value: "94%", caption: "I'd rather keep you than chase you" },
+  { label: "Years of experience", value: "4+", caption: "Performance marketing across 2 core niches" },
+  { label: "Companies worked with", value: "150+", caption: "Ecommerce + Home Services brands worldwide" },
+  { label: "Core niches", value: "2", caption: "Ecommerce & Home Services — that's it" },
+  { label: "Countries served", value: "60+", caption: "Working with clients worldwide" },
 ];
 
 export type Principle = {
@@ -1472,7 +1474,7 @@ export const workingStyle: WorkPrinciple[] = [
   {
     question: "Where I work",
     answer:
-      "Remote-first, based in Dhaka, Bangladesh. I work with clients across the US, Canada, UK, and Australia — typically async with one live call per week. My dashboard and SOPs make async work feel like I'm sitting next to you.",
+      "Remote-first, based in Feni, Bangladesh. I work with clients across the US, Canada, UK, and Australia — typically async with one live call per week. My dashboard and SOPs make async work feel like I'm sitting next to you.",
   },
   {
     question: "How I communicate",
@@ -1516,18 +1518,21 @@ export const dailyTools: DailyTool[] = [
 
 export const aboutBio = {
   shortBio:
-    "I'm Shariful Hasan Roky — a revenue growth strategist who's worked across 50+ niches and 60+ countries, managing $6.5M+ in tracked ad spend. I build full-funnel paid + lifecycle systems for ecommerce and home service brands. Growth that compounds in your bank account, not just in your ad dashboard.",
+    "I'm Shariful Hasan Roky — a revenue growth strategist with 4+ years of experience. I've worked with 150+ companies worldwide across 60+ countries, focused exclusively on two niches: Ecommerce and Home Services.",
   longBio: [
-    "I'm Shariful Hasan Roky — a revenue growth strategist. I started in 2017 doing SEO for SMBs in Dhaka, back when 'performance marketing' meant ranking a WordPress site for 'best plumber in [city]'. Eight years and four roles later, I've worked across 50+ niches and 60+ countries, managing over $6.5M in tracked ad spend. From Australian Shopify brands scaling 13x ROI to Calgary cleaning companies booking 100 leads a month.",
-    "These days I focus on two worlds I know best: ecommerce (Shopify DTC, subscriptions, gadgets, cosmetics, and 15+ other verticals) and home services (plumbing, roofing, electrician, cleaning, handyman, and more). The system is the same across both — six chapters that compound: campaign, business, scaling, numbers, measurements, growth. Skip one and scale breaks at month 9. Run all six and growth stops being heroic and becomes boring, predictable, repeatable.",
-    "I work remote from Dhaka, serving clients across the US, Canada, UK, Australia, and 56 other countries. Async-first, one live call per week, and a dashboard your CFO will actually open. No agency handoffs, no junior account managers — when you hire me, you get me. I write the strategy, build the funnels, audit the ad accounts, and answer your Slack.",
-    "Outside of marketing: I read earnings calls like novels, run a small private Slack community of 60+ founders trading growth experiments, and I'm probably the only person in Dhaka who genuinely enjoys spreadsheets. If you're a founder who's been burned by agencies before — let's talk. The strategy call is free, and I'll tell you honestly whether I can help.",
+    "I'm Shariful Hasan Roky — a revenue growth strategist with 4+ years of experience in performance marketing. I work independently, directly with founders, and I've worked with 150+ companies across the globe.",
+    "I focus exclusively on two niches: Ecommerce and Home Services. In Ecommerce, I work with Shopify DTC brands — gadgets, cosmetics, clothing, supplements, pet supplies, coffee, jewelry, and more. In Home Services, I work with plumbing, roofing, electrician, cleaning, handyman, HVAC, car repair, and similar local service businesses.",
+    "I work worldwide — clients from the US, Canada, UK, Australia, Europe, and beyond. Remote-first, async with one live call per week. When you hire me, you get me. I write the strategy, build the funnels, audit the ad accounts, and answer your Slack.",
+    "My daily stack: paid platforms (Meta, Google, TikTok, YouTube), measurement (GA4 + GTM), and AI tools — ChatGPT, Claude, Gemini, Canva, Triple Whale, Hyros, Madgicx, Semrush, AdSpy, SpyFu, and more.",
+    "If you're an ecommerce founder scaling your DTC brand, or a home service business owner looking to dominate your local market, let's talk.",
   ],
-  location: "Dhaka, Bangladesh",
+  location: "Feni, Bangladesh",
   timezone: "Asia/Dhaka (GMT+6)",
-  languages: ["English (fluent)", "Bengali (native)", "Hindi (conversational)"],
+  languages: ["Bangla (native)", "English (fluent)"],
   availability: "2 new client spots per quarter",
-  email: "rakib@hasan.studio",
+  email: "sharifulhasanrocky@gmail.com",
+  phone: "+8801538363143",
+  linkedin: "linkedin.com/in/sharifulhasanroky",
 };
 
 export type TimelineChapter = {
@@ -1538,40 +1543,34 @@ export type TimelineChapter = {
 
 export const personalTimeline: TimelineChapter[] = [
   {
-    year: "2013",
-    title: "Started marketing at 19",
-    description:
-      "Enrolled in B.B.A. Marketing at University of Dhaka. Started freelancing on oDesk (now Upwork) doing SEO for small US businesses — $5/hr, learned more in 6 months than 4 years of class.",
-  },
-  {
-    year: "2017",
-    title: "First agency job",
-    description:
-      "Graduated, joined Brightway Consulting in Dhaka. Cut my teeth on local service SEO, then Facebook Ads when iOS was still easy. First Shopify funnel I built did $1M in 12 months for a cosmetics client.",
-  },
-  {
-    year: "2019",
-    title: "Moved to the US market",
-    description:
-      "Joined Lumen Growth Agency in Austin, TX as Senior Paid Media Manager. Owned $2.8M/yr in paid spend across 14 home-service clients. Built the agency's first server-side tracking implementation post-iOS 14.",
-  },
-  {
     year: "2021",
-    title: "Head of Performance Marketing",
+    title: "Started at Alberto Pro & iSmart BD",
     description:
-      "Promoted to lead a 6-person team at Northbridge DTC Holdings in Toronto. Scaled a 4-brand portfolio from $7M to $18M ARR in 22 months. Cut blended CAC by 34% portfolio-wide.",
+      "Began my career as a Digital Marketing Executive. Strategically managed Google Ads campaigns to boost high-quality leads, actively managed Facebook ad campaigns, and analyzed web analytics data.",
+  },
+  {
+    year: "2022",
+    title: "Joined ByteCodeSoft",
+    description:
+      "Moved to ByteCodeSoft as Digital Marketing Executive. Executed and optimized Google and Facebook ad campaigns for multiple international clients including Safe Food, Home Repairs 24, Handyman Services, and more.",
   },
   {
     year: "2023",
-    title: "Founded my own studio",
+    title: "Joined Verce",
     description:
-      "Went independent. Took the system I'd built at Northbridge and started offering it directly to home services + DTC brands. 22 clients, $6.5M+ spend, 94% retention in the first 18 months.",
+      "Joined Verce as Digital Marketing Executive. Oversaw Google and Facebook ad campaigns for local and international brands including Reli Group, Winhub, MarwaridHR, TNS Global, I Fix Fast, Jamuna Gas.",
+  },
+  {
+    year: "2025",
+    title: "Promoted to Sr. Executive at Arvion",
+    description:
+      "Promoted to Sr. Digital Marketing Executive at Arvion. Worked with 40+ brands including Skycoms, Golfinex, Gearovo, Hypr Fuel, Scuba Xpress, Pixi AI, Car Formula, and FX Edu. Led junior team members.",
   },
   {
     year: "2026",
     title: "What's next",
     description:
-      "Building a measurement product (SaaS) for home services owners who can't afford a $5k/mo agency. Still taking 2 new clients per quarter — but getting pickier about who.",
+      "Continuing to work with ecommerce and home service brands worldwide. 150+ companies served across two core niches. Leveraging AI tools and competitor research to move faster than agencies 3x my size.",
   },
 ];
 

@@ -11,7 +11,7 @@ import { cvEntries } from "@/lib/marketer-data";
  * user clicks "CV" in the navbar.
  */
 export function CVPage() {
-  const totalYears = "8+";
+  const totalYears = "4+";
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
@@ -22,15 +22,15 @@ export function CVPage() {
     >
       <PageHero
         eyebrow="CV · experience & skills"
-        title="From SMB SEO to running $6.5M in tracked spend — the path."
-        description="A condensed CV of the last 8 years: 4 roles, 22 brands, $6.5M+ in tracked spend. Includes certifications, the full tech stack, and skill self-assessments across paid, measurement, and lifecycle."
+        title="Revenue growth strategist — 4+ years, 150+ companies, 2 niches."
+        description="4+ years. 150+ companies. Ecommerce & home services. Real work, real numbers."
         icon={GraduationCap}
         accent="brand"
         stats={[
-          { label: "Years in performance", value: totalYears },
-          { label: "Roles held", value: String(cvEntries.length) },
-          { label: "Spend managed", value: "$6.5M+" },
-          { label: "Client retention", value: "94%" },
+          { label: "Years experience", value: totalYears },
+          { label: "Companies", value: "150+" },
+          { label: "Niches", value: "2" },
+          { label: "Countries", value: "60+" },
         ]}
       />
       <CVSection hideHeading />

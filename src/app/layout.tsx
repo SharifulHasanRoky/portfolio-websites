@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s · Shariful Hasan Roky",
   },
   description:
-    "Performance marketer for ecommerce & home service brands. Worked across 50+ niches and 60+ countries. $6.5M+ tracked ad spend managed. Book a free 30-min strategy call.",
+    "Revenue growth strategist for ecommerce & home service brands. 4+ years, 150+ companies, 2 niches, 60+ countries. Book a free 30-min strategy call.",
   keywords: [
     "performance marketing",
     "performance marketer",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     "Shariful Hasan Roky",
     "Shariful Roky",
     "Independent Performance Marketing Studio",
-    "Dhaka marketer",
+    "Feni marketer",
     "Bangladesh marketer",
   ],
   authors: [{ name: "Shariful Hasan Roky", url: SITE_URL }],
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shariful Hasan Roky — Revenue Growth Strategist | Turning Ad Spend Into Unfair Advantage",
     description:
-      "Performance marketer for ecommerce & home service brands. 50+ niches, 60+ countries, $6.5M+ tracked spend. Book a free 30-min strategy call.",
+      "Revenue growth strategist. 4+ years, 150+ companies, 2 niches, 60+ countries. Book a free strategy call.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "en_US",
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shariful Hasan Roky — Revenue Growth Strategist",
     description:
-      "Turning ad spend into unfair advantage. 50+ niches, 60+ countries, $6.5M+ tracked spend managed.",
+      "Turning ad spend into unfair advantage. 4+ years, 150+ companies, 2 niches, 60+ countries.",
     creator: "@sharifulroky",
   },
   robots: {
@@ -148,14 +148,14 @@ const personJsonLd = {
   image: `${SITE_URL}/marketer-portrait.webp`,
   jobTitle: "Revenue Growth Strategist",
   description:
-    "Performance marketer for home services and DTC ecommerce brands. Managed $6.5M+ in tracked ad spend across 22 brands in 18 months.",
+    "Revenue growth strategist with 4+ years of experience. Worked with 150+ companies worldwide across two niches: Ecommerce and Home Services.",
   worksFor: {
     "@type": "Organization",
     name: "Shariful Hasan Roky Performance Studio",
   },
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Dhaka",
+    addressLocality: "Feni",
     addressCountry: "Bangladesh",
   },
   email: "mailto:shariful@roky.studio",
@@ -214,7 +214,7 @@ const professionalServiceJsonLd = {
   founder: { "@type": "Person", name: "Shariful Hasan Roky" },
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Dhaka",
+    addressLocality: "Feni",
     addressCountry: "Bangladesh",
   },
 };

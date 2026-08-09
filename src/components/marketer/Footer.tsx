@@ -95,13 +95,13 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
-              Performance marketer for ecommerce &amp; home service brands. 50+ niches, 60+ countries, $6.5M+ tracked spend. I
+              Revenue growth strategist for ecommerce &amp; home service brands. 4+ years, 150+ companies, 2 niches, 60+ countries. I
               build full-funnel systems that compound in your bank account, not
               just in your ad dashboard.
             </p>
             <div className="mt-5 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
               <MapPin className="h-3.5 w-3.5 text-brand" />
-              Dhaka, BD · serving US, CA, UK
+              Feni, BD · serving clients worldwide
             </div>
           </div>
 
