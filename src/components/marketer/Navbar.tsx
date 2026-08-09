@@ -34,6 +34,10 @@ export function Navbar() {
 
   function handleNav(link: (typeof navLinks)[number]) {
     setOpen(false);
+    if (link.kind === "link") {
+      window.open(link.target, "_blank");
+      return;
+    }
     if (link.kind === "view") {
       setView(link.target as View);
       return;
@@ -136,7 +140,7 @@ export function Navbar() {
                 </button>
               )}
               <button
-                onClick={() => handleNav({ label: "Book", kind: "view", target: "book" })}
+                onClick={() => handleNav({ label: "Book", kind: "link", target: "https://calendly.com/sharifulhasanroky/free15miniuteconsultancy" })}
                 className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-foreground text-background px-4 py-2 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors group"
               >
                 Book a Call
@@ -201,7 +205,7 @@ export function Navbar() {
                 );
               })}
               <button
-                onClick={() => handleNav({ label: "Book", kind: "view", target: "book" })}
+                onClick={() => handleNav({ label: "Book", kind: "link", target: "https://calendly.com/sharifulhasanroky/free15miniuteconsultancy" })}
                 className="mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-brand text-brand-foreground px-5 py-4 text-base font-semibold"
               >
                 Book a Call <ArrowUpRight className="h-5 w-5" />

@@ -1578,7 +1578,7 @@ export const personalTimeline: TimelineChapter[] = [
 export type NavLink = {
   label: string;
   /** Either scroll to a section on the home page, or switch to a dedicated view. */
-  kind: "scroll" | "view";
+  kind: "scroll" | "view" | "link";
   /** For `scroll`: the section id (#story). For `view`: the view name. */
   target: string;
 };
@@ -1590,7 +1590,7 @@ export const navLinks: NavLink[] = [
   { label: "Portfolio", kind: "view", target: "portfolio" },
   { label: "Case Studies", kind: "view", target: "cases" },
   { label: "CV", kind: "view", target: "cv" },
-  { label: "Book a Call", kind: "view", target: "book" },
+  { label: "Book a Call", kind: "link", target: "https://calendly.com/sharifulhasanroky/free15miniuteconsultancy" },
 ];
 
 export const industriesMarquee = [

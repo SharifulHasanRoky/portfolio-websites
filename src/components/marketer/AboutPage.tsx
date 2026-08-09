@@ -339,14 +339,15 @@ export function AboutPage() {
               The strategy call is 30 minutes, free, and you walk away with a real plan — whether or not we end up working together.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <button
-                type="button"
-                onClick={() => setView("book")}
+              <a
+                href="https://calendly.com/sharifulhasanroky/free15miniuteconsultancy"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-foreground text-background px-5 py-3 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors group"
               >
                 Book a free strategy call
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-              </button>
+              </a>
               <button
                 type="button"
                 onClick={() => setView("cases")}

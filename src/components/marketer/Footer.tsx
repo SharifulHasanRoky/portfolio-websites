@@ -18,6 +18,10 @@ export function Footer() {
   const view = useViewStore((s) => s.view);
 
   function handleNavClick(l: NavLink) {
+    if (l.kind === "link") {
+      window.open(l.target, "_blank");
+      return;
+    }
     if (l.kind === "view") {
       setView(l.target as View);
     } else {
@@ -55,14 +59,15 @@ export function Footer() {
               One call. Real numbers. A real plan. If we&apos;re not a fit,
               you&apos;ll still walk away with the next 30 days mapped out.
             </p>
-            <button
-              type="button"
-              onClick={() => handleNavClick({ label: "Book", kind: "view", target: "book" })}
+            <a
+              href="https://calendly.com/sharifulhasanroky/free15miniuteconsultancy"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-7 inline-flex items-center gap-2 rounded-xl bg-foreground text-background px-6 py-3.5 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors"
             >
               Book your strategy call
               <ArrowUp className="h-4 w-4 -rotate-45" />
-            </button>
+            </a>
           </div>
         </motion.div>
 

@@ -5,14 +5,11 @@ import { Building2, GraduationCap, MapPin, Award, Download } from "lucide-react"
 import { cvEntries, skills } from "@/lib/marketer-data";
 import { SectionHeading } from "./SectionHeading";
 import { TiltCard } from "./TiltCard";
-import { useViewStore } from "@/lib/view-store";
 import { cn } from "@/lib/utils";
 
 export function CVSection({ hideHeading = false }: { hideHeading?: boolean }) {
-  const setView = useViewStore((s) => s.setView);
-
   function handleBookClick() {
-    setView("book");
+    window.open("https://calendly.com/sharifulhasanroky/free15miniuteconsultancy", "_blank");
   }
   return (
     <section
