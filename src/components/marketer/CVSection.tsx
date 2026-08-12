@@ -29,12 +29,20 @@ export function CVSection({ hideHeading = false }: { hideHeading?: boolean }) {
         )}
 
         <div className={cn("flex flex-wrap gap-3", hideHeading ? "mt-0" : "mt-6")}>
-          <button
-            type="button"
-            onClick={handleBookClick}
+          <a
+            href="/Resume-of-Shariful-Hasan-Roky.pdf"
+            download
             className="inline-flex items-center gap-2 rounded-xl bg-foreground text-background px-5 py-2.5 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors"
           >
             <Download className="h-4 w-4" />
+            Download Resume
+          </a>
+          <button
+            type="button"
+            onClick={handleBookClick}
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/60 backdrop-blur px-5 py-2.5 text-sm font-semibold hover:bg-card transition-colors"
+          >
+            <Award className="h-4 w-4 text-brand" />
             Book a strategy call
           </button>
           <div className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/50 px-5 py-2.5 text-sm text-muted-foreground">
