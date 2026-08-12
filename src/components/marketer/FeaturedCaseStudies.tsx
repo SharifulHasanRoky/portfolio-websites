@@ -26,7 +26,6 @@ export function FeaturedCaseStudies() {
         <SectionHeading
           eyebrow="Featured wins · 2 of 30+ case studies"
           title="Two client stories I'm really proud of:"
-          description="🇦🇺 Shopify brand: 2x → 13x ROI   ·   🇨🇦 Calgary cleaning company: 100 qualified leads/month.   Want to see how I did it? Check out the 30+ case studies."
         />
 
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6">
