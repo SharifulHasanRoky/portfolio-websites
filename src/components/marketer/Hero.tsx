@@ -109,17 +109,15 @@ export function Hero() {
           </motion.span>
         </motion.div>
 
-        {/* H1 — centered, no image beside it */}
+        {/* H1 — name only */}
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display mt-6 text-[2rem] sm:text-5xl md:text-6xl lg:text-[4.5rem] xl:text-[5rem] font-semibold leading-[1.05] sm:leading-[1.02] tracking-tight"
+          className="font-display mt-6 text-[2.25rem] sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[5.5rem] font-semibold leading-[1.05] sm:leading-[1.02] tracking-tight"
         >
-          Revenue growth strategist
-          <br />
-          who turns ad spend into{" "}
-          <span className="text-gradient-brand">unfair advantage.</span>
+          Shariful Hasan{" "}
+          <span className="text-gradient-brand">Roky</span>
         </motion.h1>
 
         <motion.p
@@ -128,10 +126,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mx-auto mt-6 max-w-2xl text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed"
         >
-          I&apos;m{" "}
-          <span className="text-foreground font-medium">Shariful Hasan Roky</span> —
-          a revenue growth strategist with 4+ years of experience. I&apos;ve worked
-          with 150+ companies worldwide, focused exclusively on two niches:
+          Revenue growth strategist with 4+ years of experience. Worked with
+          150+ companies worldwide, focused exclusively on two niches:
           ecommerce and home services. Growth that compounds in your bank account,
           not just in your ad dashboard.
         </motion.p>

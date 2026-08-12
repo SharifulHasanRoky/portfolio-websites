@@ -28,7 +28,7 @@ const SITE_NAME = "Shariful Hasan Roky — Revenue Growth Studio";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Shariful Hasan Roky — Revenue Growth Strategist | Turning Ad Spend Into Unfair Advantage",
+    default: "Shariful Hasan Roky — Revenue Growth Strategist",
     template: "%s · Shariful Hasan Roky",
   },
   description:
