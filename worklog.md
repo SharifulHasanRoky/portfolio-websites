@@ -81,3 +81,23 @@ Stage Summary:
 - Backup tarball: /home/z/my-project/download/shariful-roky-portfolio-backup-2026-08-09_18-18-17.tar.gz (154KB)
 - 125 files total — includes all source, public assets, scripts, configs, README with restore instructions
 - Backup is downloadable from the download/ directory
+
+---
+Task ID: 4
+Agent: main
+Task: Push the project to GitHub
+
+Work Log:
+- Added remote: https://github.com/SharifulHasanRoky/portfolio-websites.git
+- Initial attempt with first fine-grained PAT failed (403 — token had read access but not Contents:Read&Write permission)
+- User provided updated PAT with proper Contents write permission
+- Successfully pushed main branch to GitHub
+- Removed token from git remote URL (security hygiene)
+- Verified via GitHub API: repo is public, default branch is main, all commits visible
+
+Stage Summary:
+- GitHub repo: https://github.com/SharifulHasanRoky/portfolio-websites
+- Branch: main
+- Visibility: Public
+- All commits pushed successfully
+- Token cleaned from git config
