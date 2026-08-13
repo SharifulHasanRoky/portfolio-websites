@@ -10,12 +10,30 @@ import {
   Coffee,
   BookOpen,
   Briefcase,
+  Bot,
+  Palette,
+  LineChart,
+  Search,
+  Workflow,
 } from "lucide-react";
 import { PageHero } from "./PageHero";
+import { SectionHeading } from "./SectionHeading";
+import { TiltCard } from "./TiltCard";
 import {
   aboutBio,
   aboutStats,
+  dailyTools,
+  aiTools,
 } from "@/lib/marketer-data";
+import { cn } from "@/lib/utils";
+
+const toolCategoryColor: Record<string, string> = {
+  Paid: "text-fire",
+  Measurement: "text-brand",
+  Lifecycle: "text-fire",
+  Creative: "text-brand",
+  Ops: "text-fire",
+};
 
 export function AboutPage() {
   return (
@@ -82,6 +100,114 @@ export function AboutPage() {
         </div>
       </section>
 
+      {/* ===== Daily Tools ===== */}
+      <section className="relative px-4 sm:px-6 py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="Tools I use daily · the actual stack"
+            title="6 tools. No filler. These are the ones I open every day."
+            description="Grouped by what they actually do — not by what looks good on a slide. If you're shopping for a marketer, this is the stack you should expect."
+          />
+
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            {dailyTools.map((t, i) => (
+              <motion.div
+                key={t.name}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.4, delay: (i % 3) * 0.05 }}
+                className="rounded-xl border border-border bg-card/40 backdrop-blur p-4 hover:bg-card/70 transition-colors"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0 flex-1">
+                    <div className="font-display text-sm font-semibold truncate">
+                      {t.name}
+                    </div>
+                    <div className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                      {t.purpose}
+                    </div>
+                  </div>
+                  <span
+                    className={cn(
+                      "text-[10px] uppercase tracking-wider font-mono shrink-0",
+                      toolCategoryColor[t.category]
+                    )}
+                  >
+                    {t.category}
+                  </span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== AI Tools ===== */}
+      <section className="relative px-4 sm:px-6 py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl">
+          <SectionHeading
+            eyebrow="AI tools · my unfair advantage"
+            title="30+ AI tools I use to move faster than agencies 3x my size."
+            description="I don't just run ads — I leverage AI across strategy, creative, measurement, and competitor research. This is the full stack, grouped by what each tool actually does."
+          />
+
+          {(["AI Assistants", "Creative & Content", "Analytics & Tracking", "Competitor Research", "Automation"] as const).map((category, catIdx) => {
+            const categoryTools = aiTools.filter((t) => t.category === category);
+            const catIcon = category === "AI Assistants" ? Bot : category === "Creative & Content" ? Palette : category === "Analytics & Tracking" ? LineChart : category === "Competitor Research" ? Search : Workflow;
+            const catColor = catIdx % 2 === 0 ? "text-brand" : "text-fire";
+            return (
+              <motion.div
+                key={category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: catIdx * 0.1 }}
+                className="mt-10"
+              >
+                <div className="flex items-center gap-2.5 mb-5">
+                  <div className={cn("grid place-items-center h-9 w-9 rounded-xl bg-card/60", catColor)}>
+                    {(() => { const Icon = catIcon; return <Icon className="h-4 w-4" />; })()}
+                  </div>
+                  <h3 className="font-display text-lg sm:text-xl font-semibold">
+                    {category}{" "}
+                    <span className="text-sm font-normal text-muted-foreground">
+                      ({categoryTools.length})
+                    </span>
+                  </h3>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {categoryTools.map((t, i) => (
+                    <motion.div
+                      key={t.name}
+                      initial={{ opacity: 0, y: 12 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ duration: 0.4, delay: (i % 3) * 0.05 }}
+                      className="rounded-xl border border-border bg-card/40 backdrop-blur p-4 hover:bg-card/70 transition-colors group"
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0 flex-1">
+                          <div className="font-display text-sm font-semibold truncate group-hover:text-brand transition-colors">
+                            {t.name}
+                          </div>
+                          <div className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                            {t.purpose}
+                          </div>
+                        </div>
+                        <span className={cn("text-[10px] uppercase tracking-wider font-mono shrink-0", catColor)}>
+                          {t.category.split(" ")[0]}
+                        </span>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* ===== Outside of Marketing ===== */}
       <section className="relative px-4 sm:px-6 py-16 sm:py-24">
         <div className="mx-auto max-w-5xl">
@@ -119,8 +245,6 @@ export function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* ===== CTA removed per user request ===== */}
     </motion.div>
   );
 }

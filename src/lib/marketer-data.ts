@@ -1625,7 +1625,6 @@ export const aboutBio = {
     "I'm Shariful Hasan Roky — a revenue growth strategist with 4+ years of experience in performance marketing. I work independently, directly with founders, and I've worked with 150+ companies across the globe.",
     "I focus exclusively on two niches: Ecommerce and Home Services. In Ecommerce, I work with Shopify DTC brands — gadgets, cosmetics, clothing, supplements, pet supplies, coffee, jewelry, and more. In Home Services, I work with plumbing, roofing, electrician, cleaning, handyman, HVAC, car repair, and similar local service businesses.",
     "I work worldwide — clients from the US, Canada, UK, Australia, Europe, and beyond. Remote-first, async with one live call per week. When you hire me, you get me. I write the strategy, build the funnels, audit the ad accounts, and answer your Slack.",
-    "My daily stack: paid platforms (Meta, Google, TikTok, YouTube), measurement (GA4 + GTM), and AI tools — ChatGPT, Claude, Gemini, Canva, Triple Whale, Hyros, Madgicx, Semrush, AdSpy, SpyFu, and more.",
     "If you're an ecommerce founder scaling your DTC brand, or a home service business owner looking to dominate your local market, let's talk.",
   ],
   location: "Feni, Bangladesh",
