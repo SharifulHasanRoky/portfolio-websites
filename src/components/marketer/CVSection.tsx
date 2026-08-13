@@ -181,30 +181,14 @@ export function CVSection({ hideHeading = false }: { hideHeading?: boolean }) {
                     {block.items.length} tools
                   </span>
                 </div>
-                <div className="mt-5 space-y-3.5">
+                <div className="mt-5 flex flex-wrap gap-2">
                   {block.items.map((s) => (
-                    <div key={s.name}>
-                      <div className="flex items-center justify-between text-xs mb-1.5">
-                        <span className="text-foreground/90">{s.name}</span>
-                        <span className="font-mono text-muted-foreground">
-                          {s.level}%
-                        </span>
-                      </div>
-                      <div className="relative h-1.5 rounded-full bg-border overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${s.level}%` }}
-                          viewport={{ once: true, amount: 0.6 }}
-                          transition={{ duration: 1, ease: "easeOut" }}
-                          className={cn(
-                            "absolute inset-y-0 left-0 rounded-full",
-                            idx % 2 === 0
-                              ? "bg-gradient-to-r from-brand to-fire"
-                              : "bg-gradient-to-r from-fire to-brand"
-                          )}
-                        />
-                      </div>
-                    </div>
+                    <span
+                      key={s.name}
+                      className="inline-flex items-center rounded-md border border-border bg-background/40 px-2.5 py-1.5 text-xs font-mono text-muted-foreground"
+                    >
+                      {s.name}
+                    </span>
                   ))}
                 </div>
               </motion.div>
