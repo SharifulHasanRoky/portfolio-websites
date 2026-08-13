@@ -7,8 +7,6 @@ import {
   Clock,
   Mail,
   Languages,
-  CalendarCheck,
-  ArrowRight,
   Coffee,
   BookOpen,
   Briefcase,
@@ -122,37 +120,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* ===== CTA (single — no duplicate) ===== */}
-      <section className="relative px-4 sm:px-6 py-12 sm:py-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5 }}
-            className="rounded-3xl border border-brand/30 bg-card/40 backdrop-blur p-8 sm:p-10 glow-brand"
-          >
-            <CalendarCheck className="h-8 w-8 text-brand mx-auto" />
-            <h2 className="font-display mt-4 text-2xl sm:text-3xl font-semibold">
-              Still reading? Let&apos;s talk.
-            </h2>
-            <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-md mx-auto">
-              The strategy call is 30 minutes, free, and you walk away with a real plan — whether or not we end up working together.
-            </p>
-            <div className="mt-6 flex justify-center">
-              <a
-                href="https://calendly.com/sharifulhasanroky/free15miniuteconsultancy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-foreground text-background px-5 py-3 text-sm font-semibold hover:bg-brand hover:text-brand-foreground transition-colors group"
-              >
-                Book a free strategy call
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* ===== CTA removed per user request ===== */}
     </motion.div>
   );
 }
