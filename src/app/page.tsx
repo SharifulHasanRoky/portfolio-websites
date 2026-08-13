@@ -30,6 +30,7 @@ export default function Home() {
   // the home view has actually mounted.
   useEffect(() => {
     if (view !== "home" || !pendingScroll) return;
+    const scrollTarget = pendingScroll;
 
     let cancelled = false;
     let attempts = 0;
@@ -38,7 +39,7 @@ export default function Home() {
     function tryScroll() {
       if (cancelled) return;
       attempts += 1;
-      const el = document.querySelector(pendingScroll) as HTMLElement | null;
+      const el = document.querySelector(scrollTarget) as HTMLElement | null;
       if (el && el.offsetParent !== null) {
         // Element is mounted AND visible (offsetParent non-null means it's rendered).
         // Force a hard reset first so the smooth scroll starts from the top.
