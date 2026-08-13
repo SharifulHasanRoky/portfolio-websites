@@ -14,15 +14,12 @@ import {
   Briefcase,
 } from "lucide-react";
 import { PageHero } from "./PageHero";
-import { useViewStore } from "@/lib/view-store";
 import {
   aboutBio,
   aboutStats,
 } from "@/lib/marketer-data";
 
 export function AboutPage() {
-  const setView = useViewStore((s) => s.setView);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
@@ -33,7 +30,7 @@ export function AboutPage() {
     >
       <PageHero
         eyebrow="About me · the marketer behind the numbers"
-        title="Revenue growth strategist. System builder. Honest operator."
+        title="Performance marketer & Revenue growth strategist."
         description={aboutBio.shortBio}
         icon={User}
         accent="brand"
@@ -142,7 +139,7 @@ export function AboutPage() {
             <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-md mx-auto">
               The strategy call is 30 minutes, free, and you walk away with a real plan — whether or not we end up working together.
             </p>
-            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="mt-6 flex justify-center">
               <a
                 href="https://calendly.com/sharifulhasanroky/free15miniuteconsultancy"
                 target="_blank"
@@ -152,13 +149,6 @@ export function AboutPage() {
                 Book a free strategy call
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
-              <button
-                type="button"
-                onClick={() => setView("cases")}
-                className="inline-flex items-center gap-2 rounded-xl border border-border bg-card/60 backdrop-blur px-5 py-3 text-sm font-semibold hover:bg-card transition-colors"
-              >
-                See the case studies first
-              </button>
             </div>
           </motion.div>
         </div>
