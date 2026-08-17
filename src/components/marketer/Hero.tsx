@@ -131,43 +131,45 @@ export function Hero() {
           conversions, and scalable revenue.
         </motion.p>
 
-        {/* Stats strip — big numbers, stacked vertically */}
+        {/* Stats strip — big numbers, stacked vertically. Same look on all screens via horizontal scroll on small. */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.28 }}
-          className="mx-auto mt-10 max-w-4xl grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3"
+          className="mx-auto mt-10 w-full max-w-4xl"
         >
-          {[
-            { value: "$6M+", label: "Ad Spend", highlight: true },
-            { value: "30K+", label: "Leads & Calls" },
-            { value: "$18M+", label: "Revenue" },
-            { value: "4×", label: "ROI" },
-            { value: "13×", label: "Highest ROAS Achieved" },
-          ].map((s) => (
-            <motion.div
-              key={s.label}
-              whileHover={{ y: -2 }}
-              className={`relative flex flex-col items-center justify-center rounded-2xl border px-3 py-4 sm:py-5 text-center overflow-hidden ${
-                s.highlight
-                  ? "border-brand/50 bg-brand/10 glow-brand"
-                  : "border-border bg-card/50 backdrop-blur"
-              }`}
-            >
-              {/* top accent line */}
-              <div className={`absolute top-0 left-3 right-3 h-px ${s.highlight ? "bg-brand" : "bg-gradient-to-r from-transparent via-brand/40 to-transparent"}`} />
-              <div
-                className={`font-display text-2xl sm:text-3xl lg:text-4xl font-semibold leading-none tracking-tight ${
-                  s.highlight ? "text-gradient-brand" : "text-foreground"
+          <div className="flex lg:grid lg:grid-cols-5 gap-2.5 sm:gap-3 overflow-x-auto lg:overflow-x-visible pb-2 lg:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory">
+            {[
+              { value: "$6M+", label: "Ad Spend", highlight: true },
+              { value: "30K+", label: "Leads & Calls" },
+              { value: "$18M+", label: "Revenue" },
+              { value: "4×", label: "ROI" },
+              { value: "13×", label: "Highest ROAS" },
+            ].map((s) => (
+              <motion.div
+                key={s.label}
+                whileHover={{ y: -2 }}
+                className={`relative flex flex-col items-center justify-center rounded-2xl border px-4 sm:px-3 py-4 sm:py-5 text-center overflow-hidden min-w-[44%] sm:min-w-0 flex-1 snap-start ${
+                  s.highlight
+                    ? "border-brand/50 bg-brand/10 glow-brand"
+                    : "border-border bg-card/50 backdrop-blur"
                 }`}
               >
-                {s.value}
-              </div>
-              <div className="mt-1.5 text-[10px] sm:text-[11px] uppercase tracking-wider text-muted-foreground font-mono leading-tight">
-                {s.label}
-              </div>
-            </motion.div>
-          ))}
+                {/* top accent line */}
+                <div className={`absolute top-0 left-3 right-3 h-px ${s.highlight ? "bg-brand" : "bg-gradient-to-r from-transparent via-brand/40 to-transparent"}`} />
+                <div
+                  className={`font-display text-2xl sm:text-3xl lg:text-4xl font-semibold leading-none tracking-tight ${
+                    s.highlight ? "text-gradient-brand" : "text-foreground"
+                  }`}
+                >
+                  {s.value}
+                </div>
+                <div className="mt-1.5 text-[10px] sm:text-[11px] uppercase tracking-wider text-muted-foreground font-mono leading-tight">
+                  {s.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div
