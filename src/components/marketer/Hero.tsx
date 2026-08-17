@@ -116,7 +116,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="font-display mt-6 text-[1.875rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.25rem] font-semibold leading-[1.08] sm:leading-[1.05] tracking-tight"
         >
-          Make Customer Acquisition Your{" "}
+          Make Customer Acquisition Your
+          <br />
           <span className="text-gradient-brand">Competitive Advantage.</span>
         </motion.h1>
 
