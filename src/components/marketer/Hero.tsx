@@ -131,33 +131,42 @@ export function Hero() {
           conversions, and scalable revenue.
         </motion.p>
 
-        {/* Stats strip — proof points */}
+        {/* Stats strip — big numbers, stacked vertically */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.28 }}
-          className="mx-auto mt-8 max-w-3xl flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xs sm:text-sm font-mono"
+          className="mx-auto mt-10 max-w-4xl grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3"
         >
           {[
-            { value: "$6M+", label: "Ad Spend" },
+            { value: "$6M+", label: "Ad Spend", highlight: true },
             { value: "30K+", label: "Leads & Calls" },
             { value: "$18M+", label: "Revenue" },
             { value: "4×", label: "ROI" },
             { value: "13×", label: "Highest ROAS Achieved" },
-          ].map((s, i) => (
-            <span
+          ].map((s) => (
+            <motion.div
               key={s.label}
-              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 ${
-                i === 0
-                  ? "border-brand/40 bg-brand/10 text-foreground"
-                  : "border-border bg-card/50 text-muted-foreground"
+              whileHover={{ y: -2 }}
+              className={`relative flex flex-col items-center justify-center rounded-2xl border px-3 py-4 sm:py-5 text-center overflow-hidden ${
+                s.highlight
+                  ? "border-brand/50 bg-brand/10 glow-brand"
+                  : "border-border bg-card/50 backdrop-blur"
               }`}
             >
-              <span className={`font-display font-semibold ${i === 0 ? "text-brand" : "text-foreground"}`}>
+              {/* top accent line */}
+              <div className={`absolute top-0 left-3 right-3 h-px ${s.highlight ? "bg-brand" : "bg-gradient-to-r from-transparent via-brand/40 to-transparent"}`} />
+              <div
+                className={`font-display text-2xl sm:text-3xl lg:text-4xl font-semibold leading-none tracking-tight ${
+                  s.highlight ? "text-gradient-brand" : "text-foreground"
+                }`}
+              >
                 {s.value}
-              </span>
-              <span className="opacity-80">{s.label}</span>
-            </span>
+              </div>
+              <div className="mt-1.5 text-[10px] sm:text-[11px] uppercase tracking-wider text-muted-foreground font-mono leading-tight">
+                {s.label}
+              </div>
+            </motion.div>
           ))}
         </motion.div>
 
