@@ -114,7 +114,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display mt-6 text-[1.875rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.25rem] font-semibold leading-[1.08] sm:leading-[1.05] tracking-tight"
+          className="font-display mt-6 text-[1.625rem] sm:text-[1.875rem] md:text-4xl lg:text-[2.75rem] xl:text-[3rem] font-semibold leading-[1.1] sm:leading-[1.08] tracking-tight"
         >
           Make Customer Acquisition Your
           <br />

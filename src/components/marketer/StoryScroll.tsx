@@ -83,7 +83,7 @@ export function StoryScroll() {
                       </div>
                     </div>
 
-                    <h3 className="font-display mt-6 text-2xl sm:text-3xl font-semibold leading-tight">
+                    <h3 className="font-display mt-6 text-xl sm:text-2xl font-semibold leading-tight">
                       {p.title}
                     </h3>
                     <p className="mt-2 text-sm font-medium text-muted-foreground">

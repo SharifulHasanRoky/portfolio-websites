@@ -48,7 +48,7 @@ export function Footer() {
           <div className="absolute -top-20 -left-20 h-48 w-48 rounded-full blur-3xl bg-brand/30" />
           <div className="absolute -bottom-20 -right-20 h-48 w-48 rounded-full blur-3xl bg-fire/30" />
           <div className="relative">
-            <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight">
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold leading-tight">
               Ready to stop renting growth
               <br className="hidden sm:block" /> and start{" "}
               <span className="text-gradient-brand">owning a brand</span>?

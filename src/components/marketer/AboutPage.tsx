@@ -215,7 +215,7 @@ export function AboutPage() {
             <div className="text-[11px] uppercase tracking-wider text-brand font-mono">
               outside of marketing
             </div>
-            <h2 className="font-display mt-3 text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight">
+            <h2 className="font-display mt-3 text-xl sm:text-2xl md:text-3xl font-semibold leading-tight">
               What I do when I&apos;m not in an ad account.
             </h2>
 

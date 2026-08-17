@@ -167,7 +167,7 @@ export function BookMeeting({ hideHeading = false }: { hideHeading?: boolean }) 
                   >
                     <CheckCircle2 className="h-8 w-8" />
                   </motion.div>
-                  <h3 className="font-display text-2xl font-semibold">
+                  <h3 className="font-display text-xl font-semibold">
                     You&apos;re on the list.
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground max-w-md">

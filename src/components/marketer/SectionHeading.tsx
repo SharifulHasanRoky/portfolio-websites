@@ -45,7 +45,7 @@ export function SectionHeading({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6, delay: 0.05 }}
-        className="font-display mt-5 text-3xl sm:text-4xl md:text-5xl font-semibold leading-[1.05] tracking-tight"
+        className="font-display mt-5 text-[1.5rem] sm:text-2xl md:text-3xl font-semibold leading-[1.1] tracking-tight"
       >
         {title}
       </motion.h2>
