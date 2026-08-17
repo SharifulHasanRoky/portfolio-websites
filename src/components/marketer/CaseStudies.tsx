@@ -140,7 +140,7 @@ export function CaseStudies({ hideHeading = false }: { hideHeading?: boolean }) 
                       <div className="text-[11px] uppercase tracking-wider text-brand font-mono">
                         {selected.vertical} · {selected.industry}
                       </div>
-                      <h3 className="font-display mt-1 text-xl sm:text-2xl font-semibold leading-tight">
+                      <h3 className="font-display mt-1 text-xl sm:text-2xl font-semibold leading-tight text-gradient-brand">
                         {selected.client}
                       </h3>
                       <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">

@@ -169,7 +169,7 @@ export function AboutPage() {
                   <div className={cn("grid place-items-center h-9 w-9 rounded-xl bg-card/60", catColor)}>
                     {(() => { const Icon = catIcon; return <Icon className="h-4 w-4" />; })()}
                   </div>
-                  <h3 className="font-display text-lg sm:text-xl font-semibold">
+                  <h3 className="font-display text-lg sm:text-xl font-semibold text-gradient-brand">
                     {category}{" "}
                     <span className="text-sm font-normal text-muted-foreground">
                       ({categoryTools.length})
@@ -215,7 +215,7 @@ export function AboutPage() {
             <div className="text-[11px] uppercase tracking-wider text-brand font-mono">
               outside of marketing
             </div>
-            <h2 className="font-display mt-3 text-xl sm:text-2xl md:text-3xl font-semibold leading-tight">
+            <h2 className="font-display mt-3 text-xl sm:text-2xl md:text-3xl font-semibold leading-tight text-gradient-brand">
               What I do when I&apos;m not in an ad account.
             </h2>
 

@@ -82,7 +82,7 @@ export function CVSection({ hideHeading = false }: { hideHeading?: boolean }) {
                           {entry.location}
                         </div>
                       </div>
-                      <h3 className="font-display mt-2 text-lg sm:text-xl font-semibold">
+                      <h3 className="font-display mt-2 text-lg sm:text-xl font-semibold text-gradient-brand">
                         {entry.role}
                       </h3>
                       <div className="text-sm text-muted-foreground">
@@ -127,7 +127,7 @@ export function CVSection({ hideHeading = false }: { hideHeading?: boolean }) {
             >
               <div className="flex items-center gap-2">
                 <GraduationCap className="h-5 w-5 text-brand" />
-                <h3 className="font-display text-lg font-semibold">Education</h3>
+                <h3 className="font-display text-lg font-semibold text-gradient-brand">Education</h3>
               </div>
               <div className="mt-4 space-y-3">
                 <div>
@@ -174,7 +174,7 @@ export function CVSection({ hideHeading = false }: { hideHeading?: boolean }) {
                 className="rounded-2xl border border-border bg-card/40 backdrop-blur p-6 sm:p-7"
               >
                 <div className="flex items-center justify-between">
-                  <h3 className="font-display text-lg font-semibold">
+                  <h3 className="font-display text-lg font-semibold text-gradient-brand">
                     {block.category}
                   </h3>
                   <span className="text-[11px] font-mono uppercase tracking-wider text-muted-foreground">

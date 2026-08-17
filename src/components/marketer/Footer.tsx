@@ -48,10 +48,8 @@ export function Footer() {
           <div className="absolute -top-20 -left-20 h-48 w-48 rounded-full blur-3xl bg-brand/30" />
           <div className="absolute -bottom-20 -right-20 h-48 w-48 rounded-full blur-3xl bg-fire/30" />
           <div className="relative">
-            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold leading-tight">
-              Ready to stop renting growth
-              <br className="hidden sm:block" /> and start{" "}
-              <span className="text-gradient-brand">owning a brand</span>?
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold leading-tight text-gradient-brand">
+              Ready to stop renting growth and start owning a brand?
             </h3>
             <p className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground">
               One call. Real numbers. A real plan. If we&apos;re not a fit,

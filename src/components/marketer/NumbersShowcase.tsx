@@ -183,7 +183,7 @@ export function NumbersShowcase() {
               <div className="text-[11px] uppercase tracking-[0.18em] text-brand font-mono">
                 measurement sample · aggregated
               </div>
-              <h3 className="font-display mt-2 text-2xl sm:text-3xl font-semibold">
+              <h3 className="font-display mt-2 text-2xl sm:text-3xl font-semibold text-gradient-brand">
                 Spend scaled 4.2x without ROAS collapse
               </h3>
             </div>

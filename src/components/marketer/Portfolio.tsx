@@ -71,7 +71,7 @@ export function Portfolio({ hideHeading = false }: { hideHeading?: boolean }) {
                 {/* Title */}
                 <h3
                   style={{ transform: "translateZ(40px)" }}
-                  className="font-display mt-5 text-2xl font-semibold leading-tight"
+                  className="font-display mt-5 text-2xl font-semibold leading-tight text-gradient-brand"
                 >
                   {p.title}
                 </h3>

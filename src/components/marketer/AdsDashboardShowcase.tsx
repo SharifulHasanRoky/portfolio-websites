@@ -89,9 +89,8 @@ export function AdsDashboardShowcase() {
             <BarChart3 className="h-3 w-3" />
             Real ad accounts · live data
           </div>
-          <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold leading-[1.1] tracking-tight max-w-3xl mx-auto">
-            Real dashboards from{" "}
-            <span className="text-gradient-brand">real ad accounts</span>
+          <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold leading-[1.1] tracking-tight max-w-3xl mx-auto text-gradient-brand">
+            Real dashboards from real ad accounts
           </h2>
           <p className="mt-1 max-w-lg mx-auto text-xs sm:text-sm text-muted-foreground">
             {total} dashboards · Google Ads, Facebook Ads &amp; Microsoft Ads.

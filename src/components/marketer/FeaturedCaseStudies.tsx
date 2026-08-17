@@ -73,7 +73,7 @@ export function FeaturedCaseStudies() {
                         >
                           {c.industry}
                         </div>
-                        <h3 className="font-display text-lg sm:text-xl font-semibold leading-tight mt-0.5">
+                        <h3 className="font-display text-lg sm:text-xl font-semibold leading-tight mt-0.5 text-gradient-brand">
                           {c.client}
                         </h3>
                       </div>

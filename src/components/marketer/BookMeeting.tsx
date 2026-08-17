@@ -92,7 +92,7 @@ export function BookMeeting({ hideHeading = false }: { hideHeading?: boolean }) 
             >
               <div className="flex items-center gap-2">
                 <Sparkles className="h-5 w-5 text-brand" />
-                <h3 className="font-display text-xl font-semibold">
+                <h3 className="font-display text-xl font-semibold text-gradient-brand">
                   What you get on the call
                 </h3>
               </div>
@@ -167,7 +167,7 @@ export function BookMeeting({ hideHeading = false }: { hideHeading?: boolean }) 
                   >
                     <CheckCircle2 className="h-8 w-8" />
                   </motion.div>
-                  <h3 className="font-display text-xl font-semibold">
+                  <h3 className="font-display text-xl font-semibold text-gradient-brand">
                     You&apos;re on the list.
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground max-w-md">

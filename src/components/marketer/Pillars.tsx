@@ -88,7 +88,7 @@ export function Pillars() {
                     >
                       {p.label}
                     </div>
-                    <h3 className="font-display mt-3 text-xl sm:text-2xl md:text-[1.625rem] font-semibold leading-tight tracking-tight">
+                    <h3 className="font-display mt-3 text-xl sm:text-2xl md:text-[1.625rem] font-semibold leading-tight tracking-tight text-gradient-brand">
                       {p.title}
                     </h3>
                     <p className="mt-2 text-sm font-medium text-muted-foreground">
@@ -161,7 +161,7 @@ export function Pillars() {
                       </div>
                       <div
                         style={{ transform: "translateZ(28px)" }}
-                        className="mt-6 font-display text-xl sm:text-2xl font-semibold leading-tight"
+                        className="mt-6 font-display text-xl sm:text-2xl font-semibold leading-tight text-gradient-brand"
                       >
                         {p.label.split(" / ")[1]}
                       </div>
