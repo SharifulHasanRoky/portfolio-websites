@@ -68,7 +68,7 @@ export function Hero() {
           className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 backdrop-blur px-4 py-1.5 text-xs font-medium text-muted-foreground"
         >
           <Sparkles className="h-3.5 w-3.5 text-brand" />
-          Revenue growth strategist · ecommerce &amp; home service brands
+          Google Ads + Facebook Ads · AI-powered growth systems
         </motion.div>
 
         {/* Portrait — centered above headline, no overlap */}
@@ -109,15 +109,15 @@ export function Hero() {
           </motion.span>
         </motion.div>
 
-        {/* H1 — name only */}
+        {/* H1 — value proposition */}
         <motion.h1
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display mt-6 text-[2.25rem] sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[5.5rem] font-semibold leading-[1.05] sm:leading-[1.02] tracking-tight"
+          className="font-display mt-6 text-[1.875rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.25rem] font-semibold leading-[1.08] sm:leading-[1.05] tracking-tight"
         >
-          Shariful Hasan{" "}
-          <span className="text-gradient-brand">Roky</span>
+          Make Customer Acquisition Your{" "}
+          <span className="text-gradient-brand">Competitive Advantage.</span>
         </motion.h1>
 
         <motion.p
@@ -126,16 +126,45 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mx-auto mt-6 max-w-2xl text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed"
         >
-          Revenue growth strategist with 4+ years of experience. Worked with
-          150+ companies worldwide, focused exclusively on two niches:
-          ecommerce and home services. Growth that compounds in your bank account,
-          not just in your ad dashboard.
+          Build intelligent growth systems where AI, automation, performance media
+          and data work together to drive efficient acquisition, higher
+          conversions, and scalable revenue.
         </motion.p>
+
+        {/* Stats strip — proof points */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.28 }}
+          className="mx-auto mt-8 max-w-3xl flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xs sm:text-sm font-mono"
+        >
+          {[
+            { value: "$6M+", label: "Ad Spend" },
+            { value: "30K+", label: "Leads & Calls" },
+            { value: "$18M+", label: "Revenue" },
+            { value: "4×", label: "ROI" },
+            { value: "13×", label: "Highest ROAS Achieved" },
+          ].map((s, i) => (
+            <span
+              key={s.label}
+              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 ${
+                i === 0
+                  ? "border-brand/40 bg-brand/10 text-foreground"
+                  : "border-border bg-card/50 text-muted-foreground"
+              }`}
+            >
+              <span className={`font-display font-semibold ${i === 0 ? "text-brand" : "text-foreground"}`}>
+                {s.value}
+              </span>
+              <span className="opacity-80">{s.label}</span>
+            </span>
+          ))}
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.36 }}
           className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
         >
           <a
