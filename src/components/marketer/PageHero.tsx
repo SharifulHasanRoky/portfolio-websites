@@ -75,7 +75,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="font-display mt-4 text-[1.625rem] sm:text-2xl md:text-3xl lg:text-[2rem] font-semibold leading-[1.1] tracking-tight"
+              className="font-display mt-4 text-[1.625rem] sm:text-2xl md:text-3xl lg:text-[2rem] font-semibold leading-[1.1] tracking-tight text-gradient-brand"
             >
               {title}
             </motion.h1>
