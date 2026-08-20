@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   ArrowUp,
   Mail,
@@ -72,22 +73,15 @@ export function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2.5">
-              <span className="grid place-items-center h-9 w-9 rounded-xl bg-gradient-to-br from-brand to-fire text-brand-foreground">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z" />
-                </svg>
-              </span>
+              <Image
+                src="/logo.svg"
+                alt="Shariful Hasan Roky logo"
+                width={36}
+                height={36}
+                className="h-9 w-9 rounded-xl"
+              />
               <span className="font-display text-base font-semibold tracking-tight">
-                Shariful<span className="text-brand">.</span>Roky
+                Shariful Hasan <span className="text-gradient-brand">Roky</span>
               </span>
             </div>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
@@ -173,7 +167,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
           <div>
-            © {new Date().getFullYear()} Shariful Hasan Roky · Performance Marketing Studio. Built
+            © {new Date().getFullYear()} Shariful Hasan Roky · Revenue Growth Strategist. Built
             with intent — and a lot of caffeine.
           </div>
           <div className="flex items-center gap-4">

@@ -119,10 +119,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
       { url: "/logo.svg", type: "image/svg+xml" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/logo.svg",
+    shortcut: "/logo.svg",
   },
   manifest: "/site.webmanifest",
 };

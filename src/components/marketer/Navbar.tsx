@@ -2,7 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowUpRight, Zap, ArrowLeft } from "lucide-react";
+import { Menu, X, ArrowUpRight, ArrowLeft } from "lucide-react";
+import Image from "next/image";
 import { navLinks } from "@/lib/marketer-data";
 import { useViewStore, type View } from "@/lib/view-store";
 import { cn } from "@/lib/utils";
@@ -88,15 +89,19 @@ export function Navbar() {
             {/* Logo — always goes home */}
             <button
               onClick={goHome}
-              className="flex items-center gap-2.5 group"
+              className="flex items-center gap-2 group"
               aria-label="Back to home"
             >
-              <span className="relative grid place-items-center h-9 w-9 rounded-xl bg-gradient-to-br from-brand to-fire text-brand-foreground shadow-[0_8px_20px_-6px_var(--brand)]">
-                <Zap className="h-5 w-5" strokeWidth={2.5} />
-                <span className="absolute inset-0 rounded-xl ring-1 ring-white/20" />
-              </span>
+              <Image
+                src="/logo.svg"
+                alt="Shariful Hasan Roky logo"
+                width={32}
+                height={32}
+                priority
+                className="h-8 w-8 sm:h-9 sm:w-9 rounded-xl shadow-[0_8px_20px_-6px_var(--brand)]"
+              />
               <span className="font-display text-[15px] font-semibold tracking-tight">
-                Shariful<span className="text-brand">.</span>Roky
+                Shariful Hasan <span className="text-gradient-brand">Roky</span>
               </span>
             </button>
 
