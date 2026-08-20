@@ -12,10 +12,16 @@
   "categories": ["business", "marketing", "productivity"],
   "icons": [
     {
-      "src": "/logo.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/logo.png",
+      "sizes": "166x157",
+      "type": "image/png",
       "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "166x157",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

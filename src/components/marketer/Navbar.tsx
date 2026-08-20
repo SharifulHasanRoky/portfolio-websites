@@ -93,12 +93,12 @@ export function Navbar() {
               aria-label="Back to home"
             >
               <Image
-                src="/logo.svg"
+                src="/logo.png"
                 alt="Shariful Hasan Roky logo"
-                width={32}
-                height={32}
+                width={36}
+                height={36}
                 priority
-                className="h-8 w-8 sm:h-9 sm:w-9 rounded-xl shadow-[0_8px_20px_-6px_var(--brand)]"
+                className="h-9 w-9 sm:h-10 sm:w-10 rounded-xl"
               />
               <span className="font-display text-[15px] font-semibold tracking-tight">
                 Shariful Hasan <span className="text-gradient-brand">Roky</span>
