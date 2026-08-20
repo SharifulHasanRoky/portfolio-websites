@@ -93,7 +93,7 @@ export function Navbar() {
               aria-label="Back to home"
             >
               <Image
-                src="/logo.png"
+                src="/logo.svg"
                 alt="Shariful Hasan Roky logo"
                 width={36}
                 height={36}
